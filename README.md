@@ -1,6 +1,6 @@
-# Caturaya Living
+# Eko Suyanto Workshop
 
-Website MVP untuk Caturaya Living, layanan interior, aluminium, kitchen set, plafon, kanopi, partisi, dan home finishing di Sidareja, Cilacap, dan sekitarnya.
+Website MVP untuk Eko Suyanto Workshop, layanan interior, aluminium, kitchen set, plafon, kanopi, partisi, dan home finishing di Sidareja, Cilacap, dan sekitarnya.
 
 ## Stack
 

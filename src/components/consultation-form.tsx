@@ -41,12 +41,12 @@ export function ConsultationForm() {
     const lead = { ...form, createdAt: new Date().toISOString(), source: "contact-form" };
     let existing: typeof lead[] = [];
     try {
-      const parsed = JSON.parse(window.localStorage.getItem("caturaya-leads") ?? "[]") as unknown;
+      const parsed = JSON.parse(window.localStorage.getItem("eko-workshop-leads") ?? "[]") as unknown;
       existing = Array.isArray(parsed) ? parsed as typeof lead[] : [];
     } catch {
       existing = [];
     }
-    window.localStorage.setItem("caturaya-leads", JSON.stringify([lead, ...existing].slice(0, 100)));
+    window.localStorage.setItem("eko-workshop-leads", JSON.stringify([lead, ...existing].slice(0, 100)));
     trackEvent("lead_submit", { source: "contact-form", need: form.need, area: form.area });
     
     let isStored = false;

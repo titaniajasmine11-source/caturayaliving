@@ -3,8 +3,8 @@ import { createHash } from "node:crypto";
 
 const buckets = new Map<string, { count: number; resetAt: number }>();
 
-export const adminCookieName = "caturaya-admin-token";
-export const adminRoleCookieName = "caturaya-admin-role";
+export const adminCookieName = "eko-workshop-admin-token";
+export const adminRoleCookieName = "eko-workshop-admin-role";
 
 export function adminSessionValue(adminToken: string) {
   return createHash("sha256").update(adminToken).digest("hex");

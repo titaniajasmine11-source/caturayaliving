@@ -15,7 +15,7 @@ type SavedDesign = { id: string; room: string; model: string; material: string; 
 function loadSavedDesigns(): SavedDesign[] {
   if (typeof window === "undefined") return [];
   try {
-    const parsed = JSON.parse(window.localStorage.getItem("caturaya-designs") ?? "[]") as unknown;
+    const parsed = JSON.parse(window.localStorage.getItem("eko-workshop-designs") ?? "[]") as unknown;
     return Array.isArray(parsed) ? parsed as SavedDesign[] : [];
   } catch {
     return [];
@@ -48,7 +48,7 @@ export function VisualPlanner() {
     const design = { id: new Date().toISOString(), room, model, material, width, length, items, notes };
     const nextDesigns = [design, ...savedDesigns].slice(0, 12);
     setSavedDesigns(nextDesigns);
-    window.localStorage.setItem("caturaya-designs", JSON.stringify(nextDesigns));
+    window.localStorage.setItem("eko-workshop-designs", JSON.stringify(nextDesigns));
     trackEvent("planner_save_design", { room, model, material, items: items.length });
 
     try {

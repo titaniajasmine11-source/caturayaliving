@@ -1,6 +1,6 @@
 export const site = {
   name: "Eko Suyanto Workshop",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://caturayaliving.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ekosuyanto-workshop.vercel.app",
   tagline: "Full kontraktor properti: interior, eksterior, kusen kayu & aluminium, kitchen set, perabotan custom, HPL/PVC finishing, plafon, kanopi, pagar, dan jasa bangunan.",
   description: "Eko Suyanto Workshop adalah kontraktor properti full-service di Sidareja, Cilacap. Kami mengelola proyek interior & eksterior secara menyeluruh dengan jaringan tim spesialis: tukang kayu, aluminium, PVC/HPL, dan tukang bangunan.",
   phonePrimary: "6285119467138",
