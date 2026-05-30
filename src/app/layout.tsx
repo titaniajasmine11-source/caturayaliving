@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased text-neutral-text bg-white">
+      <body className="font-sans antialiased text-neutral-text bg-accent-light">
         <a href="#main-content" className="skip-link">
           Langsung ke konten utama
         </a>

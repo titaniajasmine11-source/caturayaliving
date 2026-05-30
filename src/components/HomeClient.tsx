@@ -136,15 +136,15 @@ export default function HomeClient({
               variants={fadeIn}
               className="text-4xl sm:text-5xl lg:text-[60px] font-display font-medium text-white tracking-tight leading-[1.1]"
             >
-              Create Your Ideal <br className="hidden sm:inline" />
-              <span className="font-display italic text-accent font-normal">Living Space</span>
+              Wujudkan Keindahan <br className="hidden sm:inline" />
+              <span className="font-display italic text-accent font-normal">Hunian Impian Anda</span>
             </motion.h1>
 
             <motion.p 
               variants={fadeIn} 
               className="text-sm sm:text-base text-accent-light/80 leading-relaxed max-w-lg"
             >
-              Dari kusen kayu & aluminium, perabotan rumah custom, kitchen set, HPL finishing, plafon, kanopi, hingga jasa bangunan — Caturaya Living koordinasikan semua tim spesialis untuk Anda, tanpa perlu cari banyak tukang.
+              Dari kusen kayu solid anti rayap, kusen aluminium tebal tahan karat cuaca pesisir, plafon PVC anti lembab tahan air pasang Sidareja, hingga renovasi sipil total — Caturaya Living mengkoordinasikan seluruh tim spesialis untuk Anda di bawah satu manajemen tepercaya.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
@@ -179,18 +179,18 @@ export default function HomeClient({
           {[
             { 
               icon: <Layers size={18} />, 
-              title: "Timeless Design", 
-              desc: "Desain interior & eksterior yang tak lekang oleh waktu, menyatukan kehangatan kayu alami dan kepraktisan minimalis modern." 
+              title: "Desain Sepanjang Masa", 
+              desc: "Desain interior & eksterior yang kokoh, menyatukan kehangatan kayu alami pilihan dan aluminium modern yang tangguh menghadapi cuaca ekstrim Cilacap." 
             },
             { 
               icon: <Heart size={18} />, 
-              title: "Relaxed Comfort", 
-              desc: "Setiap sudut dirancang presisi untuk kenyamanan maksimal keluarga Anda, dari efisiensi sirkulasi dapur hingga keindahan fasad." 
+              title: "Kenyamanan Alami", 
+              desc: "Setiap sudut ruangan dirancang presisi demi alur aktivitas harian yang efisien, mulai dari ketahanan karat kanopi carport luar hingga kerapian kitchen set." 
             },
             { 
               icon: <Sparkle size={18} />, 
-              title: "Curated Decor", 
-              desc: "Pilihan material premium (kayu jati solid, aluminium kustom graphite, finishing HPL kustom) yang dikurasi khusus oleh tim spesialis." 
+              title: "Material Terkurasi", 
+              desc: "Penggunaan bahan premium tahan air pasang dan udara lembab pesisir (teakwood jati solid, profil aluminium graphite, PVC waterproof) yang dirakit langsung oleh tukang ahli." 
             },
           ].map((item) => (
             <motion.div 
@@ -208,7 +208,7 @@ export default function HomeClient({
                 href="/layanan" 
                 className="inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-white text-[10px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full mt-4 transition-colors"
               >
-                <span>Shop Now</span>
+                <span>Konsultasi Proyek</span>
                 <ArrowRight size={10} />
               </Link>
             </motion.div>
@@ -220,7 +220,7 @@ export default function HomeClient({
       <section className="py-16 max-w-7xl mx-auto px-6">
         <div className="flex flex-col gap-3 mb-16 text-center max-w-xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-widest text-accent">Layanan Unggulan</span>
-          <h2 className="text-3xl sm:text-4xl font-display font-medium text-primary">Explore Our Collections</h2>
+          <h2 className="text-3xl sm:text-4xl font-display font-medium text-primary">Katalog Pengerjaan Spesialis</h2>
           <div className="w-8 h-[1px] bg-accent mx-auto mt-2"></div>
         </div>
 
@@ -264,9 +264,9 @@ export default function HomeClient({
                   href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan layanan ${col.title} dan ingin menanyakan estimasi awal.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1 w-full py-2.5 bg-accent/5 hover:bg-accent text-accent hover:text-white rounded-full text-[10px] font-bold uppercase tracking-wider transition-all mt-4"
+                  className="inline-flex items-center justify-center gap-1 w-full py-2.5 bg-accent/5 hover:bg-accent text-accent hover:text-white rounded-full text-[10px] font-bold uppercase tracking-wider transition-all mt-4 cursor-pointer"
                 >
-                  <span>View More</span>
+                  <span>Lihat Detail Pengerjaan</span>
                 </a>
               </div>
             </motion.article>
@@ -371,7 +371,7 @@ export default function HomeClient({
             <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur px-6 py-4 rounded-2xl border border-white/50 shadow-sm z-10">
               <span className="text-xs uppercase font-bold tracking-widest text-accent block mb-1">Manajemen Terstruktur</span>
-              <p className="text-[10px] text-neutral-muted leading-tight">Mengkoordinasikan tim spesialis kusen kayu, aluminium, HPL finishing, & bangunan sipil di Cilacap.</p>
+              <p className="text-[10px] text-neutral-muted leading-tight">Mengkoordinasikan tim spesialis kusen kayu anti rayap, aluminium tebal tahan karat, plafon PVC anti bocor, & konstruksi sipil kokoh di Cilacap.</p>
             </div>
           </div>
 
