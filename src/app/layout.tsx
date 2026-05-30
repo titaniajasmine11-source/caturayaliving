@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteFooter, SiteHeader, StickyWhatsapp } from "@/components/site-shell";
 import { site } from "@/lib/site";
 import { Inter, Playfair_Display } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -51,16 +52,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${playfair.variable}`}>
-      <body style={{ fontFamily: "var(--font-sans), Arial, sans-serif" }}>
+      <body className="font-sans antialiased text-neutral-text bg-white">
         <a href="#main-content" className="skip-link">
           Langsung ke konten utama
         </a>
-        <SiteHeader />
-        <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          {children}
-        </main>
-        <SiteFooter />
-        <StickyWhatsapp />
+        <SmoothScroll>
+          <div className="flex flex-col min-h-screen">
+            <SiteHeader />
+            <main id="main-content" className="flex-1 flex flex-col">
+              {children}
+            </main>
+            <SiteFooter />
+          </div>
+          <StickyWhatsapp />
+        </SmoothScroll>
       </body>
     </html>
   );

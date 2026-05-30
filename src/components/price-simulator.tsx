@@ -3,7 +3,7 @@
 import { whatsappUrl } from "@/lib/site";
 import { trackEvent } from "@/lib/tracking";
 import { useEffect, useState } from "react";
-import styles from "./styles/simulator.module.css";
+import { Calculator, Phone, MapPin, Info, ArrowRight, User } from "lucide-react";
 
 const rates = {
   kitchen: { basic: 1800000, standard: 2600000, premium: 3800000 },
@@ -105,12 +105,11 @@ export function PriceSimulator() {
 
   const unit = type === "kitchen" ? length + width : type === "aluminium" || type === "doorWindow" || type === "partisi" ? length * height * quantity : length * width;
   
-  // Use local fallback if remote rates are still loading or failed
   const activeRates: Record<string, number> = remoteRates[type] ?? rates[type];
   const rate = activeRates[packageType] ?? 0;
   const middleEstimate = Math.round(unit * rate);
   const lowEstimate = Math.round(middleEstimate * 0.85);
-  const highEstimate = Math.round(middleEstimate * 1.18);
+  const highEstimate = Math.round(middleEstimate * 1.15);
   const format = (value: number) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
 
   const label = labels[type];
@@ -137,18 +136,28 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
   const isLoading = rateSource === "loading";
 
   return (
-    <div className={styles.simulator}>
-      <div className={styles.simulatorForm}>
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+      
+      {/* Inputs Form */}
+      <div className="lg:col-span-8 bg-white border border-border-premium/50 rounded-3xl p-6 sm:p-8 shadow-premium grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
         {isLoading && (
-          <div className={styles.rateLoader} aria-live="polite">
-            <span className="shimmer" style={{ display: "inline-block", height: "16px", width: "100%", borderRadius: "4px" }} />
-            Mengambil data referensi harga terbaru dari server...
+          <div className="sm:col-span-2 bg-accent-light/40 border border-accent/20 text-accent text-xs p-4 rounded-xl flex items-center gap-2" aria-live="polite">
+            <span className="w-2.5 h-2.5 bg-accent rounded-full animate-ping" />
+            <span>Sinkronisasi basis referensi harga terbaru dari server...</span>
           </div>
         )}
 
-        <label>
-          Jenis Simulasi Properti
-          <select value={type} onChange={(event) => changeType(event.target.value as keyof typeof rates)}>
+        {/* 1. Select Simulation Type */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary flex items-center gap-1.5">
+            <Calculator size={13} className="text-accent" />
+            <span>Jenis Pekerjaan</span>
+          </label>
+          <select 
+            value={type} 
+            onChange={(event) => changeType(event.target.value as keyof typeof rates)}
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm font-semibold text-primary focus:border-accent transition-colors"
+          >
             <option value="kitchen">Kitchen Set</option>
             <option value="aluminium">Kusen Aluminium</option>
             <option value="doorWindow">Pintu/Jendela Aluminium</option>
@@ -156,21 +165,27 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             <option value="kanopi">Kanopi</option>
             <option value="partisi">Partisi</option>
           </select>
-        </label>
+        </div>
         
-        <label>
-          Kategori Paket & Material
-          <select value={packageType} onChange={(event) => setPackageType(event.target.value)}>
+        {/* 2. Select Package/Material */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary">Kategori Material/Paket</label>
+          <select 
+            value={packageType} 
+            onChange={(event) => setPackageType(event.target.value)}
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm font-semibold text-primary focus:border-accent transition-colors"
+          >
             {packageOptions[type].map((option) => (
               <option value={option} key={option}>
                 {option.toUpperCase()}
               </option>
             ))}
           </select>
-        </label>
+        </div>
 
-        <label>
-          Panjang (meter)
+        {/* 3. Length Input */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary">Panjang (Meter)</label>
           <input 
             type="number" 
             min="1" 
@@ -178,11 +193,13 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={length} 
             onChange={(event) => setLength(positiveNumber(event.target.value))} 
             aria-label="Panjang area dalam satuan meter"
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
           />
-        </label>
+        </div>
 
-        <label>
-          Lebar (meter)
+        {/* 4. Width Input */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary">Lebar (Meter)</label>
           <input 
             type="number" 
             min="1" 
@@ -190,11 +207,14 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={width} 
             onChange={(event) => setWidth(positiveNumber(event.target.value))} 
             aria-label="Lebar area dalam satuan meter"
+            disabled={type === "aluminium" || type === "doorWindow"}
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary disabled:opacity-50 disabled:cursor-not-allowed focus:border-accent transition-colors"
           />
-        </label>
+        </div>
 
-        <label>
-          Tinggi / Ketebalan (meter)
+        {/* 5. Height Input */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary">Tinggi / Tebal (Meter)</label>
           <input 
             type="number" 
             min="0.5" 
@@ -202,11 +222,14 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={height} 
             onChange={(event) => setHeight(positiveNumber(event.target.value))} 
             aria-label="Tinggi atau ketebalan area dalam satuan meter"
+            disabled={type === "kitchen" || type === "plafon" || type === "kanopi"}
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary disabled:opacity-50 disabled:cursor-not-allowed focus:border-accent transition-colors"
           />
-        </label>
+        </div>
 
-        <label>
-          Jumlah Unit (Pcs)
+        {/* 6. Quantity Input */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary">Jumlah Unit (Pcs)</label>
           <input 
             type="number" 
             min="1" 
@@ -214,60 +237,96 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={quantity} 
             onChange={(event) => setQuantity(positiveNumber(event.target.value))} 
             aria-label="Jumlah unit produk yang disimulasikan"
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
           />
-        </label>
+        </div>
 
-        <label>
-          Lokasi Pemasangan (Kecamatan)
+        {/* Divider */}
+        <div className="sm:col-span-2 border-t border-border-premium/20 my-2" />
+
+        {/* 7. Installation Location */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary flex items-center gap-1">
+            <MapPin size={12} className="text-accent" />
+            <span>Kecamatan Pemasangan</span>
+          </label>
           <input 
             value={location} 
             onChange={(event) => setLocation(event.target.value)} 
-            placeholder="Sidareja / Cilacap / Cipari" 
+            placeholder="Contoh: Sidareja"
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
           />
-        </label>
+        </div>
 
-        <label>
-          Nama Lengkap
+        {/* 8. Full Name */}
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary flex items-center gap-1">
+            <User size={12} className="text-accent" />
+            <span>Nama Lengkap</span>
+          </label>
           <input 
             value={name} 
             onChange={(event) => setName(event.target.value)} 
-            placeholder="Nama Anda" 
+            placeholder="Contoh: Bapak Tholib" 
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
           />
-        </label>
+        </div>
 
-        <label style={{ gridColumn: "1 / span 2" }}>
-          Nomor WhatsApp
+        {/* 9. Phone (Span 2) */}
+        <div className="sm:col-span-2 flex flex-col gap-1.5">
+          <label className="text-xs uppercase font-bold tracking-widest text-primary">Nomor WhatsApp</label>
           <input 
             value={phone} 
             onChange={(event) => setPhone(event.target.value)} 
             placeholder="Contoh: 085119467138" 
+            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
           />
-        </label>
+        </div>
       </div>
 
-      <aside className={styles.estimateBox}>
-        <p className={styles.eyebrow}>Estimasi Biaya Proyek</p>
+      {/* Outcome/Estimate Box */}
+      <aside className="lg:col-span-4 bg-primary text-white rounded-3xl p-8 shadow-premium border border-white/5 relative overflow-hidden flex flex-col gap-6 h-full justify-between">
+        <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none" />
         
-        {isLoading ? (
-          <div className="shimmer" style={{ height: "40px", width: "100%", borderRadius: "8px", margin: "8px 0" }} />
-        ) : (
-          <strong>{format(lowEstimate)} - {format(highEstimate)}</strong>
-        )}
+        <div className="flex flex-col gap-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-accent flex items-center gap-1.5">
+            <Info size={14} />
+            <span>Hasil Simulasi Estimasi</span>
+          </span>
+          <div className="w-10 h-0.5 bg-accent"></div>
+          
+          <div className="flex flex-col gap-1 mt-2">
+            <span className="text-xs text-neutral-muted uppercase tracking-wider font-semibold">Rentang Anggaran</span>
+            {isLoading ? (
+              <div className="h-10 bg-white/5 border border-white/10 rounded-xl shimmer w-full" />
+            ) : (
+              <strong className="text-2xl sm:text-3xl font-display font-medium text-white tracking-tight leading-tight">
+                {format(lowEstimate)} <span className="text-neutral-muted text-lg font-sans font-normal">-</span> {format(highEstimate)}
+              </strong>
+            )}
+          </div>
+        </div>
 
-        <span>
-          Sumber harga: <strong>{isLoading ? "Memuat..." : rateSource}</strong>.<br />
-          Estimasi ini merupakan gambaran awal proyek. Harga final ditentukan setelah survei lokasi presisi, model desain, material terpilih, dan kondisi riil di lapangan.
-        </span>
+        <div className="flex flex-col gap-3.5 text-xs text-neutral-muted leading-relaxed">
+          <p>
+            Sumber basis data: <strong className="text-white">{isLoading ? "Menunggu..." : rateSource}</strong>.
+          </p>
+          <p>
+            Estimasi ini dihitung berdasarkan unit volume pengerjaan standar. Harga final yang akurat disesuaikan setelah survei ukuran lokasi nyata di lapangan, detail model desain visual, material aksesoris terpilih, dan kondisi struktural riil.
+          </p>
+        </div>
 
         <a 
-          className="primary" 
+          className="w-full py-4 bg-accent hover:bg-accent-hover text-white text-center rounded-xl text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group mt-4" 
           href={whatsappUrl(message)} 
           target="_blank" 
           rel="noopener noreferrer" 
           onClick={() => trackEvent("price_simulation_whatsapp", { type, estimate: middleEstimate })}
           aria-label="Kirim simulasi harga ke WhatsApp Caturaya Living"
         >
-          Kirim Estimasi ke WhatsApp
+          <Phone size={14} />
+          <span>Kirim Simulasi ke WhatsApp</span>
+          <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
         </a>
       </aside>
     </div>

@@ -1,6 +1,6 @@
 import { PriceSimulator } from "@/components/price-simulator";
 import Link from "next/link";
-import styles from "../styles/subpages.module.css";
+import { Calculator, Compass } from "lucide-react";
 
 export const metadata = {
   title: "Simulasi Harga Kitchen Set & Aluminium Premium | Caturaya Living",
@@ -9,24 +9,36 @@ export const metadata = {
 
 export default function SimulasiHargaPage() {
   return (
-    <main className={styles.subpageWrapper}>
-      {/* Breadcrumb */}
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href="/">Beranda</Link>
-        <span>Simulasi Harga</span>
-      </nav>
+    <main className="bg-white min-h-screen text-neutral-text pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-neutral-muted mb-8" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-accent">Beranda</Link>
+          <span className="text-neutral-300">/</span>
+          <span className="text-primary">Simulasi Harga</span>
+        </nav>
 
-      <header className={styles.subpageHeader}>
-        <p className={styles.articleMeta} style={{ fontSize: "12px", fontWeight: "700" }}>Kalkulator Estimasi Biaya</p>
-        <h1>Simulasi Harga Proyek Rumah Anda</h1>
-        <p>
-          Gunakan simulator interaktif ini untuk memperkirakan biaya pekerjaan arsitektural interior dan eksterior Anda. Angka ini merupakan estimasi awal berdasarkan ukuran kasar demi mempermudah perencanaan budget Anda.
-        </p>
-      </header>
+        {/* Page Header */}
+        <header className="max-w-3xl flex flex-col gap-4 mb-16">
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full w-fit">
+            <Calculator size={14} className="text-accent" />
+            <span className="text-xs font-bold uppercase tracking-widest text-accent">
+              Kalkulator Anggaran Mandiri
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-display font-medium text-primary tracking-tight leading-[1.1]">
+            Simulasi Harga Proyek Rumah Anda
+          </h1>
+          <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
+            Gunakan simulator kalkulator interaktif ini untuk memperkirakan kisaran biaya pekerjaan interior, eksterior, maupun konstruksi sipil. Angka ini disusun berdasarkan basis data harga pasaran riil untuk mempermudah perencanaan budget awal Anda.
+          </p>
+        </header>
 
-      <section style={{ marginTop: "20px" }}>
-        <PriceSimulator />
-      </section>
+        {/* Price Simulator Component */}
+        <section className="mt-8">
+          <PriceSimulator />
+        </section>
+      </div>
     </main>
   );
 }
