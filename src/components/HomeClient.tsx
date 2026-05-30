@@ -98,69 +98,71 @@ export default function HomeClient({
   return (
     <div className="bg-accent-light text-neutral-text min-h-screen">
       
-      {/* ── 1. Hero Section (Elm & Meadow Styled) ── */}
-      <section className="relative min-h-[95vh] flex items-center pt-28 pb-32 border-b border-border-premium/40 bg-accent-light">
-        <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          
-          {/* Left Column: Clean Editorial Typography */}
+      {/* ── 1. Hero Section (Cinematic Full Landscape Image with Text Overlay) ── */}
+      <section className="relative min-h-screen flex items-center pt-24 pb-36 overflow-hidden bg-primary-dark border-b border-white/5">
+        {/* Background Landscape Image with slow zoom */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/home/hero-home-interior.webp" 
+            alt="Fasad arsitektural premium Caturaya Living" 
+            fill 
+            priority
+            sizes="100vw"
+            className="object-cover animate-slow-zoom opacity-45"
+          />
+          {/* Dark premium gradient overlay for maximum readability and accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/80 to-transparent" />
+          <div className="absolute inset-0 bg-black/25" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="lg:col-span-5 flex flex-col gap-6 items-start"
+            className="flex flex-col gap-6 items-start text-left max-w-2xl"
           >
             <motion.div 
               variants={fadeIn} 
-              className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full"
+              className="inline-flex items-center gap-2 bg-accent/20 border border-accent/35 px-4 py-1.5 rounded-full"
             >
               <Sparkle size={12} className="text-accent animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-accent leading-none">
-                Mitra Kontraktor Terpercaya Anda
+              <span className="text-[10px] font-bold uppercase tracking-widest text-white leading-none">
+                Full Kontraktor Properti · Sidareja, Cilacap
               </span>
             </motion.div>
 
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl sm:text-5xl lg:text-[54px] font-display font-medium text-primary tracking-tight leading-[1.1] max-w-md"
+              className="text-4xl sm:text-5xl lg:text-[60px] font-display font-medium text-white tracking-tight leading-[1.1]"
             >
-              Create Your Ideal Living Space
+              Create Your Ideal <br className="hidden sm:inline" />
+              <span className="font-display italic text-accent font-normal">Living Space</span>
             </motion.h1>
 
             <motion.p 
               variants={fadeIn} 
-              className="text-sm sm:text-base text-neutral-muted leading-relaxed max-w-sm"
+              className="text-sm sm:text-base text-accent-light/80 leading-relaxed max-w-lg"
             >
-              Solusi satu pintu pengerjaan kusen kayu & aluminium, perabotan kustom, kitchen set butik, plafon, hingga renovasi sipil bangunan di Sidareja, Cilacap.
+              Dari kusen kayu & aluminium, perabotan rumah custom, kitchen set, HPL finishing, plafon, kanopi, hingga jasa bangunan — Caturaya Living koordinasikan semua tim spesialis untuk Anda, tanpa perlu cari banyak tukang.
             </motion.p>
 
-            <motion.div variants={fadeIn} className="pt-2">
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
               <a 
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full shadow-md shadow-accent/15 hover:shadow-accent/25 transition-all duration-300"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full shadow-lg shadow-accent/20 transition-all duration-300"
                 href={wa} 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Discover More
+                Mulai Konsultasi Gratis
               </a>
+              <Link 
+                className="inline-flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/5 text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full transition-all"
+                href="/portofolio"
+              >
+                Lihat Portofolio
+              </Link>
             </motion.div>
-          </motion.div>
-
-          {/* Right Column: Clean Lit Interior Photograph */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 relative h-[450px] sm:h-[550px] w-full rounded-[40px] overflow-hidden shadow-premium border border-border-premium/50 group"
-          >
-            <Image 
-              src="/images/home/hero-home-interior.webp" 
-              alt="Caturaya Living Premium Interior Setup" 
-              fill 
-              sizes="(max-width: 980px) 100vw, 60vw"
-              className="object-cover transition-transform duration-[12s] group-hover:scale-105"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/5" />
           </motion.div>
         </div>
       </section>
