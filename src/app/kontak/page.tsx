@@ -5,7 +5,7 @@ import { MapPin, Phone, Clock, Compass } from "lucide-react";
 
 export const metadata = {
   title: "Hubungi Caturaya Living | Jasa Konsultasi Properti Sidareja",
-  description: "Hubungi Caturaya Living Sidareja, Cilacap. Konsultasikan gratis kebutuhan kusen kayu & aluminium, perabotan rumah, kitchen set, kanopi, plafon, and pagar.",
+  description: "Hubungi Caturaya Living Sidareja, Cilacap. Konsultasikan gratis kebutuhan kusen kayu & aluminium, perabotan rumah, kitchen set, kanopi, plafon, dan pagar.",
 };
 
 export default function KontakPage() {

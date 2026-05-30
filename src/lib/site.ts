@@ -10,12 +10,12 @@ export const site = {
   address: "Jalan Seruni RT 09 RW 02, Desa Tegalsari, Kecamatan Sidareja, Kabupaten Cilacap, Jawa Tengah",
   locationCode: "GQ7C+79 Tegalsari",
   teamSpecialists: [
-    { role: "Tukang Kayu", icon: "🪵", description: "Kusen kayu solid, perabotan custom, lemari, kabinet, dan furniture ukir." },
-    { role: "Tukang Aluminium", icon: "🔩", description: "Kusen, pintu, jendela, partisi kaca, kanopi, pagar, dan gerbang aluminium." },
-    { role: "Tukang PVC & HPL", icon: "🎨", description: "Finishing HPL premium, panel PVC, plafon, dan pelapis dinding modern." },
-    { role: "Tukang Bangunan", icon: "🧱", description: "Renovasi sipil, pemasangan keramik, plesteran, dinding, dan pondasi ringan." },
-    { role: "Tim Kitchen Set", icon: "🍳", description: "Kitchen set custom dari desain hingga instalasi, material multiplek & MDF." },
-    { role: "Tim Interior", icon: "🛋️", description: "Backdrop, rak display, lemari pakaian, dan elemen dekoratif interior." },
+    { role: "Tukang Kayu", icon: "Hammer", description: "Kusen kayu solid, perabotan custom, lemari, kabinet, dan furniture ukir." },
+    { role: "Tukang Aluminium", icon: "Wrench", description: "Kusen, pintu, jendela, partisi kaca, kanopi, pagar, dan gerbang aluminium." },
+    { role: "Tukang PVC & HPL", icon: "Paintbrush", description: "Finishing HPL premium, panel PVC, plafon, dan pelapis dinding modern." },
+    { role: "Tukang Bangunan", icon: "HardHat", description: "Renovasi sipil, pemasangan keramik, plesteran, dinding, dan pondasi ringan." },
+    { role: "Tim Kitchen Set", icon: "CookingPot", description: "Kitchen set custom dari desain hingga instalasi, material multiplek & MDF." },
+    { role: "Tim Interior", icon: "Sofa", description: "Backdrop, rak display, lemari pakaian, dan elemen dekoratif interior." },
   ],
 };
 

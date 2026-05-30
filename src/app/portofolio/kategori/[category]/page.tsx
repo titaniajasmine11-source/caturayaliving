@@ -43,7 +43,7 @@ export default async function PortfolioCategoryPage({ params }: Props) {
   const categoryName = items[0].category;
 
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -89,14 +89,14 @@ export default async function PortfolioCategoryPage({ params }: Props) {
                     {item.category}
                   </div>
                   <div className="absolute bottom-4 right-4 bg-primary/85 backdrop-blur text-white text-[10px] uppercase font-bold px-3 py-1 rounded-md">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
 
                 <div className="p-8 flex flex-col gap-4 flex-1 justify-between text-left">
                   <div className="flex flex-col gap-2">
                     <span className="text-[10px] font-bold text-accent uppercase tracking-wider">{item.category} / {item.location}</span>
-                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                       {item.title}
                     </h3>
                     <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3 bg-accent-light/10 border border-border-premium/20 p-3 rounded-xl mt-1">

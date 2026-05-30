@@ -4,7 +4,7 @@ import { absoluteUrl, whatsappUrl } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Compass, Phone, ArrowRight } from "lucide-react";
+import { Compass, Phone, ArrowRight, Check } from "lucide-react";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -41,7 +41,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
   }
 
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -96,19 +96,19 @@ export default async function PortfolioDetailPage({ params }: Props) {
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 border-t border-border-premium/30 pt-6">
                 <li className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-muted">
-                  <span className="bg-accent/15 text-accent p-1 rounded-md text-[10px] font-bold mt-0.5">✓</span>
+                  <span className="bg-accent/15 text-accent p-1 rounded-md flex items-center justify-center w-5 h-5 mt-0.5"><Check size={12} /></span>
                   <span className="font-semibold leading-relaxed">Material Utama: {item.material.split(",")[0] || item.material}</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-muted">
-                  <span className="bg-accent/15 text-accent p-1 rounded-md text-[10px] font-bold mt-0.5">✓</span>
+                  <span className="bg-accent/15 text-accent p-1 rounded-md flex items-center justify-center w-5 h-5 mt-0.5"><Check size={12} /></span>
                   <span className="font-semibold leading-relaxed">Lokasi: Area {item.location}</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-muted">
-                  <span className="bg-accent/15 text-accent p-1 rounded-md text-[10px] font-bold mt-0.5">✓</span>
+                  <span className="bg-accent/15 text-accent p-1 rounded-md flex items-center justify-center w-5 h-5 mt-0.5"><Check size={12} /></span>
                   <span className="font-semibold leading-relaxed">Kecepatan: Selesai dalam {item.duration}</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-muted">
-                  <span className="bg-accent/15 text-accent p-1 rounded-md text-[10px] font-bold mt-0.5">✓</span>
+                  <span className="bg-accent/15 text-accent p-1 rounded-md flex items-center justify-center w-5 h-5 mt-0.5"><Check size={12} /></span>
                   <span className="font-semibold leading-relaxed">Kerapian: Pengerjaan Rapi & Bergaransi</span>
                 </li>
               </ul>
@@ -127,7 +127,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
               
               <div className="flex flex-col gap-3 mt-4 w-full">
                 <a 
-                  className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow-sm shadow-accent/20 group animate-soft-pulse"
+                  className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow-sm shadow-accent/20 group animate-pulse-subtle"
                   href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan hasil pengerjaan proyek ${item.title} dan ingin menanyakan estimasi biaya jika dipasang di rumah saya.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -139,7 +139,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
                 </a>
                 
                 <Link 
-                  className="w-full text-center py-3 border border-white/20 hover:border-white/50 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all font-semibold cursor-pointer"
+                  className="w-full text-center py-3 border border-white/20 hover:border-white/50 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all cursor-pointer"
                   href="/portofolio" 
                   aria-label="Lihat seluruh studi kasus Caturaya Living"
                 >

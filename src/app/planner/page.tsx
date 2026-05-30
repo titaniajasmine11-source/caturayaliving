@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function PlannerPage() {
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -70,7 +70,7 @@ export default function PlannerPage() {
                 className="bg-white border border-border-premium/50 rounded-[28px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-300 flex flex-col" 
                 key={stage.title}
               >
-                <div className="h-[180px] relative w-full overflow-hidden bg-accent-light/30 flex items-center justify-center p-6 border-b border-border-premium/20">
+                <div className="h-[180px] relative w-full overflow-hidden bg-accent-light flex items-center justify-center p-6 border-b border-border-premium/20">
                   <Image 
                     src={stage.image} 
                     alt={`${stage.title} Caturaya Living`} 
@@ -103,7 +103,7 @@ export default function PlannerPage() {
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col gap-6 items-center">
             <p className="text-xs font-bold uppercase tracking-widest text-accent">Output Konsultasi Desain</p>
             <h2 className="text-2xl sm:text-3xl font-display font-medium leading-tight">
-              Ingin Visualisasi Khuset (Sketsa/2D/3D) Khusus Untuk Rumah Anda?
+              Ingin Visualisasi Khusus (Sketsa/2D/3D) untuk Rumah Anda?
             </h2>
             <p className="text-neutral-muted text-sm leading-relaxed">
               Kirimkan foto lokasi, perkiraan ukuran, dan referensi model. Tim arsitektur kami akan memproses arahan visual (sketsa, 2D, atau 3D) yang sesuai kebutuhan Anda.

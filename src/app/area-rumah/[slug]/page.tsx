@@ -52,7 +52,7 @@ export default async function AreaDetailPage({ params }: Props) {
   );
 
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -129,7 +129,7 @@ export default async function AreaDetailPage({ params }: Props) {
                       <p className="text-xs text-neutral-muted leading-relaxed line-clamp-2 mt-1">{service.summary}</p>
                     </div>
                     <span className="text-[11px] font-bold text-accent group-hover:translate-x-1 transition-transform flex items-center gap-1 mt-2">
-                      <span>Detail Info</span>
+                      <span>Lihat Detail</span>
                       <ArrowRight size={12} />
                     </span>
                   </Link>
@@ -162,11 +162,11 @@ export default async function AreaDetailPage({ params }: Props) {
                 </a>
                 
                 <Link 
-                  className="w-full text-center py-3 border border-white/20 hover:border-white/50 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all font-semibold cursor-pointer"
+                  className="w-full text-center py-3 border border-white/20 hover:border-white/50 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all cursor-pointer"
                   href="/area-rumah" 
                   aria-label="Lihat seluruh daftar area properti Caturaya Living"
                 >
-                  Eksplor Semua Area
+                  Jelajahi Semua Area
                 </Link>
               </div>
             </div>

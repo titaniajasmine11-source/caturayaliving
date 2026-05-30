@@ -18,10 +18,20 @@ import {
   ArrowUpRight,
   Heart,
   Layers,
-  Sparkle
+  Sparkle,
+  Wrench,
+  Paintbrush,
+  Sofa,
+  Home,
+  HardHat,
+  CookingPot
 } from "lucide-react";
 import { site, whatsappUrl } from "@/lib/site";
 import { serviceCategories, designStages, process } from "@/lib/content";
+
+const iconMap: Record<string, React.ComponentType<any>> = {
+  Hammer, Wrench, Paintbrush, Sofa, Home, HardHat, CookingPot, Compass, Shield, Users,
+};
 
 interface HomeClientProps {
   articles: any[];
@@ -76,7 +86,7 @@ export default function HomeClient({
       category: "Dapur Butik",
       title: "Kitchen Set Custom",
       image: "/images/services/kitchen-set/hero-kitchen-set.webp",
-      desc: "Kabinet presisi multipleks HPL premium, top table granit, and laci soft-close.",
+      desc: "Kabinet presisi multipleks HPL premium, top table granit, dan laci soft-close.",
       slug: "kitchen-set-custom"
     },
     {
@@ -333,7 +343,7 @@ export default function HomeClient({
                   </div>
 
                   <div className="relative z-10 flex flex-col gap-2">
-                    <span className="text-2xl">{cat.icon}</span>
+                    {(() => { const Icon = iconMap[cat.icon] || Compass; return <Icon size={22} />; })()}
                     <h3 className="text-lg font-display font-medium text-white group-hover:text-accent transition-colors">
                       {cat.label}
                     </h3>
@@ -386,7 +396,7 @@ export default function HomeClient({
             </div>
             
             <p className="text-sm text-neutral-muted leading-relaxed">
-              Caturaya Living mempersatukan jaringan mitra tukang ahli Sidareja yang terampil bertahun-tahun di bidangnya. Semua tim dikoordinasikan langsung agar pengerjaan properti Anda selesai rapi, kokoh, and sesuai desain impian.
+              Caturaya Living mempersatukan jaringan mitra tukang ahli Sidareja yang terampil bertahun-tahun di bidangnya. Semua tim dikoordinasikan langsung agar pengerjaan properti Anda selesai rapi, kokoh, dan sesuai desain impian.
             </p>
 
             <motion.div 
@@ -402,7 +412,7 @@ export default function HomeClient({
                   key={spec.role} 
                   className="flex gap-4 p-5 rounded-2xl bg-white border border-border-premium/55 hover:border-accent/25 transition-all duration-300 shadow-sm"
                 >
-                  <span className="text-2xl mt-0.5 select-none">{spec.icon}</span>
+                  {(() => { const SpecIcon = iconMap[spec.icon] || Compass; return <SpecIcon size={20} className="text-accent mt-0.5" />; })()}
                   <div className="flex flex-col gap-1">
                     <strong className="text-xs font-semibold text-primary">{spec.role}</strong>
                     <p className="text-[11px] text-neutral-muted leading-relaxed">{spec.description}</p>

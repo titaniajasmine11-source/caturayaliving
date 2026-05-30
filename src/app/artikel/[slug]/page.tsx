@@ -50,7 +50,7 @@ export default async function ArticleDetailPage({ params }: Props) {
   };
 
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
         

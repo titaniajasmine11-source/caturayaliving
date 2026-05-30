@@ -23,7 +23,7 @@ export const serviceCategories = [
   },
   {
     id: "interior",
-    label: "Interior & Kitchen",
+    label: "Interior & Dapur",
     icon: "Sofa",
     description: "Desain dan instalasi interior custom menyesuaikan karakter dan fungsi ruang.",
     services: ["kitchen-set-custom", "interior-custom", "backdrop-tv", "lemari-custom"],
@@ -72,21 +72,21 @@ export const services = [
 
 
 export const areas = [
-  { title: "Gerbang & Pagar", slug: "gerbang-pagar", summary: "Area depan yang membentuk kesan pertama rumah and butuh material tahan cuaca.", image: "/images/areas/gerbang-pagar/hero-gerbang-pagar.png", recommended: ["Kanopi", "Aluminium", "Home Finishing"] },
+  { title: "Gerbang & Pagar", slug: "gerbang-pagar", summary: "Area depan yang membentuk kesan pertama rumah dan butuh material tahan cuaca.", image: "/images/areas/gerbang-pagar/hero-gerbang-pagar.png", recommended: ["Kanopi", "Aluminium", "Home Finishing"] },
   { title: "Teras Depan", slug: "teras-depan", summary: "Ruang transisi untuk menerima tamu, bersantai, dan memperkuat fasad rumah.", image: "/images/areas/teras-depan/hero-teras-depan.webp", recommended: ["Kanopi", "Plafon", "Partisi"] },
-  { title: "Living Room", slug: "living-room", summary: "Ruang keluarga yang perlu terasa rapi, nyaman, dan punya titik fokus visual.", image: "/images/areas/living-room/hero-living-room.webp", recommended: ["Interior Custom", "Partisi", "Plafon"] },
+  { title: "Ruang Tamu", slug: "living-room", summary: "Ruang keluarga yang perlu terasa rapi, nyaman, dan punya titik fokus visual.", image: "/images/areas/living-room/hero-living-room.webp", recommended: ["Interior Custom", "Partisi", "Plafon"] },
   { title: "Kitchen / Dapur", slug: "kitchen-dapur", summary: "Area kerja harian yang membutuhkan layout efisien dan storage mudah dijangkau.", image: "/images/areas/kitchen/hero-kitchen.webp", recommended: ["Kitchen Set Custom", "Plafon", "Home Finishing"] },
-  { title: "Master Room", slug: "master-room", summary: "Kamar utama yang membutuhkan storage, pencahayaan, dan detail personal.", image: "/images/areas/master-room/hero-master-room.webp", recommended: ["Interior Custom", "Partisi", "Plafon"] },
+  { title: "Kamar Utama", slug: "master-room", summary: "Kamar utama yang membutuhkan storage, pencahayaan, dan detail personal.", image: "/images/areas/master-room/hero-master-room.webp", recommended: ["Interior Custom", "Partisi", "Plafon"] },
   { title: "Carport & Kanopi", slug: "carport-kanopi", summary: "Area kendaraan yang perlu perlindungan panas hujan dan struktur aman.", image: "/images/areas/carport-kanopi/hero-carport-kanopi.webp", recommended: ["Kanopi", "Aluminium", "Home Finishing"] },
   { title: "Halaman Belakang", slug: "halaman-belakang", summary: "Area servis atau santai yang bisa dibuat lebih teduh dan fungsional.", image: "/images/areas/halaman-belakang/hero-halaman-belakang.webp", recommended: ["Kanopi", "Partisi", "Plafon"] },
   { title: "Ruko / Tempat Usaha", slug: "ruko-tempat-usaha", summary: "Ruang usaha kecil yang membutuhkan tampilan rapi, efisien, dan mudah dirawat.", image: "/images/areas/ruko-usaha/hero-ruko-usaha.png", recommended: ["Partisi Ruangan", "Aluminium", "Interior Custom"] },
   { title: "Ruang Keluarga", slug: "ruang-keluarga", summary: "Area berkumpul keluarga yang membutuhkan storage, backdrop, dan suasana nyaman.", image: "/images/areas/living-room/hero-living-room.webp", recommended: ["Backdrop TV", "Interior Custom", "Rak / Kabinet"] },
   { title: "Kamar Anak", slug: "kamar-anak", summary: "Kamar anak yang perlu aman, rapi, dan mudah berubah mengikuti kebutuhan usia.", image: "/images/services/lemari/hero-lemari.png", recommended: ["Lemari Custom", "Rak / Kabinet", "Interior Custom"] },
   { title: "Kamar Tamu", slug: "kamar-tamu", summary: "Kamar tambahan yang perlu simple, bersih, dan tetap fungsional saat digunakan.", image: "/images/services/lemari/hero-lemari.png", recommended: ["Lemari Custom", "Plafon Gypsum/PVC", "Home Finishing"] },
-  { title: "Dining Area", slug: "dining-area", summary: "Area makan yang bisa dibuat lebih hangat dengan kabinet, lighting, dan finishing dinding.", image: "/images/services/perabotan/hero-perabotan.png", recommended: ["Interior Custom", "Rak / Kabinet", "Plafon Gypsum"] },
+  { title: "Ruang Makan", slug: "dining-area", summary: "Area makan yang bisa dibuat lebih hangat dengan kabinet, lighting, dan finishing dinding.", image: "/images/services/perabotan/hero-perabotan.png", recommended: ["Interior Custom", "Rak / Kabinet", "Plafon Gypsum"] },
   { title: "Kamar Mandi", slug: "kamar-mandi", summary: "Area basah yang perlu material mudah dirawat dan detail finishing rapi.", image: "/images/areas/kamar-mandi/hero-kamar-mandi.webp", recommended: ["Home Finishing", "Aluminium", "Renovasi Ringan"] },
   { title: "Mushola Rumah", slug: "mushola-rumah", summary: "Sudut ibadah yang tenang, bersih, dan bisa dilengkapi storage kecil.", image: "/images/services/partisi/hero-partisi.png", recommended: ["Interior Custom", "Rak / Kabinet", "Partisi Ruangan"] },
-  { title: "Laundry Area", slug: "laundry-area", summary: "Area cuci yang perlu rak, kabinet, dan perlindungan agar tetap rapi.", image: "/images/areas/laundry-area/hero-laundry-area.webp", recommended: ["Rak / Kabinet", "Kanopi", "Home Finishing"] },
+  { title: "Area Cuci", slug: "laundry-area", summary: "Area cuci yang perlu rak, kabinet, dan perlindungan agar tetap rapi.", image: "/images/areas/laundry-area/hero-laundry-area.webp", recommended: ["Rak / Kabinet", "Kanopi", "Home Finishing"] },
   { title: "Gudang", slug: "gudang", summary: "Area penyimpanan yang perlu rak kuat, sirkulasi, dan pembagian barang jelas.", image: "/images/areas/gudang/hero-gudang.webp", recommended: ["Rak / Kabinet", "Partisi Ruangan", "Home Finishing"] },
   { title: "Taman Depan", slug: "taman-depan", summary: "Area hijau depan rumah yang memperkuat fasad dan kenyamanan visual.", image: "/images/areas/taman-depan/hero-taman-depan.webp", recommended: ["Kanopi", "Pagar / Gerbang", "Home Finishing"] },
 ];

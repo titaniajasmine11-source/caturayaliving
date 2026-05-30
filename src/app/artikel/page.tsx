@@ -12,7 +12,7 @@ export default async function ArtikelPage() {
   const categories = [...new Set(articles.map((article) => article.category))];
 
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -74,7 +74,7 @@ export default async function ArtikelPage() {
                       {article.readTime}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug mt-2">
+                  <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug mt-2">
                     {article.title}
                   </h3>
                   <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3 bg-accent-light/10 border border-border-premium/20 p-3 rounded-xl mt-1">

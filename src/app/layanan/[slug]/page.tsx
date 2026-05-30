@@ -4,7 +4,7 @@ import { absoluteUrl, whatsappUrl } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Compass, Phone, ArrowRight } from "lucide-react";
+import { Compass, Phone, ArrowRight, Check } from "lucide-react";
 
 const serviceSlugAliases: Record<string, string> = {
   "kitchen-set": "kitchen-set-custom",
@@ -53,7 +53,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   ).slice(0, 3);
 
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -110,7 +110,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-muted">
-                    <span className="bg-accent/15 text-accent p-1 rounded-md text-[10px] font-bold mt-0.5">✓</span>
+                    <span className="bg-accent/15 text-accent p-1 rounded-md text-[10px] font-bold mt-0.5 flex items-center justify-center w-5 h-5"><Check size={12} /></span>
                     <span className="font-medium leading-relaxed">{benefit}</span>
                   </li>
                 ))}
@@ -120,7 +120,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Deliverables section */}
             <section className="bg-white border border-border-premium/40 rounded-[32px] p-6 sm:p-10 shadow-premium text-left">
               <header className="mb-6">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">Tahapan Deliverables</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">Tahapan Hasil Kerja</p>
                 <h2 className="text-xl sm:text-2xl font-display font-medium text-primary tracking-tight">
                   Apa yang Anda Dapatkan Sejak Konsultasi Awal?
                 </h2>
@@ -128,7 +128,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {service.deliverables.map((item, index) => (
                   <div key={item} className="bg-accent-light/10 border border-border-premium/30 p-4 rounded-2xl flex flex-col gap-2">
-                    <span className="text-[10px] font-bold text-accent">0{index + 1}</span>
+                    <span className="text-[10px] font-bold text-accent">{String(index + 1).padStart(2, '0')}</span>
                     <span className="text-xs font-semibold text-primary">{item}</span>
                   </div>
                 ))}
@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </a>
                 
                 <Link 
-                  className="w-full text-center py-3 border border-white/20 hover:border-white/50 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all font-semibold cursor-pointer"
+                  className="w-full text-center py-3 border border-white/20 hover:border-white/50 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all cursor-pointer"
                   href="/layanan" 
                   aria-label="Lihat seluruh katalog layanan Caturaya Living"
                 >

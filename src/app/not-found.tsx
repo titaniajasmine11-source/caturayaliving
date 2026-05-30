@@ -4,7 +4,7 @@ import { Compass, Phone, ArrowRight } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-48 pb-24 flex items-center justify-center">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-48 pb-24 flex items-center justify-center">
       <section className="max-w-2xl bg-white border border-border-premium/50 rounded-[40px] p-8 sm:p-16 text-center shadow-premium flex flex-col items-center gap-6 relative overflow-hidden mx-6">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
         

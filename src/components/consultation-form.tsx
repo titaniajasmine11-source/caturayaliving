@@ -163,10 +163,10 @@ Catatan: ${form.notes}`;
           className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm font-semibold text-primary focus:border-accent transition-colors"
         >
           <option>Kitchen / Dapur</option>
-          <option>Living Room</option>
+          <option>Ruang Tamu</option>
           <option>Teras Depan</option>
           <option>Carport & Kanopi</option>
-          <option>Master Room</option>
+          <option>Kamar Utama</option>
           <option>Gerbang & Pagar</option>
           <option>Ruko / Tempat Usaha</option>
         </select>

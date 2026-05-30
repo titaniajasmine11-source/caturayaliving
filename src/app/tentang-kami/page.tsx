@@ -13,10 +13,19 @@ import {
   Sparkles, 
   CheckCircle,
   FileText,
-  Phone
+  Phone,
+  Paintbrush,
+  HardHat,
+  CookingPot,
+  Sofa,
+  Home
 } from "lucide-react";
 import { process, serviceCategories } from "@/lib/content";
 import { site, whatsappUrl } from "@/lib/site";
+
+const iconMap: Record<string, React.ComponentType<any>> = {
+  Hammer, Wrench, Paintbrush, Sofa, Home, HardHat, CookingPot,
+};
 
 export default function TentangKamiPage() {
   const wa = whatsappUrl();
@@ -37,7 +46,7 @@ export default function TentangKamiPage() {
   };
 
   return (
-    <div className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -124,7 +133,7 @@ export default function TentangKamiPage() {
                 className="bg-white border border-border-premium/50 p-6 rounded-2xl hover:shadow-premium transition-all duration-300 hover:border-accent/30 group"
               >
                 <div className="w-10 h-10 flex items-center justify-center bg-accent-light border border-border-premium rounded-xl shadow-sm text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-all">
-                  <span className="text-xl select-none">{spec.icon}</span>
+                  {(() => { const Icon = iconMap[spec.icon] || Compass; return <Icon size={20} />; })()}
                 </div>
                 <h3 className="text-sm font-semibold text-primary mb-2 group-hover:text-accent transition-colors">{spec.role}</h3>
                 <p className="text-xs text-neutral-muted leading-relaxed">{spec.description}</p>
@@ -214,6 +223,6 @@ export default function TentangKamiPage() {
         </section>
 
       </div>
-    </div>
+    </main>
   );
 }

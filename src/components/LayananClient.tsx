@@ -102,7 +102,7 @@ export default function LayananClient({
 
         {/* Selected Category Intro Banner */}
         {activeCategoryData && (
-          <div className="bg-accent-light/30 border border-border-premium/40 p-6 sm:p-8 rounded-3xl mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+          <div className="bg-accent-light border border-border-premium/40 p-6 sm:p-8 rounded-3xl mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
             <div className="flex flex-col gap-1.5">
               <span className="text-xs font-bold uppercase tracking-widest text-accent flex items-center gap-1.5">
                 <span>Kategori:</span>
@@ -154,7 +154,7 @@ export default function LayananClient({
 
                 <div className="p-8 flex flex-col gap-4 flex-1 justify-between">
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                       {service.title}
                     </h3>
                     <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3">

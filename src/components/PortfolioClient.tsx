@@ -95,7 +95,7 @@ export default function PortfolioClient({ portfolio }: PortfolioClientProps) {
                     {item.category}
                   </div>
                   <div className="absolute bottom-4 right-4 bg-primary/85 backdrop-blur text-white text-[10px] uppercase font-semibold px-3 py-1 rounded-md">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
 
@@ -105,7 +105,7 @@ export default function PortfolioClient({ portfolio }: PortfolioClientProps) {
                       <MapPin size={11} className="text-accent" />
                       <span>{item.location}</span>
                     </span>
-                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                       {item.title}
                     </h3>
                     <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3">

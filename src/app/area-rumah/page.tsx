@@ -59,14 +59,14 @@ export default async function AreaRumahPage() {
                     Tata Ruang
                   </div>
                   <div className="absolute bottom-4 right-4 bg-primary/80 backdrop-blur text-white text-[10px] uppercase font-semibold px-3 py-1 rounded-md">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
 
                 {/* Body */}
                 <div className="p-8 flex flex-col gap-4 flex-1 justify-between">
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                       {area.title}
                     </h3>
                     <p className="text-xs text-neutral-muted leading-relaxed">

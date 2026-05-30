@@ -40,6 +40,7 @@ const config: Config = {
         "fade-in": "fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "slow-zoom": "slowZoom 20s ease-out infinite alternate",
         "pulse-subtle": "pulseSubtle 2s infinite ease-in-out",
+        "spin-slow": "spinSlow 8s linear infinite",
       },
       keyframes: {
         fadeUp: {
@@ -57,6 +58,10 @@ const config: Config = {
         pulseSubtle: {
           "0%, 100%": { transform: "scale(1)", boxShadow: "0 10px 25px -5px rgba(168, 117, 61, 0.4)" },
           "50%": { transform: "scale(1.05)", boxShadow: "0 15px 30px -5px rgba(168, 117, 61, 0.6)" },
+        },
+        spinSlow: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         }
       }
     },
