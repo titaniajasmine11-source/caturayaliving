@@ -28,6 +28,8 @@ import {
 } from "lucide-react";
 import { site, whatsappUrl } from "@/lib/site";
 import { serviceCategories, designStages, process } from "@/lib/content";
+import { Modal } from "./ui/modal";
+import { Product3DViewer } from "./product-3d-viewer";
 
 const iconMap: Record<string, React.ComponentType<any>> = {
   Hammer, Wrench, Paintbrush, Sofa, Home, HardHat, CookingPot, Compass, Shield, Users,
@@ -51,6 +53,7 @@ export default function HomeClient({
   testimonials
 }: HomeClientProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const wa = whatsappUrl();
 
   const toggleFaq = (index: number) => {
@@ -501,8 +504,9 @@ export default function HomeClient({
           {portfolio.slice(0, 6).map((item, index) => (
             <motion.article 
               variants={fadeIn}
-              className="bg-white border border-border-premium/50 rounded-[2px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-500 flex flex-col h-full"
+              className="bg-white border border-border-premium/50 rounded-[2px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-500 flex flex-col h-full cursor-pointer"
               key={item.title}
+              onClick={() => setSelectedProject(item)}
             >
               <div className="h-[230px] relative w-full overflow-hidden">
                 <Image 
@@ -530,13 +534,13 @@ export default function HomeClient({
                   </p>
                 </div>
                 
-                <Link 
-                  href={`/portofolio/${item.slug}`}
-                  className="text-xs font-semibold uppercase tracking-wide text-primary border-t border-border-premium/20 pt-4 mt-6 flex items-center gap-1 group-hover:text-accent transition-colors w-fit"
+                <button 
+                  type="button"
+                  className="text-xs font-semibold uppercase tracking-wide text-primary border-t border-border-premium/20 pt-4 mt-6 flex items-center gap-1 group-hover:text-accent transition-colors w-fit bg-transparent border-0 outline-none select-none cursor-pointer"
                 >
-                  <span>Lihat Studi Kasus</span>
+                  <span>Lihat Desain & 3D</span>
                   <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
-                </Link>
+                </button>
               </div>
             </motion.article>
           ))}
@@ -690,6 +694,92 @@ export default function HomeClient({
 
         </div>
       </section>
+
+      {/* Portfolio Lightbox Modal */}
+      <Modal
+        isOpen={selectedProject !== null}
+        onClose={() => setSelectedProject(null)}
+        title="Studi Kasus Realisasi Desain"
+        size="xl"
+      >
+        {selectedProject && (
+          <div className="flex flex-col gap-6 text-left">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              {/* Image Column */}
+              <div className="w-full md:w-[45%] h-[240px] md:h-[300px] relative rounded-[2px] overflow-hidden border border-border-premium/30 bg-accent-light/10 flex-shrink-0">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Specs info Column */}
+              <div className="flex-1 flex flex-col gap-4">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-luxury text-accent">
+                    {selectedProject.category}
+                  </span>
+                  <h4 className="text-xl font-semibold text-primary mt-1">
+                    {selectedProject.title}
+                  </h4>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 border-y border-border-premium/30 py-4">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-neutral-muted block mb-1">Lokasi Proyek</span>
+                    <span className="text-xs font-semibold text-primary">{selectedProject.location}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-neutral-muted block mb-1">Durasi Pengerjaan</span>
+                    <span className="text-xs font-semibold text-primary">{selectedProject.duration}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-neutral-muted block mb-1">Material & Finishing Utama</span>
+                  <p className="text-xs text-primary leading-relaxed bg-white border border-border-premium/30 p-3 rounded-[2px]">
+                    {selectedProject.material}.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Draggable 3D interactive viewer area */}
+            <div className="border-t border-border-premium/30 pt-6">
+              <span className="text-xs font-bold uppercase tracking-luxury text-neutral-muted block mb-4">
+                Inspeksi Model 3D Konseptual (Klik & Geser untuk Memutar)
+              </span>
+              <Product3DViewer 
+                category={
+                  selectedProject.category === "Kitchen Set" ? "kitchen-set" :
+                  selectedProject.category === "Aluminium" ? "kusen-aluminium" :
+                  selectedProject.category === "Kayu & Perabotan" ? "kusen-kayu" :
+                  selectedProject.category === "Plafon" ? "plafon" :
+                  selectedProject.category === "Kanopi" ? "kanopi" :
+                  selectedProject.category === "Partisi" ? "partisi" :
+                  selectedProject.category === "HPL & Finishing" ? "hpl-finishing" : "perabotan-custom"
+                } 
+              />
+            </div>
+
+            <div className="flex justify-end pt-4 border-t border-border-premium/20 mt-2">
+              <a
+                href={whatsappUrl(
+                  `Halo Eko Suyanto Workshop, saya tertarik dengan proyek *${selectedProject.title}* di ${selectedProject.location}. Bisa minta estimasi awal?`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary px-6 py-3 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all shadow-md cursor-pointer"
+              >
+                <Phone size={12} />
+                <span>Konsultasikan Desain Serupa</span>
+              </a>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }

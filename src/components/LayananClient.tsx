@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Phone, ArrowRight, ArrowUpRight, Compass, Shield, Hammer, Wrench, Paintbrush, Sofa, Home } from "lucide-react";
+import { Phone, ArrowRight, ArrowUpRight, Compass, Shield, Hammer, Wrench, Paintbrush, Sofa, Home, LayoutGrid } from "lucide-react";
 import { whatsappUrl } from "@/lib/site";
+import { Modal } from "./ui/modal";
+import { Product3DViewer } from "./product-3d-viewer";
 
 const categoryIconMap: Record<string, React.ComponentType<any>> = {
   Hammer,
@@ -28,6 +30,7 @@ export default function LayananClient({
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("kategori") || serviceCategories[0].id;
   const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [selected3dService, setSelected3dService] = useState<any | null>(null);
 
   useEffect(() => {
     const cat = searchParams.get("kategori");
@@ -183,15 +186,14 @@ export default function LayananClient({
                     >
                       Detail Info
                     </Link>
-                    <a
-                      href={whatsappUrl(`Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai pengerjaan ${service.title}.`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"
+                    <button
+                      type="button"
+                      onClick={() => setSelected3dService(service)}
+                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer outline-none border-0"
                     >
-                      <Phone size={11} />
-                      <span>Tanya WA</span>
-                    </a>
+                      <LayoutGrid size={11} />
+                      <span>Inspeksi 3D</span>
+                    </button>
                   </div>
                 </div>
               </motion.article>
@@ -222,6 +224,57 @@ export default function LayananClient({
             </a>
           </div>
         </section>
+
+      {/* 3D Product Inspector Modal */}
+      <Modal
+        isOpen={selected3dService !== null}
+        onClose={() => setSelected3dService(null)}
+        title="Spesifikasi & Desain 3D"
+        size="lg"
+      >
+        {selected3dService && (
+          <div className="flex flex-col gap-6 text-left">
+            <div>
+              <span className="text-[10px] uppercase font-bold tracking-luxury text-accent">
+                Visualisasi Produk
+              </span>
+              <h4 className="text-xl font-semibold text-primary mt-0.5">
+                {selected3dService.title}
+              </h4>
+              <p className="text-xs text-neutral-muted leading-relaxed mt-1">
+                {selected3dService.summary}
+              </p>
+            </div>
+
+            {/* Draggable 3D component */}
+            <div className="border-t border-border-premium/30 pt-6">
+              <Product3DViewer category={selected3dService.slug} />
+            </div>
+
+            {/* Specifications Details */}
+            <div className="bg-white border border-border-premium/50 p-5 rounded-[2px] shadow-sm flex flex-col gap-3">
+              <h5 className="text-xs uppercase tracking-luxury text-primary font-bold">Scope Pekerjaan & Hasil Kerja</h5>
+              <p className="text-xs text-neutral-muted leading-relaxed">
+                {selected3dService.detail}
+              </p>
+            </div>
+
+            <div className="flex justify-end pt-4 border-t border-border-premium/20 mt-2">
+              <a
+                href={whatsappUrl(
+                  `Halo Eko Suyanto Workshop, saya tertarik dengan layanan *${selected3dService.title}*. Bisa minta penjelasan detail?`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary px-6 py-3 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all shadow-md cursor-pointer"
+              >
+                <Phone size={12} />
+                <span>Konsultasikan Pembuatan</span>
+              </a>
+            </div>
+          </div>
+        )}
+      </Modal>
 
       </div>
     </div>

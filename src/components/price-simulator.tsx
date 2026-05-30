@@ -3,7 +3,8 @@
 import { whatsappUrl } from "@/lib/site";
 import { trackEvent } from "@/lib/tracking";
 import { useEffect, useState } from "react";
-import { Calculator, Phone, MapPin, Info, ArrowRight, User } from "lucide-react";
+import { Calculator, Phone, MapPin, Info, ArrowRight, User, ClipboardList, CheckCircle } from "lucide-react";
+import { Modal } from "./ui/modal";
 
 const rates = {
   kitchen: { basic: 1800000, standard: 2600000, premium: 3800000 },
@@ -63,6 +64,7 @@ export function PriceSimulator() {
   const [phone, setPhone] = useState("");
   const [remoteRates, setRemoteRates] = useState<Partial<Record<RateType, Record<string, number>>>>({});
   const [rateSource, setRateSource] = useState("loading");
+  const [isInvoiceOpen, setIsInvoiceOpen] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -316,18 +318,125 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
           </p>
         </div>
 
-        <a 
-          className="w-full py-4 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-center rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-sm transition-all flex items-center justify-center gap-2 group mt-4 cursor-pointer" 
-          href={whatsappUrl(message)} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          onClick={() => trackEvent("price_simulation_whatsapp", { type, estimate: middleEstimate })}
-          aria-label="Kirim simulasi harga ke WhatsApp Eko Suyanto Workshop"
+        <button 
+          type="button"
+          onClick={() => setIsInvoiceOpen(true)}
+          className="w-full py-4 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-center rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-sm transition-all flex items-center justify-center gap-2 group mt-4 cursor-pointer border-0 outline-none select-none" 
+          aria-label="Buka detail rincian simulasi harga"
         >
-          <Phone size={12} />
-          <span>Kirim ke WhatsApp</span>
+          <ClipboardList size={12} />
+          <span>Lihat Detail Estimasi</span>
           <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-        </a>
+        </button>
+      {/* Detail Invoice Summary Modal */}
+      <Modal
+        isOpen={isInvoiceOpen}
+        onClose={() => setIsInvoiceOpen(false)}
+        title="Lembar Rincian Estimasi Harga"
+        size="lg"
+      >
+        <div className="flex flex-col gap-6 text-left">
+          
+          {/* Invoice Header */}
+          <div className="border-b border-border-premium/30 pb-5">
+            <h4 className="text-base font-semibold text-primary uppercase tracking-luxury">Eko Suyanto Workshop</h4>
+            <p className="text-xs text-neutral-muted">Spesialis Interior, Kusen & Jasa Renovasi Properti · Sidareja, Cilacap</p>
+            <div className="flex justify-between items-center text-[10px] text-neutral-400 font-semibold tracking-wider mt-4 uppercase">
+              <span>Simulasi Mandiri</span>
+              <span>Tanggal: {new Date().toLocaleDateString("id-ID")}</span>
+            </div>
+          </div>
+
+          {/* Project Details Grid */}
+          <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-xs border-b border-border-premium/30 pb-5">
+            <div>
+              <span className="text-[10px] text-neutral-muted uppercase font-bold block mb-1">Nama Pelanggan</span>
+              <span className="font-semibold text-primary">{name || "-"}</span>
+            </div>
+            <div>
+              <span className="text-[10px] text-neutral-muted uppercase font-bold block mb-1">WhatsApp</span>
+              <span className="font-semibold text-primary">{phone || "-"}</span>
+            </div>
+            <div>
+              <span className="text-[10px] text-neutral-muted uppercase font-bold block mb-1">Lokasi Pemasangan</span>
+              <span className="font-semibold text-primary">{location}</span>
+            </div>
+            <div>
+              <span className="text-[10px] text-neutral-muted uppercase font-bold block mb-1">Jenis Pekerjaan</span>
+              <span className="font-semibold text-primary">{label}</span>
+            </div>
+          </div>
+
+          {/* Itemized Calculations */}
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] text-neutral-muted uppercase font-bold tracking-wider">Item Pekerjaan & Ukuran</span>
+            
+            <div className="bg-white border border-border-premium/40 rounded-[2px] overflow-hidden">
+              <table className="w-full text-xs text-left">
+                <thead className="bg-accent-light/50 border-b border-border-premium/30 font-bold uppercase tracking-wider text-[10px] text-neutral-500">
+                  <tr>
+                    <th className="px-4 py-3">Deskripsi</th>
+                    <th className="px-4 py-3">Ukuran</th>
+                    <th className="px-4 py-3 text-right">Tarif Dasar / Satuan</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border-premium/20">
+                  <tr>
+                    <td className="px-4 py-3">
+                      <div className="font-medium text-primary capitalize">{label}</div>
+                      <div className="text-[10px] text-neutral-muted uppercase tracking-luxury-sm mt-0.5">Paket: {packageType}</div>
+                    </td>
+                    <td className="px-4 py-3 text-neutral-muted">
+                      {type === "kitchen" && `${length}m + ${width}m = ${unit.toFixed(1)}m lari`}
+                      {type === "plafon" && `${length}m x ${width}m = ${unit.toFixed(1)} m²`}
+                      {type === "kanopi" && `${length}m x ${width}m = ${unit.toFixed(1)} m²`}
+                      {type === "partisi" && `${length}m x ${height}m x ${quantity} unit = ${unit.toFixed(1)} m²`}
+                      {(type === "aluminium" || type === "doorWindow") && `${length}m x ${height}m x ${quantity} unit = ${unit.toFixed(1)} m²`}
+                    </td>
+                    <td className="px-4 py-3 text-right font-medium text-primary">
+                      {format(rate)} / {type === "kitchen" ? "m lari" : "m²"}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Summary Block */}
+          <div className="p-5 bg-primary text-white rounded-[2px] border border-white/5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-2">
+            <div>
+              <span className="text-[10px] text-accent uppercase font-bold tracking-luxury-sm">Rekomendasi Anggaran (Kisaran)</span>
+              <div className="text-xl sm:text-2xl font-bold tracking-tight mt-1">
+                {format(lowEstimate)} - {format(highEstimate)}
+              </div>
+            </div>
+            <div className="text-[10px] text-neutral-400 text-left sm:text-right max-w-[200px] leading-relaxed">
+              *Rencana Anggaran Biaya (RAB) resmi dikeluarkan setelah survey lapangan resmi.
+            </div>
+          </div>
+
+          {/* Action Button */}
+          <div className="flex justify-end gap-3 pt-4 border-t border-border-premium/20 mt-2">
+            <button
+              onClick={() => setIsInvoiceOpen(false)}
+              className="px-4 py-2.5 border border-border-premium hover:border-primary text-neutral-muted hover:text-primary rounded-[2px] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+            >
+              Tutup
+            </button>
+            <a
+              href={whatsappUrl(message)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("price_simulation_whatsapp", { type, estimate: middleEstimate })}
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary px-6 py-2.5 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all shadow-md cursor-pointer"
+            >
+              <Phone size={12} />
+              <span>Kirim Rincian ke WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </Modal>
+
       </aside>
     </div>
   );

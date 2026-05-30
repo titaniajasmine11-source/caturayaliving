@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { ConsultationModal } from "./consultation-modal";
 
 const navigation = [
   { href: "/", label: "Beranda" },
@@ -19,7 +20,7 @@ const navigation = [
   { href: "/kontak", label: "Kontak" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ onConsultClick }: { onConsultClick: () => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -106,16 +107,14 @@ export function SiteHeader() {
           </nav>
 
           {/* Desktop CTA */}
-          <a
-            className={`hidden lg:flex items-center gap-2 border px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm ${headerCtaClass}`}
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onConsultClick}
+            className={`hidden lg:flex items-center gap-2 border px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm cursor-pointer ${headerCtaClass}`}
             aria-label="Konsultasi cepat via WhatsApp"
           >
             <Phone size={11} />
             <span>Konsultasi</span>
-          </a>
+          </button>
 
           {/* Hamburger button (Mobile) */}
           <button
@@ -168,17 +167,17 @@ export function SiteHeader() {
               transition={{ delay: navigation.length * 0.04 }}
               className="flex flex-col gap-4"
             >
-              <a
-                className="flex items-center justify-center gap-2 bg-primary hover:bg-accent text-white py-3.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300"
-                href={whatsappUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                className="flex items-center justify-center gap-2 bg-primary hover:bg-accent text-white py-3.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 cursor-pointer"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  onConsultClick();
+                }}
                 aria-label="Konsultasi cepat via WhatsApp"
               >
                 <Phone size={13} />
-                <span>Konsultasi WhatsApp</span>
-              </a>
+                <span>Konsultasi Proyek</span>
+              </button>
             </motion.div>
           </motion.div>
         )}
@@ -362,17 +361,31 @@ export function SiteFooter() {
   );
 }
 
-export function StickyWhatsapp() {
+export function StickyWhatsapp({ onConsultClick }: { onConsultClick: () => void }) {
   return (
-    <a
-      className="fixed bottom-6 right-6 z-40 bg-primary border border-accent/25 hover:border-accent hover:bg-accent text-accent hover:text-white flex items-center gap-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-premium transition-all duration-500"
-      href={whatsappUrl("Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai proyek properti saya.")}
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      onClick={onConsultClick}
+      className="fixed bottom-6 right-6 z-40 bg-primary border border-accent/25 hover:border-accent hover:bg-accent text-accent hover:text-white flex items-center gap-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-premium transition-all duration-500 cursor-pointer"
       aria-label="Hubungi layanan Eko Suyanto Workshop via WhatsApp"
     >
       <Phone size={12} />
       <span>Tanya Kami</span>
-    </a>
+    </button>
+  );
+}
+
+export function SiteShell({ children }: { children: React.ReactNode }) {
+  const [isConsultOpen, setIsConsultOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <SiteHeader onConsultClick={() => setIsConsultOpen(true)} />
+      <main id="main-content" className="flex-1 flex flex-col">
+        {children}
+      </main>
+      <SiteFooter />
+      <StickyWhatsapp onConsultClick={() => setIsConsultOpen(true)} />
+      <ConsultationModal isOpen={isConsultOpen} onClose={() => setIsConsultOpen(false)} />
+    </div>
   );
 }

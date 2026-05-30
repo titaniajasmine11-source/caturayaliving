@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader, StickyWhatsapp } from "@/components/site-shell";
+import { SiteShell } from "@/components/site-shell";
 import { site } from "@/lib/site";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -52,14 +52,9 @@ export default function RootLayout({
           Langsung ke konten utama
         </a>
         <SmoothScroll>
-          <div className="flex flex-col min-h-screen">
-            <SiteHeader />
-            <main id="main-content" className="flex-1 flex flex-col">
-              {children}
-            </main>
-            <SiteFooter />
-          </div>
-          <StickyWhatsapp />
+          <SiteShell>
+            {children}
+          </SiteShell>
         </SmoothScroll>
       </body>
     </html>
