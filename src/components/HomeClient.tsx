@@ -120,10 +120,10 @@ export default function HomeClient({
             fill 
             priority
             sizes="100vw"
-            className="object-cover animate-slow-zoom opacity-[0.08]"
+            className="object-cover animate-slow-zoom opacity-[0.25]"
           />
           {/* Light premium gradient overlay for maximum readability and accessibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -343,9 +343,9 @@ export default function HomeClient({
                       src={bgImages[index] || "/images/home/hero-home-interior.webp"} 
                       alt={cat.label}
                       fill
-                      className="object-cover opacity-[0.06] group-hover:opacity-[0.09] group-hover:scale-105 transition-all duration-[8s]"
+                      className="object-cover opacity-[0.35] group-hover:opacity-[0.45] group-hover:scale-105 transition-all duration-[8s]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
                   </div>
 
                   <div className="relative z-10 flex flex-col gap-2">
@@ -454,9 +454,9 @@ export default function HomeClient({
                     src={area.image || "/images/home/hero-home-interior.webp"} 
                     alt={area.title}
                     fill
-                    className="object-cover opacity-[0.08] group-hover:opacity-[0.12] group-hover:scale-105 transition-all duration-[8s]"
+                    className="object-cover opacity-[0.4] group-hover:opacity-[0.5] group-hover:scale-105 transition-all duration-[8s]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                 </div>
                 
                 <div className="relative z-10">
