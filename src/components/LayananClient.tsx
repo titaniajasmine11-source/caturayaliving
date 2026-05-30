@@ -202,10 +202,9 @@ export default function LayananClient({
         </motion.div>
 
         {/* Bottom CTA Block */}
-        <section className="bg-primary text-white rounded-[2px] overflow-hidden p-8 sm:p-16 text-center mt-24 relative border border-white/5">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
+        <section className="bg-white text-primary rounded-[2px] overflow-hidden p-8 sm:p-16 text-center mt-24 relative border border-border-premium/50 shadow-premium">
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col gap-6 items-center">
-            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight text-primary">
               Belum Menemukan Spesifikasi Layanan yang Sesuai?
             </h2>
             <p className="text-neutral-muted text-sm sm:text-base leading-relaxed max-w-xl">
@@ -215,7 +214,7 @@ export default function LayananClient({
               href={whatsappUrl()} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark px-8 py-4 rounded-[2px] text-xs font-semibold uppercase tracking-wide shadow-lg transition-all group mt-2"
+              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark px-8 py-4 rounded-[2px] text-xs font-semibold uppercase tracking-wide shadow-lg transition-all group mt-2 cursor-pointer"
               aria-label="Konsultasi gratis via WhatsApp"
             >
               <Phone size={13} />

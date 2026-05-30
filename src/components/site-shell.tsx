@@ -180,16 +180,16 @@ export function SiteHeader({ onConsultClick }: { onConsultClick: () => void }) {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-primary-dark text-accent-light pt-24 pb-12 border-t border-white/5 relative z-10">
+    <footer className="bg-white text-primary pt-24 pb-12 border-t border-border-premium/50 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Column 1: Brand & Description */}
           <div className="flex flex-col gap-6">
-            <Link className="flex items-center gap-3 text-white group" href="/">
-              <div className="relative w-8 h-8 flex items-center justify-center bg-white/5 border border-white/10 rounded-[4px] p-1.5">
+            <Link className="flex items-center gap-3 text-primary group" href="/">
+              <div className="relative w-8 h-8 flex items-center justify-center bg-accent-light/50 border border-border-premium/50 rounded-[4px] p-1.5">
                 <Image src="/images/logo-caturaya.png" alt="Eko Suyanto Workshop Logo" width={22} height={22} />
               </div>
-              <span className="tracking-[0.25em] text-xs font-medium uppercase text-white group-hover:text-accent transition-colors">
+              <span className="tracking-[0.25em] text-xs font-medium uppercase text-primary group-hover:text-accent transition-colors">
                 Eko Suyanto Workshop
               </span>
             </Link>
@@ -200,7 +200,7 @@ export function SiteFooter() {
               <div className="flex gap-2.5 items-start">
                 <MapPin size={14} className="text-accent flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  <strong className="text-white font-medium">Alamat Kantor:</strong><br />
+                  <strong className="text-primary font-medium">Alamat Kantor:</strong><br />
                   {site.address}<br />
                   Kode Lokasi:{" "}
                   <a
@@ -271,7 +271,7 @@ export function SiteFooter() {
             </h3>
             <div className="text-sm flex flex-col gap-4">
               <div className="flex flex-col gap-1 text-neutral-muted">
-                <span className="text-xs uppercase tracking-luxury-sm text-white font-medium">WhatsApp Utama (Tholib)</span>
+                <span className="text-xs uppercase tracking-luxury-sm text-primary font-medium">WhatsApp Utama (Tholib)</span>
                 <a
                   href={whatsappUrl(undefined, site.phonePrimary)}
                   target="_blank"
@@ -283,7 +283,7 @@ export function SiteFooter() {
                 </a>
               </div>
               <div className="flex flex-col gap-1 text-neutral-muted">
-                <span className="text-xs uppercase tracking-luxury-sm text-white font-medium">WhatsApp Alternatif (Eko)</span>
+                <span className="text-xs uppercase tracking-luxury-sm text-primary font-medium">WhatsApp Alternatif (Eko)</span>
                 <a
                   href={whatsappUrl(undefined, site.phoneSecondary)}
                   target="_blank"
@@ -294,14 +294,14 @@ export function SiteFooter() {
                   <span>{site.phoneSecondaryLabel}</span>
                 </a>
               </div>
-              <div className="flex flex-col gap-2 pt-3 border-t border-white/5">
-                <span className="text-xs uppercase tracking-luxury-sm text-white font-medium">Ikuti Sosial Media</span>
+              <div className="flex flex-col gap-2 pt-3 border-t border-border-premium/30">
+                <span className="text-xs uppercase tracking-luxury-sm text-primary font-medium">Ikuti Sosial Media</span>
                 <div className="flex gap-2">
                   <a
                     href="https://instagram.com/ekosuyanto.workshop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 flex items-center justify-center rounded-[2px] bg-white/5 text-neutral-muted hover:bg-accent hover:text-white border border-white/5 transition-all duration-300"
+                    className="w-8 h-8 flex items-center justify-center rounded-[2px] bg-accent-light/50 text-neutral-muted hover:bg-accent hover:text-white border border-border-premium/50 transition-all duration-300"
                     aria-label="Ikuti Eko Suyanto Workshop di Instagram"
                   >
                     <svg
@@ -322,7 +322,7 @@ export function SiteFooter() {
                     href="https://facebook.com/ekosuyanto.workshop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 flex items-center justify-center rounded-[2px] bg-white/5 text-neutral-muted hover:bg-accent hover:text-white border border-white/5 transition-all duration-300"
+                    className="w-8 h-8 flex items-center justify-center rounded-[2px] bg-accent-light/50 text-neutral-muted hover:bg-accent hover:text-white border border-border-premium/50 transition-all duration-300"
                     aria-label="Ikuti Eko Suyanto Workshop di Facebook"
                   >
                     <svg
@@ -344,7 +344,7 @@ export function SiteFooter() {
         </div>
 
         {/* Footer Bottom copyright */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs uppercase tracking-luxury-sm text-neutral-muted text-center sm:text-left">
+        <div className="pt-8 border-t border-border-premium/30 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs uppercase tracking-luxury-sm text-neutral-muted text-center sm:text-left">
           <span>&copy; {new Date().getFullYear()} Eko Suyanto Workshop. Hak Cipta Dilindungi Undang-Undang.</span>
           <span>Premium Interior, Aluminium & Fasad Specialist di Sidareja, Cilacap</span>
         </div>
@@ -357,7 +357,7 @@ export function StickyWhatsapp({ onConsultClick }: { onConsultClick: () => void 
   return (
     <button
       onClick={onConsultClick}
-      className="fixed bottom-6 right-6 z-40 bg-primary border border-accent/25 hover:border-accent hover:bg-accent text-accent hover:text-white flex items-center gap-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-premium transition-all duration-500 cursor-pointer"
+      className="fixed bottom-6 right-6 z-40 bg-white border border-border-premium/50 hover:bg-primary text-primary hover:text-white flex items-center gap-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-premium transition-all duration-500 cursor-pointer"
       aria-label="Hubungi layanan Eko Suyanto Workshop via WhatsApp"
     >
       <Phone size={12} />

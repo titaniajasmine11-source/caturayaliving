@@ -111,7 +111,7 @@ export default function HomeClient({
     <div className="bg-accent-light text-neutral-text min-h-screen">
       
       {/* ── 1. Hero Section (Cinematic Full Landscape Image with Text Overlay) ── */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-36 overflow-hidden bg-primary-dark border-b border-white/5">
+      <section className="relative min-h-screen flex items-center pt-24 pb-36 overflow-hidden bg-white border-b border-border-premium/50">
         {/* Background Landscape Image with slow zoom */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -120,11 +120,10 @@ export default function HomeClient({
             fill 
             priority
             sizes="100vw"
-            className="object-cover animate-slow-zoom opacity-35"
+            className="object-cover animate-slow-zoom opacity-[0.08]"
           />
-          {/* Dark premium gradient overlay for maximum readability and accessibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/75 to-transparent" />
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Light premium gradient overlay for maximum readability and accessibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -146,7 +145,7 @@ export default function HomeClient({
 
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl sm:text-6xl lg:text-[72px] font-semibold text-white tracking-tight leading-[1.05]"
+              className="text-4xl sm:text-6xl lg:text-[72px] font-semibold text-primary tracking-tight leading-[1.05]"
             >
               Wujudkan Keindahan <br className="hidden sm:inline" />
               <span className="italic text-accent font-normal">Hunian Impian Anda</span>
@@ -154,22 +153,23 @@ export default function HomeClient({
 
             <motion.p 
               variants={fadeIn} 
-              className="text-sm sm:text-base text-accent-light/70 leading-relaxed max-w-xl"
+              className="text-sm sm:text-base text-neutral-text leading-relaxed max-w-xl"
             >
               Dari kusen kayu solid anti rayap, kusen aluminium tebal tahan karat cuaca pesisir, plafon PVC anti lembab tahan air pasang Sidareja, hingga renovasi sipil total — Eko Suyanto Workshop mengkoordinasikan seluruh tim spesialis untuk Anda di bawah satu manajemen tepercaya.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
               <a 
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide px-8 py-4 rounded-[2px] transition-all duration-300 shadow-sm"
-                href={wa} 
-                target="_blank" 
+                className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark px-8 py-4 rounded-[2px] text-xs font-semibold uppercase tracking-wide shadow-md transition-all group cursor-pointer"
+                href={wa}
+                target="_blank"
                 rel="noopener noreferrer"
               >
-                Mulai Konsultasi Gratis
+                <Phone size={12} />
+                <span>Mulai Konsultasi</span>
               </a>
               <Link 
-                className="inline-flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/5 text-white text-xs font-semibold uppercase tracking-wide px-8 py-4 rounded-[2px] transition-all"
+                className="inline-flex items-center justify-center border border-primary/10 hover:border-primary/30 text-primary hover:bg-accent-light text-xs font-semibold uppercase tracking-wide px-8 py-4 rounded-[2px] transition-all"
                 href="/portofolio"
               >
                 Lihat Portofolio
@@ -293,20 +293,18 @@ export default function HomeClient({
       </section>
 
       {/* ── 4. Bento Grid Layanan Seluruh Bidang ── */}
-      <section className="py-24 bg-primary text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-neutral/20 via-primary-dark to-primary-dark pointer-events-none" />
-        
+      <section className="py-24 bg-white text-primary relative border-t border-b border-border-premium/50">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20">
             <div className="flex flex-col gap-4 max-w-2xl">
               <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Layanan Lengkap</span>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-primary leading-tight">
                 Koordinasikan Semua Kebutuhan Properti Anda
               </h2>
             </div>
             <Link 
               href="/layanan" 
-              className="group flex items-center gap-2 border border-white/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-xs font-semibold uppercase tracking-wide transition-all duration-300"
+              className="group flex items-center gap-2 border border-primary/10 hover:border-accent hover:text-accent text-primary px-6 py-3.5 rounded-[2px] text-xs font-semibold uppercase tracking-wide transition-all duration-300"
             >
               <span>Lihat Seluruh Layanan</span>
               <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -338,21 +336,21 @@ export default function HomeClient({
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   key={cat.id}
-                  className={`${spanning} relative rounded-[2px] overflow-hidden group border border-white/5 flex flex-col justify-end p-8`}
+                  className={`${spanning} relative rounded-[2px] overflow-hidden group border border-border-premium/50 shadow-premium hover:shadow-premium-lg bg-white flex flex-col justify-end p-8`}
                 >
-                  <div className="absolute inset-0 bg-primary-dark z-0 pointer-events-none">
+                  <div className="absolute inset-0 bg-white z-0 pointer-events-none">
                     <Image 
                       src={bgImages[index] || "/images/home/hero-home-interior.webp"} 
                       alt={cat.label}
                       fill
-                      className="object-cover opacity-20 group-hover:opacity-25 group-hover:scale-105 transition-all duration-[8s]"
+                      className="object-cover opacity-[0.06] group-hover:opacity-[0.09] group-hover:scale-105 transition-all duration-[8s]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent" />
                   </div>
 
                   <div className="relative z-10 flex flex-col gap-2">
                     {(() => { const Icon = iconMap[cat.icon] || Compass; return <Icon size={18} className="text-accent" />; })()}
-                    <h3 className="text-lg font-semibold text-white group-hover:text-accent transition-colors pt-1">
+                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors pt-1">
                       {cat.label}
                     </h3>
                     <p className="text-sm text-neutral-muted leading-relaxed max-w-sm">
@@ -360,7 +358,7 @@ export default function HomeClient({
                     </p>
                     <Link 
                       href={`/layanan?kategori=${cat.id}`}
-                      className="text-xs font-semibold uppercase tracking-wide text-accent group-hover:text-white border-b border-transparent group-hover:border-white pb-0.5 mt-3 transition-all w-fit flex items-center gap-1"
+                      className="text-xs font-semibold uppercase tracking-wide text-accent group-hover:text-primary border-b border-transparent group-hover:border-primary pb-0.5 mt-3 transition-all w-fit flex items-center gap-1"
                     >
                       <span>Pelajari Layanan</span>
                       <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
@@ -433,11 +431,11 @@ export default function HomeClient({
       </section>
 
       {/* ── 6. Area Rumah Slider ── */}
-      <section className="py-24 bg-primary text-white overflow-hidden relative">
+      <section className="py-24 bg-accent-light border-b border-border-premium/50 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <div className="flex flex-col gap-3">
             <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Zonasi Area Rumah</span>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-primary">
               Pilih Bagian Rumah yang Ingin Dipercantik
             </h2>
           </div>
@@ -449,23 +447,23 @@ export default function HomeClient({
               <Link 
                 href={`/area-rumah/${area.slug}`} 
                 key={area.slug}
-                className="w-[280px] sm:w-[320px] h-[200px] relative rounded-[2px] overflow-hidden group shadow-premium flex flex-col justify-end p-6 border border-white/5"
+                className="w-[280px] sm:w-[320px] h-[200px] relative rounded-[2px] overflow-hidden group shadow-premium flex flex-col justify-end p-6 border border-border-premium/50 bg-white"
               >
-                <div className="absolute inset-0 bg-primary-dark z-0 pointer-events-none">
+                <div className="absolute inset-0 bg-white z-0 pointer-events-none">
                   <Image 
                     src={area.image || "/images/home/hero-home-interior.webp"} 
                     alt={area.title}
                     fill
-                    className="object-cover opacity-30 group-hover:opacity-35 group-hover:scale-105 transition-all duration-[8s]"
+                    className="object-cover opacity-[0.08] group-hover:opacity-[0.12] group-hover:scale-105 transition-all duration-[8s]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
                 </div>
                 
                 <div className="relative z-10">
                   <span className="text-accent text-xs font-semibold uppercase tracking-luxury-sm block mb-1">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="text-base font-semibold text-white group-hover:text-accent transition-colors flex items-center gap-1.5">
+                  <h3 className="text-base font-semibold text-primary group-hover:text-accent transition-colors flex items-center gap-1.5">
                     <span>{area.title}</span>
                     <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </h3>
@@ -603,13 +601,13 @@ export default function HomeClient({
       </section>
 
       {/* ── 9. Editorial Testimonial ── */}
-      <section className="py-28 bg-primary text-accent-light relative">
+      <section className="py-28 bg-accent-light text-primary border-t border-b border-border-premium/50 relative">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
           <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Testimonial</span>
           
           <figure className="flex flex-col gap-4">
             <span className="text-4xl text-accent select-none leading-none">"</span>
-            <blockquote className="text-lg sm:text-xl italic leading-relaxed max-w-2xl mx-auto text-white">
+            <blockquote className="text-lg sm:text-xl italic leading-relaxed max-w-2xl mx-auto text-primary">
               Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Eko Suyanto Workshop, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.
             </blockquote>
             <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>

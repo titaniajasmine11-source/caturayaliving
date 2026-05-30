@@ -96,8 +96,7 @@ export default function TentangKamiPage() {
             </div>
           </div>
           
-          <div className="lg:col-span-5 bg-primary text-white rounded-[2px] border border-white/5 p-8 shadow-premium relative overflow-hidden flex flex-col gap-6">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full pointer-events-none" />
+          <div className="lg:col-span-5 bg-white text-primary rounded-[2px] border border-border-premium/50 p-8 shadow-premium relative overflow-hidden flex flex-col gap-6">
             <h3 className="text-xs font-semibold text-accent uppercase tracking-luxury-sm">Cakupan Pekerjaan Kami</h3>
             <div className="w-8 h-[1px] bg-accent/60 -mt-2"></div>
             
@@ -191,11 +190,10 @@ export default function TentangKamiPage() {
         </section>
 
         {/* Alur Kerja */}
-        <section className="bg-primary text-white rounded-[2px] border border-white/5 p-8 sm:p-16 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
+        <section className="bg-white text-primary rounded-[2px] border border-border-premium/50 p-8 sm:p-16 text-center relative overflow-hidden shadow-premium">
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col gap-6 items-center">
             <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Proses Pengerjaan</span>
-            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-primary leading-tight">
               Alur Kerja Terkoordinasi & Tenang
             </h2>
             <p className="text-neutral-muted text-sm leading-relaxed max-w-xl">
@@ -204,7 +202,7 @@ export default function TentangKamiPage() {
 
             <div className="flex flex-wrap justify-center gap-2.5 max-w-2xl my-4">
               {process.map((step, index) => (
-                <span key={step} className="text-xs font-semibold uppercase tracking-luxury-sm bg-white/5 border border-white/10 px-3.5 py-2 rounded-[2px] flex items-center gap-1.5">
+                <span key={step} className="text-xs font-semibold uppercase tracking-luxury-sm bg-accent-light/50 border border-border-premium/30 px-3.5 py-2 rounded-[2px] flex items-center gap-1.5 text-primary">
                   <span className="text-accent font-bold">{index + 1}.</span>
                   <span>{step}</span>
                 </span>

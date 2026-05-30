@@ -93,7 +93,7 @@ export const areas = [
 
 export const portfolioCategories = ["Semua", "Kayu & Perabotan", "Aluminium", "Kitchen Set", "HPL & Finishing", "Plafon", "Kanopi", "Partisi", "Interior", "Bangunan"];
 
-export const portfolio = [
+const initialPortfolio = [
   { title: "Kitchen Set Minimalis Sidareja", category: "Kitchen Set", slug: "kitchen-set", location: "Sidareja", material: "Kabinet custom multipleks HPL, top table granit, backsplash", duration: "7-14 hari", image: "/images/services/kitchen-set/hero-kitchen-set.webp" },
   { title: "Kusen Aluminium Rumah Tegalsari", category: "Aluminium", slug: "aluminium", location: "Tegalsari", material: "Profil aluminium graphite, kaca bening 5mm", duration: "3-7 hari", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp" },
   { title: "Plafon Drop Ceiling Ruang Tamu", category: "Plafon", slug: "plafon", location: "Sidareja", material: "Gypsum rangka hollow, finishing cat putih", duration: "2-5 hari", image: "/images/services/plafon/hero-plafon.webp" },
@@ -108,6 +108,233 @@ export const portfolio = [
   { title: "Renovasi Kamar Mandi + Keramik", category: "Bangunan", slug: "renovasi-kamar-mandi", location: "Kedungreja", material: "Pasang keramik 60x60, dinding mozaik, shower area", duration: "5-8 hari", image: "/images/services/jasa-bangunan/hero-jasa-bangunan.png" },
   { title: "Renovasi Teras & Kanopi Minimalis", category: "Kanopi", slug: "renovasi-teras", location: "Cilacap", material: "Kanopi atap alderon, plafon teras, cat ulang", duration: "6-10 hari", image: "/images/services/home-finishing/hero-home-finishing.png" },
   { title: "Rak Display Ruko Produk Lokal", category: "Interior", slug: "rak-display-ruko", location: "Cipari", material: "Rak display HPL, kabinet bawah, backdrop brand", duration: "5-9 hari", image: "/images/areas/ruko-usaha/hero-ruko-usaha.png" },
+];
+
+const categoryTemplates: Record<string, { titles: string[], materials: string[], images: string[] }> = {
+  "Kitchen Set": {
+    titles: [
+      "Kitchen Set Klasik American Style", "Kitchen Set Modern L-Shape Glossy", "Kitchen Set Minimalis Compact U-Shape",
+      "Dapur Bersih dengan Kitchen Island Granit", "Kitchen Set Semi-Outdoor Tahan Lembab", "Kitchen Set HPL Woodgrain & Matt Black",
+      "Dapur Basah Stainless Steel & Multipleks", "Kitchen Set Compact Studio", "Kabinet Dapur Klasik Cat Duco Putih",
+      "Kitchen Set Mewah LED Smart Lighting", "Dapur Industrial Rangka Besi & HPL", "Kitchen Set Sudut Ekonomis",
+      "Kitchen Set Kombinasi Kaca Fluted", "Dapur Premium Modern Handleless", "Kitchen Set Alabaster Soft Ivory"
+    ],
+    materials: [
+      "Multipleks HPL premium, engsel soft-close, top table marmer, backlight LED",
+      "Multipleks HPL glossy white, top table granit hitam slab, rak piring stainless steel",
+      "Multipleks HPL abu-abu matte, fittings blum soft-close, sink granite sink",
+      "Kayu mahoni solid kombinasi multipleks, cat duco putih antik, top table kayu oak",
+      "PVC board waterproof (tahan air pasang Sidareja), finishing HPL, top table solid surface",
+      "Multipleks HPL woodgrain walnut, laci dorong soft-close, lighting strip LED",
+      "Multipleks finishing melamik alami, rangka kayu jati lokal, handle stainless",
+      "Blockboard HPL serat kayu pinus, rak piring mini, laci sendok terintegrasi",
+      "Multipleks HPL motif semen concrete, rak gantung terbuka, fittings hitam matte"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556909212-d55073e2998a?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Aluminium": {
+    titles: [
+      "Pintu Geser Aluminium Frame Hitam", "Jendela Casement Aluminium Graphite", "Kusen Aluminium Pintu Lipat Ruko",
+      "Jendela Awning Aluminium Silver", "Pintu Kaca Aluminium Toko Minimalis", "Jendela Sliding Aluminium Lebar Fasad",
+      "Pintu Panel Aluminium Kamar Mandi", "Kusen Aluminium Putih Clean", "Pintu Utama Aluminium Kaca Tempered",
+      "Jendela Kisi-Kisi Aluminium Ventilasi", "Partisi Sekat Aluminium Kaca Kantor", "Pintu Swing Aluminium Kaca Riben",
+      "Jendela Geser Aluminium Ruang Makan", "Kusen Aluminium Bronze Mewah", "Pintu Lipat Aluminium 4 Daun"
+    ],
+    materials: [
+      "Profil aluminium hitam tebal 1.2mm, kaca tempered 8mm, lockset dekkson",
+      "Profil aluminium graphite modern, kaca polos 5mm, hinges stainless steel",
+      "Aluminium silver anodized, kaca riben 5mm anti-UV, sistem roda gantung",
+      "Profil aluminium putih coating premium, kaca es frosted 5mm, sealer silikon",
+      "Aluminium bronze tebal, kaca double glazed kedap suara, handle pull bar stainless",
+      "Profil alexindo aluminium tebal, aksesoris kunci lengkap, karet gasket peredam"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Plafon": {
+    titles: [
+      "Plafon Drop Ceiling LED Ruang Tamu", "Plafon PVC Motif Serat Kayu Teras", "Plafon Gypsum Flat Minimalis Kamar",
+      "Plafon PVC Clean White Ruang Keluarga", "Plafon Drop Ceiling Oval Mewah", "Plafon PVC Anti Air Kamar Mandi",
+      "Plafon Gypsum Bertingkat Klasik", "Plafon PVC Motif Gold Line Koridor", "Plafon Gypsum Soundproof",
+      "Plafon PVC Minimalis Abu-Abu Modern", "Plafon Drop Ceiling L-Shape Mushola", "Plafon Gypsum Drywall Ruko"
+    ],
+    materials: [
+      "Papan gypsum jayaboard 9mm, rangka hollow galvanis 4x4, finishing cat mowilex",
+      "Panel PVC tebal 8mm tahan lembab, rangka hollow galvanis, list sudut PVC motif",
+      "Gypsum knauf water-resistant, rangka hollow 2x4, finishing kompon rapi",
+      "Panel PVC glossy motif marmer, rangka hollow, kelengkapan fitting lampu downlight"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Kanopi": {
+    titles: [
+      "Kanopi Atap Alderon Rangka Hollow", "Kanopi Tempered Glass Carport Fasad", "Kanopi Atap Polycarbonate Minimalis",
+      "Kanopi Solarflat Transparan Industrial", "Kanopi Spandek Pasir Ekonomis Samping", "Kanopi Rangka Baja Ringan Teras",
+      "Kanopi Kaca Laminated Canopy Entrance", "Kanopi Geser Sliding Skylight Jemur", "Kanopi Cantilever Gantung Minimalis",
+      "Kanopi Rangka Double Hollow Mewah"
+    ],
+    materials: [
+      "Rangka besi hollow 4x8 double, atap alderon twinwall tebal 10mm, cat anti-karat nippon paint",
+      "Struktur besi hollow 5x10, kaca tempered clear 8mm, sealant silicone weatherproof",
+      "Baja ringan truss profil C75, atap spandek pasir peredam bising, cat zinc chromate",
+      "Besi hollow 4x4, atap polycarbonate twinlite 6mm dengan lapisan UV protection",
+      "Rangka WF-150 kokoh, atap kaca laminated double glass 5+5mm, konstruksi las presisi"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Partisi": {
+    titles: [
+      "Partisi Kisi-Kisi Kayu Penyekat Ruang", "Partisi Kaca Tempered Bingkai Aluminium", "Partisi Gypsum Dua Sisi Ruang Kerja",
+      "Sekat Ruang Keluarga HPL & Rak Buku", "Partisi Sliding Kaca Ruko Minimalis", "Penyekat Lipat Folding Partition Aula",
+      "Partisi Besi Hollow & Kayu Industrial", "Partisi Panel HPL Putih & Cermin", "Partisi Roster Semen & Frame Aluminium"
+    ],
+    materials: [
+      "Rangka kayu meranti oven, slat kayu jati laminasi melamik, pasang bracket besi tersembunyi",
+      "Kaca tempered 10mm clear, frame aluminium alexindo graphite 4 inch, door patch fittings",
+      "Papan gypsum gajah 9mm double-sided, rangka hollow galvanis 4x4, glasswool peredam suara",
+      "Multipleks 15mm lapis HPL motif serat kayu teak, ambalan rak gantung, lampu led warm white"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "HPL & Finishing": {
+    titles: [
+      "Backdrop TV Panel HPL Marmer LED", "Lemari Pakaian HPL Sliding Door", "Wall Panel HPL Motif Semen Industrial",
+      "Meja Rias Custom HPL Mirror Clean", "Kabinet Konsol HPL Walnut Matte", "Backdrop Tempat Tidur HPL & Cushion",
+      "Lemari Pajangan Kaca & HPL Gold", "Wall Panel HPL Woodgrain Ruang Meeting", "Meja Receptionist Kantor HPL Putih"
+    ],
+    materials: [
+      "Multipleks 12-15mm, finishing HPL taco motif white carrara marble, led strip warm, kelistrikan",
+      "Multipleks tebal, finishing HPL motif teak woodgrain, rel pintu geser sliding track aluminium",
+      "MDF board density tinggi, laminasi HPL motif concrete abu-abu, aksen garis alur nat minimalis",
+      "Multipleks finishing HPL matte black kombinasi cermin bevel, engsel soft-close huben"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Kayu & Perabotan": {
+    titles: [
+      "Meja Makan Kayu Jati Solid Alam", "Pintu Utama Kayu Jati Ukir Sidareja", "Kursi Teras Kayu Akasia Minimalis",
+      "Tempat Tidur Laci Kayu Mahoni", "Bufet TV Retro Kayu Jati Natural", "Meja Kerja Kayu Solid Kaki Besi",
+      "Rak Buku Kayu Solid Gantung", "Kusen Pintu Kayu Meranti Oven", "Meja Konsol Kayu Mindi Klasik"
+    ],
+    materials: [
+      "Kayu jati perhutani grade A tebal slab 5cm, finishing sanding melamik natural doff, kaki kayu solid",
+      "Kayu jati solid oven Sidareja, ukiran manual detail arsitektural, handle kuningan antik",
+      "Kayu mahoni solid oven, finishing cat duco putih satin, laci double track undermount",
+      "Kayu meranti lokal pilihan, profil kusen minimalis 5x10, lapis politur weatherproof ultran"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1544030288-e6e6108867f8?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Interior": {
+    titles: [
+      "Interior Kamar Utama Luxury Suite", "Interior Ruko Cafe Minimalis Aesthetic", "Interior Living Room Modern Cozy",
+      "Interior Kamar Anak Multifungsi", "Walk-in Closet Mewah Lemari HPL", "Interior Ruang Meeting Kantor Rapi",
+      "Interior Toko Butik Fashion Elegan", "Interior Mushola Rumah Tenang & Rapi", "Layout Bedroom Apartemen Studio"
+    ],
+    materials: [
+      "Paket interior komplit: bed frame, backdrop padded headboard, wardrobe sliding, meja rias, lighting led",
+      "Interior retail: rak display besi, meja kasir HPL, wall cladding, spot lighting track led, lantai vinyl",
+      "Living room set: backdrop TV panel, rak ambalan, pembatas ruang kisi-kisi, cat dinding serasi",
+      "Interior kamar anak: bunk bed custom laci tangga, lemari pakaian mini, meja belajar lipat multipleks"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop"
+    ]
+  },
+  "Bangunan": {
+    titles: [
+      "Pagar Tembok & Pintu Gerbang Hollow", "Renovasi Fasad Depan Rumah Minimalis", "Pembangunan Carport Dak Beton Rapi",
+      "Pekerjaan Keramik Lantai & Dinding", "Renovasi Total Rumah Tua Sidareja", "Pekerjaan Pondasi & Dinding Ruko",
+      "Pekerjaan Plesteran & Cat Ulang Fasad", "Renovasi Kolam Hias Depan Rumah", "Pekerjaan Kamar Mandi Sipil & Plumbing"
+    ],
+    materials: [
+      "Pekerjaan sipil: Dinding bata merah plester aci, besi beton ulir 10/12mm, keramik dinding granit 60x60",
+      "Fasad modern: Pasang batu alam candi, tiang carport beton bertulang, cat eksterior jotun weatherproof",
+      "Pondasi batu kali kokoh, struktur kolom beton bertulang besi SNI, dinding bata ringan hebel",
+      "Keramik lantai granit 60x60, nat semen waterproof, waterproofing sika area basah, pipa pvc wavin"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?q=80&w=600&auto=format&fit=crop"
+    ]
+  }
+};
+
+const locationsList = [
+  "Sidareja", "Tegalsari", "Cipari", "Kedungreja", "Gandrungmangu", "Karangpucung", "Wanareja", "Cilacap"
+];
+
+const durationsList = [
+  "3-5 hari", "5-8 hari", "7-12 hari", "10-15 hari", "4-7 hari"
+];
+
+const generatedPortfolio: any[] = [];
+let idCounter = 1;
+
+Object.keys(categoryTemplates).forEach((cat) => {
+  const data = categoryTemplates[cat];
+  data.titles.forEach((title, idx) => {
+    const loc = locationsList[idx % locationsList.length];
+    const mat = data.materials[idx % data.materials.length];
+    const dur = durationsList[idx % durationsList.length];
+    const img = data.images[idx % data.images.length];
+    
+    // Create unique slug
+    const cleanTitle = title.toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, "-");
+    const slug = `${cleanTitle}-${idCounter++}`;
+    
+    generatedPortfolio.push({
+      title: `${title} di ${loc}`,
+      category: cat,
+      slug,
+      location: loc,
+      material: mat,
+      duration: dur,
+      image: img
+    });
+  });
+});
+
+export const portfolio = [
+  ...initialPortfolio,
+  ...generatedPortfolio
 ];
 
 export const designStages = [

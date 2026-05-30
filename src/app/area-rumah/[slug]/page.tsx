@@ -145,11 +145,10 @@ export default async function AreaDetailPage({ params }: Props) {
           </div>
 
           {/* Right Column: Sticky Sidebar CTA */}
-          <aside className="lg:col-span-4 bg-primary text-white p-8 rounded-[2px] border border-white/5 shadow-premium lg:sticky lg:top-28 flex flex-col gap-6 text-left relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
+          <aside className="lg:col-span-4 bg-white text-primary p-8 rounded-[2px] border border-border-premium/50 shadow-premium lg:sticky lg:top-28 flex flex-col gap-6 text-left relative overflow-hidden">
             <div className="relative z-10 flex flex-col gap-4">
               <p className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Konsultasi Area</p>
-              <h3 className="text-xl font-semibold leading-tight">Tata Ulang Area {area.title}</h3>
+              <h3 className="text-xl font-semibold text-primary leading-tight font-sans">Tata Ulang Area {area.title}</h3>
               <p className="text-neutral-muted text-sm leading-relaxed">
                 Konsultasikan rencana renovasi ringan atau kustomisasi interior/eksterior untuk area {area.title.toLowerCase()} Anda. Tim lapangan kami siap menjadwalkan survei ke lokasi Anda.
               </p>
@@ -168,7 +167,7 @@ export default async function AreaDetailPage({ params }: Props) {
                 </a>
                 
                 <Link 
-                  className="w-full text-center py-3 border border-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-wide rounded-[2px] transition-all cursor-pointer bg-transparent"
+                  className="w-full text-center py-3 border border-primary/10 hover:border-primary/30 text-primary hover:text-accent text-xs font-bold uppercase tracking-wide rounded-[2px] transition-all cursor-pointer bg-transparent"
                   href="/area-rumah" 
                   aria-label="Lihat seluruh daftar area properti Eko Suyanto Workshop"
                 >
