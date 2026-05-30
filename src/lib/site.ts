@@ -1,28 +1,37 @@
 export const site = {
   name: "Caturaya Living",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://caturayaliving.vercel.app",
-  tagline: "Interior, aluminium, kitchen set, plafon, kanopi, partisi, dan home finishing.",
+  tagline: "Full kontraktor properti: interior, eksterior, kusen kayu & aluminium, kitchen set, perabotan custom, HPL/PVC finishing, plafon, kanopi, pagar, dan jasa bangunan.",
+  description: "Caturaya Living adalah kontraktor properti full-service di Sidareja, Cilacap. Kami mengelola proyek interior & eksterior secara menyeluruh dengan jaringan tim spesialis: tukang kayu, aluminium, PVC/HPL, dan tukang bangunan.",
   phonePrimary: "6285119467138",
   phonePrimaryLabel: "0851-1946-7138",
   phoneSecondary: "62895703018230",
   phoneSecondaryLabel: "0895-7030-18230",
   address: "Jalan Seruni RT 09 RW 02, Desa Tegalsari, Kecamatan Sidareja, Kabupaten Cilacap, Jawa Tengah",
   locationCode: "GQ7C+79 Tegalsari",
+  teamSpecialists: [
+    { role: "Tukang Kayu", icon: "🪵", description: "Kusen kayu solid, perabotan custom, lemari, kabinet, dan furniture ukir." },
+    { role: "Tukang Aluminium", icon: "🔩", description: "Kusen, pintu, jendela, partisi kaca, kanopi, pagar, dan gerbang aluminium." },
+    { role: "Tukang PVC & HPL", icon: "🎨", description: "Finishing HPL premium, panel PVC, plafon, dan pelapis dinding modern." },
+    { role: "Tukang Bangunan", icon: "🧱", description: "Renovasi sipil, pemasangan keramik, plesteran, dinding, dan pondasi ringan." },
+    { role: "Tim Kitchen Set", icon: "🍳", description: "Kitchen set custom dari desain hingga instalasi, material multiplek & MDF." },
+    { role: "Tim Interior", icon: "🛋️", description: "Backdrop, rak display, lemari pakaian, dan elemen dekoratif interior." },
+  ],
 };
 
 export function whatsappUrl(message?: string, phone = site.phonePrimary) {
   const text = encodeURIComponent(
     message ??
-      `Halo Caturaya Living, saya ingin konsultasi.
+      `Halo Caturaya Living, saya ingin konsultasi proyek.
 
 Nama:
-Lokasi:
-Kebutuhan:
-Area rumah:
-Ukuran perkiraan:
-Referensi desain:
-Budget perkiraan:
-Kapan ingin dikerjakan:`,
+Lokasi / Alamat:
+Jenis Pekerjaan (interior/eksterior/bangunan):
+Detail Kebutuhan:
+Ukuran Perkiraan:
+Referensi Desain:
+Budget Perkiraan:
+Target Selesai:`,
   );
 
   return `https://wa.me/${phone}?text=${text}`;
@@ -31,3 +40,4 @@ Kapan ingin dikerjakan:`,
 export function absoluteUrl(path = "") {
   return new URL(path, site.url).toString();
 }
+

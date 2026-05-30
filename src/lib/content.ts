@@ -1,20 +1,75 @@
-export const services = [
-  { title: "Kusen Aluminium", slug: "kusen-aluminium", summary: "Kusen rapi, ringan, tahan lembap, dan mudah dirawat untuk rumah maupun ruko.", detail: "Cocok untuk pintu, jendela, partisi kaca, dan area yang butuh finishing modern.", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp", benefits: ["Tahan lembap", "Perawatan mudah", "Ukuran custom", "Tampilan modern"], deliverables: ["Pengukuran bukaan", "Rekomendasi profil", "Pilihan kaca dan warna", "Pemasangan di lokasi"] },
-  { title: "Pintu & Jendela Aluminium", slug: "pintu-jendela-aluminium", summary: "Pembuatan pintu dan jendela aluminium custom sesuai ukuran bukaan di lokasi.", detail: "Termasuk konsultasi profil, warna, kaca, aksesoris, dan pola bukaan.", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp", benefits: ["Bukaan lebih presisi", "Cocok rumah/ruko", "Pilihan kaca fleksibel", "Finishing bersih"], deliverables: ["Survey bukaan", "Desain pola bukaan", "Produksi frame", "Instalasi dan pengecekan"] },
-  { title: "Kitchen Set Custom", slug: "kitchen-set-custom", summary: "Kitchen set yang disesuaikan dengan alur masak, ukuran ruang, dan budget.", detail: "Mulai dari kabinet bawah, kabinet atas, top table, backsplash, hingga storage tambahan.", image: "/images/services/kitchen-set/hero-kitchen-set.webp", benefits: ["Storage lebih rapi", "Layout sesuai kebiasaan", "Material bisa disesuaikan", "Preview visual lebih jelas"], deliverables: ["Layout kabinet", "Rekomendasi material", "Visual 3D awal", "Produksi dan pemasangan"] },
-  { title: "Plafon Gypsum/PVC", slug: "plafon-gypsum-pvc", summary: "Plafon untuk ruang tamu, kamar, dapur, ruko, dan area renovasi ringan.", detail: "Membantu ruangan terlihat lebih rapi, terang, dan nyaman dengan pilihan material tepat.", image: "/images/services/plafon/hero-plafon.webp", benefits: ["Ruang lebih clean", "Titik lampu tertata", "Opsi gypsum/PVC", "Cocok renovasi ringan"], deliverables: ["Cek tinggi ruang", "Rencana titik lampu", "Rekomendasi material", "Pemasangan plafon"] },
-  { title: "Kanopi", slug: "kanopi", summary: "Kanopi carport, teras, atau area belakang dengan struktur yang disesuaikan lokasi.", detail: "Pilihan konsep minimalis, industrial, atau fungsional untuk perlindungan panas dan hujan.", image: "/images/services/kanopi/hero-kanopi.webp", benefits: ["Area lebih teduh", "Struktur sesuai lokasi", "Pilihan atap fleksibel", "Melindungi carport/teras"], deliverables: ["Cek titik tumpuan", "Rekomendasi rangka", "Estimasi material", "Pemasangan struktur"] },
-  { title: "Partisi Ruangan", slug: "partisi-ruangan", summary: "Partisi aluminium, kaca, gypsum, atau custom untuk membagi ruang tanpa terasa sempit.", detail: "Ideal untuk ruang keluarga, kantor kecil, toko, dan area usaha.", image: "/images/services/partisi/hero-partisi.png", benefits: ["Zonasi ruang jelas", "Tidak selalu perlu dinding", "Privasi lebih baik", "Bisa semi-transparan"], deliverables: ["Analisis fungsi ruang", "Pilihan material", "Ukuran partisi", "Pemasangan akhir"] },
-  { title: "Interior Custom", slug: "interior-custom", summary: "Elemen interior custom untuk membuat rumah lebih tertata dan sesuai karakter penghuni.", detail: "Meliputi backdrop, kabinet, storage, rak, meja, dan detail finishing lain.", image: "/images/areas/living-room/hero-living-room.webp", benefits: ["Desain sesuai ruang", "Rumah terasa selesai", "Storage lebih efisien", "Visual lebih personal"], deliverables: ["Moodboard konsep", "Sketsa/visual", "Produksi custom", "Finishing dan instalasi"] },
-  { title: "Home Finishing", slug: "home-finishing", summary: "Paket finishing rumah agar detail akhir terlihat bersih, serasi, dan siap digunakan.", detail: "Membantu menyatukan pekerjaan plafon, aluminium, partisi, kanopi, dan interior.", image: "/images/services/home-finishing/hero-home-finishing.png", benefits: ["Detail akhir lebih rapi", "Pekerjaan lebih terkoordinasi", "Cocok rumah baru/renovasi", "Prioritas budget jelas"], deliverables: ["Checklist finishing", "Urutan pekerjaan", "Estimasi bertahap", "Serah terima"] },
-  { title: "Pagar / Gerbang", slug: "pagar-gerbang", summary: "Pagar dan gerbang custom untuk memperkuat fasad, keamanan, dan kesan pertama rumah.", detail: "Membantu memilih pola, rangka, bukaan, dan finishing yang sesuai ukuran depan rumah.", image: "/images/services/pagar-gerbang/hero-pagar-gerbang.png", benefits: ["Fasad lebih rapi", "Keamanan meningkat", "Ukuran custom", "Tahan cuaca"], deliverables: ["Ukur area depan", "Konsep pola", "Pilihan material", "Pemasangan gerbang"] },
-  { title: "Backdrop TV", slug: "backdrop-tv", summary: "Backdrop TV custom agar ruang keluarga punya titik fokus yang rapi dan modern.", detail: "Bisa dikombinasikan dengan kabinet, rak display, panel, dan jalur kabel tersembunyi.", image: "/images/areas/living-room/hero-living-room.webp", benefits: ["Ruang lebih fokus", "Kabel lebih rapi", "Bisa tambah storage", "Tampilan premium"], deliverables: ["Sketsa backdrop", "Layout panel", "Rekomendasi finishing", "Instalasi di lokasi"] },
-  { title: "Lemari Custom", slug: "lemari-custom", summary: "Lemari pakaian, lemari display, atau storage custom sesuai ukuran ruang.", detail: "Solusi untuk kamar, ruang keluarga, area usaha, dan rumah dengan ukuran tidak standar.", image: "/images/services/lemari/hero-lemari.png", benefits: ["Storage maksimal", "Sesuai ukuran ruang", "Model fleksibel", "Ruang lebih tertata"], deliverables: ["Ukur kebutuhan storage", "Layout sekat", "Pilihan finishing", "Produksi custom"] },
-  { title: "Rak / Kabinet", slug: "rak-kabinet", summary: "Rak dan kabinet custom untuk dapur, ruang keluarga, ruko, atau area display.", detail: "Dirancang untuk menyimpan barang lebih rapi tanpa mengganggu sirkulasi ruang.", image: "/images/services/rak-kabinet/hero-rak-kabinet.png", benefits: ["Barang tertata", "Display lebih rapi", "Ukuran fleksibel", "Cocok rumah/usaha"], deliverables: ["Desain rak", "Pembagian storage", "Pilihan material", "Pemasangan kabinet"] },
-  { title: "Renovasi Ringan", slug: "renovasi-ringan", summary: "Renovasi ringan untuk memperbaiki tampilan dan fungsi rumah tanpa bongkar besar.", detail: "Fokus pada pekerjaan finishing, plafon, partisi, kabinet, aluminium, dan detail interior.", image: "/images/services/home-finishing/hero-home-finishing.png", benefits: ["Tidak perlu bongkar besar", "Prioritas pekerjaan jelas", "Budget lebih terkendali", "Rumah terasa baru"], deliverables: ["Checklist kondisi", "Urutan renovasi", "Estimasi tahap", "Eksekusi finishing"] },
-  { title: "Plafon PVC", slug: "plafon-pvc", summary: "Plafon PVC untuk area yang butuh perawatan mudah dan tampilan praktis.", detail: "Cocok untuk area tertentu yang membutuhkan material ringan dan mudah dibersihkan.", image: "/images/services/plafon/hero-plafon.webp", benefits: ["Mudah dibersihkan", "Tahan lembap", "Pemasangan praktis", "Pilihan motif"], deliverables: ["Ukur plafon", "Pilih motif", "Rangka plafon", "Pemasangan PVC"] },
-  { title: "Plafon Gypsum", slug: "plafon-gypsum", summary: "Plafon gypsum untuk tampilan ruang yang lebih clean, halus, dan mudah dibentuk.", detail: "Ideal untuk ruang tamu, kamar, dan area yang ingin terlihat lebih modern.", image: "/images/services/plafon/hero-plafon.webp", benefits: ["Tampilan halus", "Bisa drop ceiling", "Lampu lebih tertata", "Kesan modern"], deliverables: ["Rencana plafon", "Titik lampu", "Rangka gypsum", "Finishing akhir"] },
+// ─── Kategori Layanan (untuk tampilan terorganisir) ───────────────────────────
+export const serviceCategories = [
+  {
+    id: "kayu",
+    label: "Kayu & Perabotan",
+    icon: "🪵",
+    description: "Dikerjakan oleh tim tukang kayu berpengalaman dengan material pilihan.",
+    services: ["kusen-kayu", "perabotan-custom", "lemari-custom", "backdrop-tv", "rak-kabinet"],
+  },
+  {
+    id: "aluminium",
+    label: "Aluminium & Kaca",
+    icon: "🔩",
+    description: "Fabrikasi aluminium presisi untuk eksterior dan interior rumah & ruko.",
+    services: ["kusen-aluminium", "pintu-jendela-aluminium", "partisi-ruangan", "pagar-gerbang", "kanopi"],
+  },
+  {
+    id: "finishing",
+    label: "HPL, PVC & Finishing",
+    icon: "🎨",
+    description: "Material finishing modern yang tahan lama, variatif, dan mudah dirawat.",
+    services: ["hpl-finishing", "plafon-gypsum-pvc", "plafon-pvc", "plafon-gypsum", "home-finishing"],
+  },
+  {
+    id: "interior",
+    label: "Interior & Kitchen",
+    icon: "🛋️",
+    description: "Desain dan instalasi interior custom menyesuaikan karakter dan fungsi ruang.",
+    services: ["kitchen-set-custom", "interior-custom", "backdrop-tv", "lemari-custom"],
+  },
+  {
+    id: "bangunan",
+    label: "Jasa Bangunan",
+    icon: "🧱",
+    description: "Pekerjaan sipil ringan hingga renovasi berat oleh tim tukang bangunan terlatih.",
+    services: ["jasa-bangunan", "renovasi-ringan", "renovasi-total"],
+  },
 ];
+
+export const services = [
+  // KAYU & PERABOTAN
+  { title: "Kusen Kayu", slug: "kusen-kayu", category: "kayu", summary: "Kusen pintu dan jendela dari kayu solid berkualitas tinggi, hangat dan kokoh.", detail: "Menggunakan kayu jati, mahoni, atau kayu lokal pilihan. Cocok untuk rumah bergaya tropis, klasik, dan modern-natural.", image: "/images/services/kusen-kayu/hero-kusen-kayu.png", benefits: ["Material alami & hangat", "Kekuatan tinggi", "Ukiran custom bisa", "Nilai estetika tinggi"], deliverables: ["Pilihan jenis kayu", "Pengukuran bukaan", "Produksi frame kayu", "Pemasangan & finishing"] },
+  { title: "Perabotan Rumah Custom", slug: "perabotan-custom", category: "kayu", summary: "Meja, kursi, bufet, meja makan, dan perabotan rumah custom sesuai desain Anda.", detail: "Dibuat oleh tukang kayu berpengalaman. Pilihan material: kayu solid, multipleks HPL, atau kombinasi kayu-besi.", image: "/images/services/perabotan/hero-perabotan.png", benefits: ["Ukuran persis sesuai ruang", "Material pilihan sendiri", "Desain unik personal", "Lebih awet dari produk pabrikan"], deliverables: ["Konsultasi desain", "Pilihan material & finishing", "Produksi custom", "Pengiriman & instalasi"] },
+  { title: "Lemari Custom", slug: "lemari-custom", category: "kayu", summary: "Lemari pakaian, lemari display, atau storage custom sesuai ukuran ruang.", detail: "Solusi untuk kamar, ruang keluarga, area usaha, dan rumah dengan ukuran tidak standar.", image: "/images/services/lemari/hero-lemari.png", benefits: ["Storage maksimal", "Sesuai ukuran ruang", "Model fleksibel", "Ruang lebih tertata"], deliverables: ["Ukur kebutuhan storage", "Layout sekat", "Pilihan finishing", "Produksi custom"] },
+  { title: "Rak / Kabinet", slug: "rak-kabinet", category: "kayu", summary: "Rak dan kabinet custom untuk dapur, ruang keluarga, ruko, atau area display.", detail: "Dirancang untuk menyimpan barang lebih rapi tanpa mengganggu sirkulasi ruang.", image: "/images/services/rak-kabinet/hero-rak-kabinet.png", benefits: ["Barang tertata", "Display lebih rapi", "Ukuran fleksibel", "Cocok rumah/usaha"], deliverables: ["Desain rak", "Pembagian storage", "Pilihan material", "Pemasangan kabinet"] },
+  { title: "Backdrop TV", slug: "backdrop-tv", category: "kayu", summary: "Backdrop TV custom agar ruang keluarga punya titik fokus yang rapi dan modern.", detail: "Bisa dikombinasikan dengan kabinet, rak display, panel, dan jalur kabel tersembunyi.", image: "/images/areas/living-room/hero-living-room.webp", benefits: ["Ruang lebih fokus", "Kabel lebih rapi", "Bisa tambah storage", "Tampilan premium"], deliverables: ["Sketsa backdrop", "Layout panel", "Rekomendasi finishing", "Instalasi di lokasi"] },
+
+  // ALUMINIUM & KACA
+  { title: "Kusen Aluminium", slug: "kusen-aluminium", category: "aluminium", summary: "Kusen rapi, ringan, tahan lembap, dan mudah dirawat untuk rumah maupun ruko.", detail: "Cocok untuk pintu, jendela, partisi kaca, dan area yang butuh finishing modern.", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp", benefits: ["Tahan lembap", "Perawatan mudah", "Ukuran custom", "Tampilan modern"], deliverables: ["Pengukuran bukaan", "Rekomendasi profil", "Pilihan kaca dan warna", "Pemasangan di lokasi"] },
+  { title: "Pintu & Jendela Aluminium", slug: "pintu-jendela-aluminium", category: "aluminium", summary: "Pembuatan pintu dan jendela aluminium custom sesuai ukuran bukaan di lokasi.", detail: "Termasuk konsultasi profil, warna, kaca, aksesoris, dan pola bukaan.", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp", benefits: ["Bukaan lebih presisi", "Cocok rumah/ruko", "Pilihan kaca fleksibel", "Finishing bersih"], deliverables: ["Survey bukaan", "Desain pola bukaan", "Produksi frame", "Instalasi dan pengecekan"] },
+  { title: "Partisi Ruangan", slug: "partisi-ruangan", category: "aluminium", summary: "Partisi aluminium, kaca, gypsum, atau custom untuk membagi ruang tanpa terasa sempit.", detail: "Ideal untuk ruang keluarga, kantor kecil, toko, dan area usaha.", image: "/images/services/partisi/hero-partisi.png", benefits: ["Zonasi ruang jelas", "Tidak selalu perlu dinding", "Privasi lebih baik", "Bisa semi-transparan"], deliverables: ["Analisis fungsi ruang", "Pilihan material", "Ukuran partisi", "Pemasangan akhir"] },
+  { title: "Kanopi", slug: "kanopi", category: "aluminium", summary: "Kanopi carport, teras, atau area belakang dengan struktur yang disesuaikan lokasi.", detail: "Pilihan konsep minimalis, industrial, atau fungsional untuk perlindungan panas dan hujan.", image: "/images/services/kanopi/hero-kanopi.webp", benefits: ["Area lebih teduh", "Struktur sesuai lokasi", "Pilihan atap fleksibel", "Melindungi carport/teras"], deliverables: ["Cek titik tumpuan", "Rekomendasi rangka", "Estimasi material", "Pemasangan struktur"] },
+  { title: "Pagar / Gerbang", slug: "pagar-gerbang", category: "aluminium", summary: "Pagar dan gerbang custom untuk memperkuat fasad, keamanan, dan kesan pertama rumah.", detail: "Membantu memilih pola, rangka, bukaan, dan finishing yang sesuai ukuran depan rumah.", image: "/images/services/pagar-gerbang/hero-pagar-gerbang.png", benefits: ["Fasad lebih rapi", "Keamanan meningkat", "Ukuran custom", "Tahan cuaca"], deliverables: ["Ukur area depan", "Konsep pola", "Pilihan material", "Pemasangan gerbang"] },
+
+  // HPL, PVC & FINISHING
+  { title: "HPL Finishing", slug: "hpl-finishing", category: "finishing", summary: "Finishing HPL (High Pressure Laminate) premium untuk kabinet, lemari, dan panel dinding.", detail: "HPL tersedia ratusan pilihan warna, motif, dan tekstur. Tahan goresan, lembap, dan mudah dibersihkan.", image: "/images/services/hpl-finishing/hero-hpl-finishing.png", benefits: ["Ratusan pilihan warna", "Tahan goresan & lembap", "Mudah dibersihkan", "Tampilan premium"], deliverables: ["Konsultasi warna & motif", "Pengukuran bidang", "Cutting & laminasi HPL", "Pemasangan presisi"] },
+  { title: "Plafon Gypsum/PVC", slug: "plafon-gypsum-pvc", category: "finishing", summary: "Plafon untuk ruang tamu, kamar, dapur, ruko, dan area renovasi ringan.", detail: "Membantu ruangan terlihat lebih rapi, terang, dan nyaman dengan pilihan material tepat.", image: "/images/services/plafon/hero-plafon.webp", benefits: ["Ruang lebih clean", "Titik lampu tertata", "Opsi gypsum/PVC", "Cocok renovasi ringan"], deliverables: ["Cek tinggi ruang", "Rencana titik lampu", "Rekomendasi material", "Pemasangan plafon"] },
+  { title: "Home Finishing", slug: "home-finishing", category: "finishing", summary: "Paket finishing rumah agar detail akhir terlihat bersih, serasi, dan siap digunakan.", detail: "Membantu menyatukan pekerjaan plafon, aluminium, partisi, kanopi, dan interior.", image: "/images/services/home-finishing/hero-home-finishing.png", benefits: ["Detail akhir lebih rapi", "Pekerjaan lebih terkoordinasi", "Cocok rumah baru/renovasi", "Prioritas budget jelas"], deliverables: ["Checklist finishing", "Urutan pekerjaan", "Estimasi bertahap", "Serah terima"] },
+
+  // INTERIOR & KITCHEN
+  { title: "Kitchen Set Custom", slug: "kitchen-set-custom", category: "interior", summary: "Kitchen set yang disesuaikan dengan alur masak, ukuran ruang, dan budget.", detail: "Mulai dari kabinet bawah, kabinet atas, top table, backsplash, hingga storage tambahan. Material: multipleks HPL, MDF, atau solid wood.", image: "/images/services/kitchen-set/hero-kitchen-set.webp", benefits: ["Storage lebih rapi", "Layout sesuai kebiasaan", "Material bisa disesuaikan", "Preview visual lebih jelas"], deliverables: ["Layout kabinet", "Rekomendasi material", "Visual 3D awal", "Produksi dan pemasangan"] },
+  { title: "Interior Custom", slug: "interior-custom", category: "interior", summary: "Elemen interior custom untuk membuat rumah lebih tertata dan sesuai karakter penghuni.", detail: "Meliputi backdrop, kabinet, storage, rak, meja, dan detail finishing lain.", image: "/images/areas/living-room/hero-living-room.webp", benefits: ["Desain sesuai ruang", "Rumah terasa selesai", "Storage lebih efisien", "Visual lebih personal"], deliverables: ["Moodboard konsep", "Sketsa/visual", "Produksi custom", "Finishing dan instalasi"] },
+
+  // JASA BANGUNAN
+  { title: "Jasa Bangunan & Renovasi", slug: "jasa-bangunan", category: "bangunan", summary: "Pekerjaan bangunan menyeluruh: dari pondasi, dinding, keramik, hingga renovasi total.", detail: "Tim tukang bangunan kami menangani pekerjaan sipil ringan hingga berat: pembuatan dinding, pemasangan keramik, plesteran, dan renovasi ruangan.", image: "/images/services/jasa-bangunan/hero-jasa-bangunan.png", benefits: ["Tim berpengalaman", "Koordinasi langsung", "Estimasi jelas & transparan", "Bisa paket full project"], deliverables: ["Survey lokasi", "RAB (Rencana Anggaran Biaya)", "Pekerjaan sipil terstruktur", "Serah terima bersih"] },
+  { title: "Renovasi Ringan", slug: "renovasi-ringan", category: "bangunan", summary: "Renovasi ringan untuk memperbaiki tampilan dan fungsi rumah tanpa bongkar besar.", detail: "Fokus pada pekerjaan finishing, plafon, partisi, kabinet, aluminium, dan detail interior.", image: "/images/services/home-finishing/hero-home-finishing.png", benefits: ["Tidak perlu bongkar besar", "Prioritas pekerjaan jelas", "Budget lebih terkendali", "Rumah terasa baru"], deliverables: ["Checklist kondisi", "Urutan renovasi", "Estimasi tahap", "Eksekusi finishing"] },
+  { title: "Renovasi Total", slug: "renovasi-total", category: "bangunan", summary: "Renovasi menyeluruh dari awal: bangunan, interior, finishing, dan semua detailnya.", detail: "Kami koordinasi semua tim: tukang bangunan, kayu, aluminium, PVC/HPL, kitchen set — dalam satu proyek terpadu.", image: "/images/services/jasa-bangunan/hero-jasa-bangunan.png", benefits: ["Satu kontraktor semua tim", "Koordinasi lebih mudah", "Tidak perlu cari vendor sendiri", "Progres termonitor"], deliverables: ["Desain konsep", "RAB lengkap", "Pekerjaan multi-tim terpadu", "Finishing & serah terima"] },
+  { title: "Plafon PVC", slug: "plafon-pvc", category: "finishing", summary: "Plafon PVC untuk area yang butuh perawatan mudah dan tampilan praktis.", detail: "Cocok untuk area tertentu yang membutuhkan material ringan dan mudah dibersihkan.", image: "/images/services/plafon/hero-plafon.webp", benefits: ["Mudah dibersihkan", "Tahan lembap", "Pemasangan praktis", "Pilihan motif"], deliverables: ["Ukur plafon", "Pilih motif", "Rangka plafon", "Pemasangan PVC"] },
+  { title: "Plafon Gypsum", slug: "plafon-gypsum", category: "finishing", summary: "Plafon gypsum untuk tampilan ruang yang lebih clean, halus, dan mudah dibentuk.", detail: "Ideal untuk ruang tamu, kamar, dan area yang ingin terlihat lebih modern.", image: "/images/services/plafon/hero-plafon.webp", benefits: ["Tampilan halus", "Bisa drop ceiling", "Lampu lebih tertata", "Kesan modern"], deliverables: ["Rencana plafon", "Titik lampu", "Rangka gypsum", "Finishing akhir"] },
+];
+
+
 
 export const areas = [
   { title: "Gerbang & Pagar", slug: "gerbang-pagar", summary: "Area depan yang membentuk kesan pertama rumah and butuh material tahan cuaca.", image: "/images/areas/gerbang-pagar/hero-gerbang-pagar.png", recommended: ["Kanopi", "Aluminium", "Home Finishing"] },
@@ -36,19 +91,23 @@ export const areas = [
   { title: "Taman Depan", slug: "taman-depan", summary: "Area hijau depan rumah yang memperkuat fasad dan kenyamanan visual.", image: "/images/areas/taman-depan/hero-taman-depan.webp", recommended: ["Kanopi", "Pagar / Gerbang", "Home Finishing"] },
 ];
 
-export const portfolioCategories = ["Aluminium", "Kitchen Set", "Plafon", "Kanopi", "Partisi", "Interior", "Renovasi"];
+export const portfolioCategories = ["Semua", "Kayu & Perabotan", "Aluminium", "Kitchen Set", "HPL & Finishing", "Plafon", "Kanopi", "Partisi", "Interior", "Bangunan"];
 
 export const portfolio = [
-  { title: "Kitchen Set Minimalis Sidareja", category: "Kitchen Set", slug: "kitchen-set", location: "Sidareja", material: "Kabinet custom, top table, backsplash", duration: "7-14 hari", image: "/images/services/kitchen-set/hero-kitchen-set.webp" },
-  { title: "Kusen Aluminium Rumah Tegalsari", category: "Aluminium", slug: "aluminium", location: "Tegalsari", material: "Profil aluminium, kaca bening", duration: "3-7 hari", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp" },
-  { title: "Plafon Ruang Tamu", category: "Plafon", slug: "plafon", location: "Sidareja", material: "Gypsum/PVC sesuai kebutuhan", duration: "2-5 hari", image: "/images/services/plafon/hero-plafon.webp" },
-  { title: "Kanopi Carport Cilacap", category: "Kanopi", slug: "kanopi", location: "Cilacap", material: "Rangka custom dan atap pilihan", duration: "3-6 hari", image: "/images/services/kanopi/hero-kanopi.webp" },
-  { title: "Partisi Kaca Area Usaha", category: "Partisi", slug: "partisi", location: "Cipari", material: "Aluminium dan kaca", duration: "3-5 hari", image: "/images/services/partisi/hero-partisi.png" },
-  { title: "Backdrop Interior Ruang Keluarga", category: "Interior", slug: "interior", location: "Kedungreja", material: "Panel custom dan storage", duration: "5-10 hari", image: "/images/areas/living-room/hero-living-room.webp" },
-  { title: "Gerbang Minimalis Rumah Baru", category: "Aluminium", slug: "gerbang-minimalis", location: "Tegalsari", material: "Rangka custom, finishing bronze graphite", duration: "4-8 hari", image: "/images/services/pagar-gerbang/hero-pagar-gerbang.png" },
-  { title: "Lemari Custom Master Room", category: "Interior", slug: "lemari-master-room", location: "Sidareja", material: "Kabinet custom, rak pakaian, finishing warm wood", duration: "7-12 hari", image: "/images/services/lemari/hero-lemari.png" },
-  { title: "Rak Display Ruko Lokal", category: "Interior", slug: "rak-display-ruko", location: "Cipari", material: "Rak display, kabinet bawah, panel backdrop", duration: "5-9 hari", image: "/images/areas/ruko-usaha/hero-ruko-usaha.png" },
-  { title: "Renovasi Ringan Teras Depan", category: "Kanopi", slug: "renovasi-teras", location: "Cilacap", material: "Kanopi, plafon teras, finishing dinding", duration: "6-10 hari", image: "/images/services/home-finishing/hero-home-finishing.png" },
+  { title: "Kitchen Set Minimalis Sidareja", category: "Kitchen Set", slug: "kitchen-set", location: "Sidareja", material: "Kabinet custom multipleks HPL, top table granit, backsplash", duration: "7-14 hari", image: "/images/services/kitchen-set/hero-kitchen-set.webp" },
+  { title: "Kusen Aluminium Rumah Tegalsari", category: "Aluminium", slug: "aluminium", location: "Tegalsari", material: "Profil aluminium graphite, kaca bening 5mm", duration: "3-7 hari", image: "/images/services/kusen-aluminium/hero-kusen-aluminium.webp" },
+  { title: "Plafon Drop Ceiling Ruang Tamu", category: "Plafon", slug: "plafon", location: "Sidareja", material: "Gypsum rangka hollow, finishing cat putih", duration: "2-5 hari", image: "/images/services/plafon/hero-plafon.webp" },
+  { title: "Kanopi Carport Tempered Glass", category: "Kanopi", slug: "kanopi", location: "Cilacap", material: "Rangka besi hollow, atap tempered glass 8mm", duration: "3-6 hari", image: "/images/services/kanopi/hero-kanopi.webp" },
+  { title: "Partisi Kaca Area Usaha Cipari", category: "Partisi", slug: "partisi", location: "Cipari", material: "Frame aluminium silver, kaca 6mm sandblast", duration: "3-5 hari", image: "/images/services/partisi/hero-partisi.png" },
+  { title: "Backdrop TV Panel Kayu Ruang Keluarga", category: "Interior", slug: "interior", location: "Kedungreja", material: "Panel HPL motif kayu, kabinet bawah, jalur LED", duration: "5-10 hari", image: "/images/areas/living-room/hero-living-room.webp" },
+  { title: "Gerbang Minimalis Besi Hollow", category: "Aluminium", slug: "gerbang-minimalis", location: "Tegalsari", material: "Rangka besi hollow, finishing cat bronze graphite", duration: "4-8 hari", image: "/images/services/pagar-gerbang/hero-pagar-gerbang.png" },
+  { title: "Lemari HPL Custom Master Room", category: "HPL & Finishing", slug: "lemari-master-room", location: "Sidareja", material: "Multipleks HPL motif kayu warm oak, soft-close", duration: "7-12 hari", image: "/images/services/lemari/hero-lemari.png" },
+  { title: "Kusen Kayu Jati Rumah Klasik", category: "Kayu & Perabotan", slug: "kusen-kayu-jati", location: "Sidareja", material: "Kayu jati solid, profil ukir minimalis, finishing politur", duration: "10-18 hari", image: "/images/services/kusen-kayu/hero-kusen-kayu.png" },
+  { title: "Perabotan Ruang Makan Custom", category: "Kayu & Perabotan", slug: "perabotan-ruang-makan", location: "Cilacap", material: "Meja makan kayu solid, kursi custom, bufet", duration: "14-21 hari", image: "/images/services/perabotan/hero-perabotan.png" },
+  { title: "Finishing HPL Kitchen Set Ruko", category: "HPL & Finishing", slug: "hpl-kitchen-ruko", location: "Cipari", material: "HPL motif marble, kabinet atas-bawah, wastafel", duration: "5-9 hari", image: "/images/services/hpl-finishing/hero-hpl-finishing.png" },
+  { title: "Renovasi Kamar Mandi + Keramik", category: "Bangunan", slug: "renovasi-kamar-mandi", location: "Kedungreja", material: "Pasang keramik 60x60, dinding mozaik, shower area", duration: "5-8 hari", image: "/images/services/jasa-bangunan/hero-jasa-bangunan.png" },
+  { title: "Renovasi Teras & Kanopi Minimalis", category: "Kanopi", slug: "renovasi-teras", location: "Cilacap", material: "Kanopi atap alderon, plafon teras, cat ulang", duration: "6-10 hari", image: "/images/services/home-finishing/hero-home-finishing.png" },
+  { title: "Rak Display Ruko Produk Lokal", category: "Interior", slug: "rak-display-ruko", location: "Cipari", material: "Rak display HPL, kabinet bawah, backdrop brand", duration: "5-9 hari", image: "/images/areas/ruko-usaha/hero-ruko-usaha.png" },
 ];
 
 export const designStages = [
@@ -58,19 +117,25 @@ export const designStages = [
   { title: "Preview 4D", label: "4D", image: "/images/visual-4d.svg", description: "Simulasi konsep bertahap untuk menjelaskan urutan pekerjaan, progres, dan pengalaman ruang." },
 ];
 
-export const process = ["Konsultasi", "Kirim foto/ukuran", "Survei lokasi", "Penawaran harga", "Produksi", "Pemasangan", "Serah terima"];
+export const process = ["Konsultasi & Ceritakan Kebutuhan", "Kirim Foto & Ukuran Lokasi", "Survei Lokasi", "RAB & Penawaran Harga", "Koordinasi Tim Spesialis", "Produksi & Fabrikasi", "Pemasangan di Lokasi", "Finishing & Serah Terima"];
 
 export const testimonials = [
-  { quote: "Komunikasi jelas dari awal, pilihan bahan dijelaskan, dan hasilnya rapi.", name: "Customer Sidareja" },
-  { quote: "Estimasi pekerjaan mudah dipahami dan tim responsif saat konsultasi.", name: "Customer Tegalsari" },
-  { quote: "Rumah jadi terasa lebih tertata setelah kitchen set dan plafon selesai.", name: "Customer Cilacap" },
+  { quote: "Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Caturaya Living, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.", name: "Bapak Heri – Sidareja" },
+  { quote: "Kitchen set kayu HPL-nya bagus banget, beda dari toko biasa. Finishing rapi dan ukurannya pas banget dengan dapur saya yang tidak standar.", name: "Ibu Sari – Tegalsari" },
+  { quote: "Renovasi kamar mandi plus pasang kusen aluminium baru. Komunikasi tim responsif, estimasi harga jelas sejak awal, tidak ada biaya kejutan.", name: "Bapak Doni – Cilacap" },
+  { quote: "Perabotan custom ruang tamu yang saya minta sesuai ekspektasi. Kayu solid asli, finishing halus, dan pengiriman tepat waktu.", name: "Ibu Wati – Kedungreja" },
+  { quote: "Satu nomor WhatsApp sudah bisa urus semua kebutuhan renovasi. Gak perlu repot cari tukang satu-satu. Sangat membantu!", name: "Bapak Eko – Cipari" },
 ];
 
 export const faqs = [
-  { question: "Apakah bisa survei lokasi dulu?", answer: "Bisa. Untuk pekerjaan yang perlu ukuran presisi, survei lokasi membantu estimasi lebih akurat." },
-  { question: "Apakah melayani luar Sidareja?", answer: "Ya, area utama Sidareja, Cilacap, dan sekitarnya. Lokasi lebih jauh bisa dikonsultasikan lebih dulu." },
-  { question: "Apakah bisa mulai dari foto referensi?", answer: "Bisa. Kirim foto referensi, ukuran perkiraan, dan foto kondisi lokasi lewat WhatsApp." },
-  { question: "Apakah harga langsung pasti?", answer: "Harga awal bisa diestimasi, tetapi harga final bergantung ukuran, material, detail model, dan kondisi lokasi." },
+  { question: "Apa itu full kontraktor? Apakah Caturaya Living bisa mengerjakan semua jenis proyek?", answer: "Ya. Sebagai full kontraktor, kami mengelola proyek dari awal sampai selesai — termasuk koordinasi tim tukang kayu, aluminium, PVC/HPL, dan tukang bangunan. Anda cukup satu kali konsultasi untuk semua kebutuhan." },
+  { question: "Apakah melayani kusen kayu, bukan hanya aluminium?", answer: "Tentu. Kami melayani kusen dari kayu solid (jati, mahoni, kayu lokal) maupun aluminium sesuai kebutuhan dan budget Anda." },
+  { question: "Bisakah memesan perabotan rumah custom seperti meja, kursi, atau bufet?", answer: "Bisa. Tim tukang kayu kami mengerjakan berbagai perabotan custom: meja makan, kursi, bufet, rak buku, dan furniture lain sesuai desain dan ukuran ruang Anda." },
+  { question: "Apa itu HPL dan kenapa direkomendasikan untuk finishing?", answer: "HPL (High Pressure Laminate) adalah lapisan finishing modern yang kuat, tahan goresan, tahan lembap, dan tersedia ratusan pilihan motif dan warna. Cocok untuk kitchen set, lemari, dan kabinet." },
+  { question: "Apakah bisa menangani renovasi bangunan seperti pasang keramik atau dinding?", answer: "Bisa. Kami memiliki tim tukang bangunan untuk pekerjaan sipil ringan hingga berat: pemasangan keramik, plesteran, pembuatan dinding, dan renovasi ruangan secara menyeluruh." },
+  { question: "Apakah bisa survei lokasi dulu sebelum estimasi?", answer: "Bisa dan sangat disarankan. Survei lokasi membantu kami mengukur langsung, memahami kondisi, dan memberikan estimasi harga yang lebih akurat." },
+  { question: "Bagaimana cara memulai proyek dengan Caturaya Living?", answer: "Mudah — hubungi kami lewat WhatsApp, ceritakan kebutuhan Anda, kirim foto lokasi jika ada, lalu kami atur jadwal konsultasi atau survei. Tidak ada biaya untuk konsultasi awal." },
+  { question: "Apakah melayani area luar Sidareja?", answer: "Ya. Area utama kami adalah Sidareja, Cilacap, Tegalsari, Cipari, dan Kedungreja. Lokasi lebih jauh bisa dikonsultasikan terlebih dahulu tergantung jenis dan skala pekerjaan." },
 ];
 
 export const articles = [

@@ -1,3 +1,9 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME PAGE MODULE CSS — Caturaya Living
+   Full Contractor Premium Styling
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero ── */
 .hero {
   position: relative;
   display: grid;
@@ -19,7 +25,7 @@
 
 .hero h1 {
   font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(34px, 4.5vw, 60px);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -28,7 +34,7 @@
 }
 
 .hero .lead {
-  font-size: clamp(16px, 2.5vw, 18px);
+  font-size: clamp(15px, 2.2vw, 17px);
   line-height: 1.7;
   color: var(--color-neutral);
   margin-bottom: 36px;
@@ -39,8 +45,28 @@
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 28px;
 }
 
+/* Service tag pills below hero CTA */
+.heroServiceTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.serviceTag {
+  padding: 5px 14px;
+  background: var(--color-accent-light);
+  border: 1px solid rgba(168, 117, 61, 0.2);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent-hover);
+  white-space: nowrap;
+}
+
+/* Buttons */
 .primary,
 .secondary {
   display: inline-flex;
@@ -82,7 +108,7 @@
   transform: translateY(-2px);
 }
 
-/* Hero visual panel - Modern collage of premium photography instead of CSS lines */
+/* Hero visual panel — premium collage */
 .heroPanel {
   position: relative;
   display: grid;
@@ -134,17 +160,7 @@
   transform: scale(1.05);
 }
 
-/* Category Grid (prominent links under hero) */
-.categoryGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 40px clamp(16px, 5vw, 64px);
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* Running Advantages Strip (Clean, high-end styling) */
+/* ── Keunggulan Strip ── */
 .strip {
   display: flex;
   justify-content: space-around;
@@ -158,7 +174,7 @@
 
 .strip span {
   font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(13px, 1.8vw, 16px);
   font-weight: 500;
   letter-spacing: 0.05em;
   display: flex;
@@ -171,7 +187,7 @@
   color: var(--color-accent);
 }
 
-/* Main layouts sections */
+/* ── Section Layout ── */
 .section {
   padding: 80px clamp(16px, 5vw, 64px);
   width: 100%;
@@ -215,7 +231,7 @@
   border-color: var(--color-accent-hover);
 }
 
-/* Dark section theme (Area Rumah) */
+/* ── Dark Section ── */
 .dark {
   background: var(--color-primary);
   color: #FFFFFF;
@@ -236,7 +252,7 @@
   border-color: var(--color-accent);
 }
 
-/* Interactive service area list button maps */
+/* ── Area Rumah List ── */
 .areaList {
   display: flex;
   flex-wrap: wrap;
@@ -263,7 +279,79 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Timelines / Workflow Steps */
+/* ── Tim Spesialis Section ── */
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1280px;
+}
+
+.teamImageCol {
+  position: relative;
+}
+
+.teamImageWrapper {
+  position: relative;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.teamContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.teamSpecialistGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.specialistCard {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.specialistCard:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.specialistIcon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.specialistCard strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.specialistCard p {
+  font-size: 12px;
+  color: var(--color-neutral);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Alur Kerja / Process ── */
 .process {
   padding: 80px clamp(16px, 5vw, 64px);
   background: var(--color-bg-alt);
@@ -278,15 +366,15 @@
   font-weight: 700;
   color: var(--color-neutral-dark);
   margin-top: 8px;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
 }
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 36px auto 0;
   position: relative;
 }
 
@@ -295,7 +383,7 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--color-neutral-dark);
   position: relative;
@@ -305,17 +393,17 @@
   content: "";
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background: var(--color-accent-light);
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
   border-radius: 50%;
   font-family: var(--font-display), Georgia, serif;
   font-weight: 700;
+  font-size: 15px;
 }
 
-/* Numbering process steps */
 .steps span:nth-child(1)::before { content: "1"; }
 .steps span:nth-child(2)::before { content: "2"; }
 .steps span:nth-child(3)::before { content: "3"; }
@@ -323,6 +411,7 @@
 .steps span:nth-child(5)::before { content: "5"; }
 .steps span:nth-child(6)::before { content: "6"; }
 .steps span:nth-child(7)::before { content: "7"; }
+.steps span:nth-child(8)::before { content: "8"; }
 
 .steps span:hover::before {
   background: var(--color-accent);
@@ -332,12 +421,12 @@
   transition: var(--transition-base);
 }
 
-/* FAQ Details tags styling */
+/* ── FAQ ── */
 .faqList {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -351,7 +440,7 @@
 
 .faqList summary {
   font-family: var(--font-sans), sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--color-neutral-dark);
   cursor: pointer;
@@ -360,6 +449,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .faqList summary::after {
@@ -368,6 +458,7 @@
   font-weight: 400;
   color: var(--color-accent);
   transition: var(--transition-base);
+  flex-shrink: 0;
 }
 
 .faqList details[open] {
@@ -384,33 +475,27 @@
 
 .faqList details[open] summary::after {
   content: "−";
-  transform: rotate(180deg);
 }
 
 .faqList details p {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--color-neutral);
   animation: slideDownFAQ 0.2s ease;
 }
 
 @keyframes slideDownFAQ {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Contacts layout */
+/* ── Contact ── */
 .contact {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 40px;
   align-items: center;
+  padding: 80px clamp(16px, 5vw, 64px);
   background: var(--color-bg-alt);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -466,7 +551,23 @@
   margin-top: 20px;
 }
 
-/* Responsiveness breakpoints */
+/* Eyebrow utility */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Page wrapper */
+.page {
+  overflow-x: hidden;
+}
+
+/* ── Responsive ── */
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
@@ -477,10 +578,6 @@
   .heroPanel {
     height: 380px;
   }
-  .categoryGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
   .sectionHead {
     flex-direction: column;
     align-items: flex-start;
@@ -490,6 +587,13 @@
   .contact {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .teamImageWrapper {
+    height: 320px;
   }
 }
 
@@ -516,5 +620,11 @@
   }
   .contactCard {
     padding: 24px;
+  }
+  .teamSpecialistGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroServiceTags {
+    gap: 6px;
   }
 }

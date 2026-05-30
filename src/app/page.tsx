@@ -1,4 +1,4 @@
-import { designStages, process } from "@/lib/content";
+import { designStages, process, serviceCategories } from "@/lib/content";
 import { getAreas, getArticles, getFaqs, getPortfolio, getServices, getTestimonials } from "@/lib/cms";
 import { site, whatsappUrl } from "@/lib/site";
 import Image from "next/image";
@@ -7,6 +7,18 @@ import styles from "./styles/home.module.css";
 import cardStyles from "@/components/styles/cards.module.css";
 
 const wa = whatsappUrl();
+
+export const metadata = {
+  title: "Caturaya Living | Full Kontraktor Properti – Interior, Eksterior & Bangunan Sidareja",
+  description: "Caturaya Living adalah kontraktor full-service di Sidareja, Cilacap. Melayani kusen kayu & aluminium, perabotan custom, kitchen set, HPL finishing, plafon, kanopi, jasa bangunan, dan renovasi total.",
+  openGraph: {
+    title: "Caturaya Living | Full Kontraktor Properti Sidareja",
+    description: "Satu koordinator untuk semua kebutuhan properti Anda: interior, eksterior, material kayu, aluminium, HPL, dan jasa bangunan.",
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+  },
+};
 
 export default async function Home() {
   const [articles, services, portfolio, areas, faqs, testimonials] = await Promise.all([
@@ -20,13 +32,25 @@ export default async function Home() {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "GeneralContractor",
     name: site.name,
     url: site.url,
     telephone: `+${site.phonePrimary}`,
     address: site.address,
     areaServed: ["Sidareja", "Cilacap", "Tegalsari", "Cipari", "Kedungreja"],
     description: site.tagline,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Layanan Properti",
+      itemListElement: serviceCategories.map(cat => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: cat.label,
+          description: cat.description,
+        }
+      }))
+    }
   };
   
   const faqSchema = {
@@ -47,15 +71,15 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* Hero Section */}
+      {/* ── Hero Section ── */}
       <section id="top" className={styles.hero}>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow} style={{ color: "var(--color-accent)", fontSize: "11px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "12px" }}>
-            Sidareja, Cilacap dan Sekitarnya
+            Full Kontraktor Properti · Sidareja, Cilacap & Sekitarnya
           </p>
-          <h1>Solusi Interior, Aluminium & Fasad Rumah Premium di Sidareja</h1>
+          <h1>Satu Kontraktor untuk Semua Kebutuhan Properti Anda</h1>
           <p className={styles.lead}>
-            Caturaya Living membantu merapikan rumah Anda secara presisi. Mulai dari pengerjaan kusen, pintu, jendela aluminium, kitchen set custom mewah, plafon drop ceiling, kanopi kaca tempered, gerbang pagar minimalis, hingga interior custom dengan estimasi biaya transparan.
+            Dari kusen kayu & aluminium, perabotan rumah custom, kitchen set, HPL finishing, plafon, kanopi, hingga jasa bangunan — Caturaya Living koordinasikan semua tim spesialis untuk Anda, tanpa perlu cari banyak tukang.
           </p>
           <div className={styles.heroActions}>
             <a 
@@ -63,22 +87,29 @@ export default async function Home() {
               href={wa} 
               target="_blank" 
               rel="noopener noreferrer"
-              aria-label="Konsultasi cepat via WhatsApp"
+              aria-label="Konsultasi gratis via WhatsApp"
             >
-              Konsultasi via WhatsApp
+              Konsultasi Gratis via WhatsApp
             </a>
             <Link className={styles.secondary} href="/portofolio" aria-label="Lihat portofolio proyek Caturaya Living">
               Lihat Portofolio
             </Link>
           </div>
+          
+          {/* Cakupan Layanan Singkat */}
+          <div className={styles.heroServiceTags}>
+            {["Kusen Kayu & Aluminium", "Kitchen Set", "Perabotan Custom", "HPL Finishing", "Plafon", "Kanopi", "Jasa Bangunan", "Renovasi Total"].map(tag => (
+              <span key={tag} className={styles.serviceTag}>{tag}</span>
+            ))}
+          </div>
         </div>
 
-        {/* Premium Photography Collage instead of CSS lines */}
+        {/* Premium Photography Collage */}
         <div className={styles.heroPanel} aria-label="Kolase karya arsitektural interior dan eksterior Caturaya Living">
           <div className={styles.heroImageWrapper}>
             <Image 
               src="/images/home/hero-home-interior.webp" 
-              alt="Fasad arsitektural aluminium modern minimalis menyatu dengan desain interior kayu Caturaya Living" 
+              alt="Fasad arsitektural premium menyatu dengan desain interior custom Caturaya Living" 
               fill 
               sizes="(max-width: 980px) 100vw, 50vw"
               priority
@@ -86,8 +117,8 @@ export default async function Home() {
           </div>
           <div className={styles.heroImageWrapper}>
             <Image 
-              src="/images/areas/teras-depan/hero-teras-depan.webp" 
-              alt="Desain teras depan minimalis dan fasad outdoor karya Caturaya Living" 
+              src="/images/services/kusen-kayu/hero-kusen-kayu.png" 
+              alt="Kusen kayu solid jati custom berkualitas tinggi Caturaya Living" 
               fill 
               sizes="(max-width: 980px) 50vw, 25vw"
             />
@@ -95,7 +126,7 @@ export default async function Home() {
           <div className={styles.heroImageWrapper}>
             <Image 
               src="/images/services/kitchen-set/hero-kitchen-set.webp" 
-              alt="Kitchen set custom modern mewah kombinasi kayu arsitektural hangat" 
+              alt="Kitchen set custom modern mewah kombinasi kayu dan HPL" 
               fill 
               sizes="(max-width: 980px) 50vw, 25vw"
             />
@@ -103,39 +134,113 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Prominent Category Cards */}
-      <section className={styles.categoryGrid} aria-label="Kategori inspirasi ruang">
-        {[
-          ["Living Room", "Desain backdrop TV arsitektural, lemari custom, partisi, dan finishing ruang keluarga hangat.", "01"],
-          ["Kitchen", "Dapur idaman dengan kitchen set custom modern yang mengikuti kepraktisan alur masak harian.", "02"],
-          ["Exterior & Fasad", "Kusen aluminium presisi, kanopi carport tempered glass, gerbang dan pagar eksterior minimalis.", "03"],
-        ].map(([title, copy, num]) => (
-          <article className={cardStyles.categoryCard} key={title}>
-            <div className={cardStyles.categoryImage}>{num}</div>
-            <div>
-              <h2>{title}</h2>
-              <p>{copy}</p>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      {/* Keunggulan Strip */}
+      {/* ── Keunggulan Strip ── */}
       <section className={styles.strip} aria-label="Keunggulan singkat">
-        <span>Survei Lokasi Cepat</span>
-        <span>Estimasi Biaya Jelas</span>
+        <span>Satu Kontraktor, Semua Tim</span>
+        <span>Survei Lokasi Gratis</span>
+        <span>RAB Transparan</span>
         <span>Custom Sesuai Ukuran</span>
         <span>WhatsApp Fast Response</span>
       </section>
 
-      {/* Layanan Section */}
-      <section className={styles.section} id="layanan">
+      {/* ── Why Full Contractor Section ── */}
+      <section className={styles.section} id="kenapa-kami">
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
-            <p className={styles.eyebrow}>Layanan Utama</p>
-            <h2>Kebutuhan Rumah dari Fasad Depan hingga Dapur Belakang</h2>
+            <p className={styles.eyebrow}>Mengapa Caturaya Living?</p>
+            <h2>Satu Pintu untuk Semua Kebutuhan — dari Bangunan hingga Interior</h2>
+          </div>
+        </div>
+        <div className={cardStyles.whyGrid}>
+          {[
+            { icon: "🔑", title: "Satu Koordinator, Banyak Tim", desc: "Tidak perlu repot cari tukang kayu, aluminium, PVC, atau tukang bangunan sendiri. Kami koordinasikan semua." },
+            { icon: "📋", title: "RAB & Estimasi Transparan", desc: "Rencana Anggaran Biaya yang jelas sejak awal. Tidak ada biaya kejutan di tengah proyek." },
+            { icon: "🛠️", title: "Tim Spesialis Berpengalaman", desc: "Setiap jenis pekerjaan dikerjakan oleh tim ahli di bidangnya: kayu, aluminium, HPL, finishing, bangunan." },
+            { icon: "📍", title: "Survei Lokasi Langsung", desc: "Tim kami datang ke lokasi untuk mengukur, memahami kondisi, dan memberikan rekomendasi terbaik." },
+            { icon: "⚙️", title: "Custom dari Nol", desc: "Semua dikerjakan custom sesuai ukuran, desain, dan kebutuhan spesifik rumah atau properti Anda." },
+            { icon: "✅", title: "Garansi Pengerjaan", desc: "Kami bertanggung jawab penuh atas kualitas dan kerapian pekerjaan, sampai Anda puas." },
+          ].map((item) => (
+            <div className={cardStyles.whyCard} key={item.title}>
+              <span className={cardStyles.whyIcon}>{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Kategori Layanan ── */}
+      <section className={`${styles.section} ${styles.dark}`} id="layanan">
+        <div className={styles.sectionHead}>
+          <div className={styles.sectionHeadContent}>
+            <p className={styles.eyebrow} style={{ color: "var(--color-accent)" }}>Layanan Lengkap</p>
+            <h2>Semua Bidang Properti — Interior, Eksterior & Bangunan</h2>
           </div>
           <Link href="/layanan" aria-label="Lihat seluruh daftar layanan Caturaya Living">Lihat Semua Layanan</Link>
+        </div>
+
+        <div className={cardStyles.categoryTabGrid}>
+          {serviceCategories.map((cat) => (
+            <article className={cardStyles.categoryTabCard} key={cat.id}>
+              <span className={cardStyles.categoryIcon}>{cat.icon}</span>
+              <h3>{cat.label}</h3>
+              <p>{cat.description}</p>
+              <Link href={`/layanan?kategori=${cat.id}`} className={cardStyles.categoryLink} aria-label={`Lihat layanan ${cat.label}`}>
+                Lihat Layanan →
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Tim Spesialis ── */}
+      <section className={styles.section} id="tim">
+        <div className={styles.sectionHead}>
+          <div className={styles.sectionHeadContent}>
+            <p className={styles.eyebrow}>Jaringan Tim Mitra</p>
+            <h2>Tim Spesialis di Balik Setiap Proyek Caturaya Living</h2>
+          </div>
+          <Link href="/tentang-kami" aria-label="Pelajari lebih lanjut tentang tim Caturaya Living">Tentang Kami</Link>
+        </div>
+
+        <div className={styles.teamGrid}>
+          <div className={styles.teamImageCol}>
+            <div className={styles.teamImageWrapper}>
+              <Image
+                src="/images/home/tim-kontraktor.png"
+                alt="Tim spesialis Caturaya Living — tukang kayu, aluminium, HPL, dan tukang bangunan"
+                fill
+                sizes="(max-width: 980px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+          <div className={styles.teamContent}>
+            <p style={{ color: "var(--color-neutral)", marginBottom: "32px", lineHeight: "1.7" }}>
+              Caturaya Living bukan sekadar satu tukang. Di balik setiap proyek, ada jaringan tim spesialis yang bekerja sesuai keahlian masing-masing — dikoordinasikan langsung oleh kami agar proyek Anda selesai rapi, tepat waktu, dan sesuai ekspektasi.
+            </p>
+            <div className={styles.teamSpecialistGrid}>
+              {site.teamSpecialists.map((spec) => (
+                <div className={styles.specialistCard} key={spec.role}>
+                  <span className={styles.specialistIcon}>{spec.icon}</span>
+                  <div>
+                    <strong>{spec.role}</strong>
+                    <p>{spec.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Layanan Unggulan (daftar cepat) ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <div className={styles.sectionHeadContent}>
+            <p className={styles.eyebrow}>Layanan Populer</p>
+            <h2>Yang Paling Sering Kami Kerjakan untuk Customer</h2>
+          </div>
+          <Link href="/layanan" aria-label="Lihat seluruh daftar layanan Caturaya Living">Lihat Semua</Link>
         </div>
         
         <div className={cardStyles.grid}>
@@ -157,14 +262,14 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Area Rumah Section */}
+      {/* ── Area Rumah ── */}
       <section className={`${styles.section} ${styles.dark}`} id="area">
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
             <p className={styles.eyebrow} style={{ color: "var(--color-accent)" }}>Area Rumah</p>
             <h2>Pilih Bagian Rumah yang Ingin Dibuat Lebih Rapi & Fungsional</h2>
           </div>
-          <Link href="/area-rumah" aria-label="Eksplorasi area ruangan rumah Caturaya Living">Eksplor Area Rumah</Link>
+          <Link href="/area-rumah" aria-label="Eksplorasi area ruangan rumah Caturaya Living">Eksplorasi Area Rumah</Link>
         </div>
         
         <div className={styles.areaList}>
@@ -176,12 +281,12 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Portofolio Section */}
+      {/* ── Portofolio ── */}
       <section className={styles.section} id="portofolio">
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
             <p className={styles.eyebrow}>Portofolio Proyek</p>
-            <h2>Hasil Pengerjaan Interior & Eksterior di Area Cilacap</h2>
+            <h2>Hasil Pengerjaan Interior, Eksterior & Bangunan di Area Cilacap</h2>
           </div>
           <Link href="/portofolio" aria-label="Lihat seluruh studi kasus proyek Caturaya Living">Lihat Portofolio</Link>
         </div>
@@ -206,7 +311,19 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Visualizer Planner Intro Section */}
+      {/* ── Alur Kerja Section ── */}
+      <section className={styles.process}>
+        <p className={styles.eyebrow}>Alur Kerja Kami</p>
+        <h2>Proses Terstruktur — dari Konsultasi hingga Serah Terima</h2>
+        <p style={{ color: "var(--color-neutral)", fontSize: "14px", maxWidth: "600px", margin: "0 auto 36px", textAlign: "center" }}>
+          Setiap proyek dikelola dengan alur yang jelas agar Anda selalu tahu progres pengerjaan dan tidak ada kebingungan di tengah jalan.
+        </p>
+        <div className={styles.steps}>
+          {process.map((step) => <span key={step}>{step}</span>)}
+        </div>
+      </section>
+
+      {/* ── Visualizer Planner ── */}
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
@@ -230,40 +347,31 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Alur Kerja Section */}
-      <section className={styles.process}>
-        <p className={styles.eyebrow}>Alur Kerja Kami</p>
-        <h2>Proses Dibuat Jelas Agar Rencana Bangun & Renovasi Terasa Ringan</h2>
-        <div className={styles.steps}>
-          {process.map((step) => <span key={step}>{step}</span>)}
-        </div>
-      </section>
-
-      {/* Testimoni Section */}
-      <section className={styles.section}>
+      {/* ── Testimoni ── */}
+      <section className={`${styles.section} ${styles.dark}`}>
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
-            <p className={styles.eyebrow}>Testimoni Pelanggan</p>
-            <h2>Kesan Customer Lokal Setelah Berkonsultasi dan Serah Terima Proyek</h2>
+            <p className={styles.eyebrow} style={{ color: "var(--color-accent)" }}>Testimoni Pelanggan</p>
+            <h2>Cerita Customer yang Sudah Kami Bantu Wujudkan Proyeknya</h2>
           </div>
         </div>
         
         <div className={cardStyles.quoteGrid}>
           {testimonials.map((item) => (
             <figure className={cardStyles.quote} key={item.name}>
-              <blockquote>“{item.quote}”</blockquote>
+              <blockquote>"{item.quote}"</blockquote>
               <figcaption>{item.name}</figcaption>
             </figure>
           ))}
         </div>
       </section>
 
-      {/* SEO Articles Section */}
+      {/* ── Artikel & Tips ── */}
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
             <p className={styles.eyebrow}>Panduan & Artikel</p>
-            <h2>Tips Menentukan Material, Layout, Serta Perkiraan Budget Properti</h2>
+            <h2>Tips Material, Layout, & Estimasi Budget untuk Proyek Properti Anda</h2>
           </div>
           <Link href="/artikel" aria-label="Baca panduan dan artikel seputar renovasi rumah">Baca Artikel</Link>
         </div>
@@ -279,12 +387,12 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* ── FAQ ── */}
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <div className={styles.sectionHeadContent}>
             <p className={styles.eyebrow}>Pertanyaan Umum</p>
-            <h2>Beberapa Pertanyaan yang Sering Diajukan Customer Sebelum Memulai Proyek</h2>
+            <h2>Hal-hal yang Sering Ditanyakan Sebelum Memulai Proyek</h2>
           </div>
         </div>
         
@@ -298,20 +406,23 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* ── Kontak ── */}
       <section className={styles.contact} id="kontak">
         <div>
-          <p className={styles.eyebrow}>Kontak & Alamat</p>
-          <h2>Konsultasikan Kebutuhan Proyek Rumah Anda Secara Gratis</h2>
-          <p style={{ marginTop: "16px" }}>{site.address}.<br />Kode Plus Google Maps: <strong>{site.locationCode}</strong>.</p>
+          <p className={styles.eyebrow}>Kontak & Konsultasi</p>
+          <h2>Mulai Proyek Anda Hari Ini — Konsultasi Pertama Gratis</h2>
+          <p style={{ marginTop: "16px", color: "var(--color-neutral)", lineHeight: "1.7" }}>
+            Ceritakan kebutuhan Anda, kirim foto lokasi, dan biarkan kami menyusun rencana terbaik untuk properti Anda.
+          </p>
+          <p style={{ marginTop: "12px", fontSize: "13px" }}>{site.address}.<br />Kode Plus: <strong>{site.locationCode}</strong>.</p>
         </div>
         
         <div className={styles.contactCard}>
           <strong>WhatsApp Utama</strong>
-          <span>Tholib - {site.phonePrimaryLabel}</span>
+          <span>Tholib – {site.phonePrimaryLabel}</span>
           
           <strong>WhatsApp Alternatif</strong>
-          <span>Eko Suyanto - {site.phoneSecondaryLabel}</span>
+          <span>Eko Suyanto – {site.phoneSecondaryLabel}</span>
           
           <a 
             className={styles.primary} 
@@ -320,7 +431,7 @@ export default async function Home() {
             rel="noopener noreferrer"
             aria-label="Mulai berkonsultasi via WhatsApp chat"
           >
-            Mulai Konsultasi
+            Mulai Konsultasi Gratis
           </a>
         </div>
       </section>
