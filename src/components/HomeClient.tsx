@@ -113,7 +113,7 @@ export default function HomeClient({
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/home/hero-home-interior.webp" 
-            alt="Fasad arsitektural premium Caturaya Living" 
+            alt="Fasad arsitektural premium Eko Suyanto Workshop" 
             fill 
             priority
             sizes="100vw"
@@ -153,7 +153,7 @@ export default function HomeClient({
               variants={fadeIn} 
               className="text-sm sm:text-base text-accent-light/70 leading-relaxed max-w-xl"
             >
-              Dari kusen kayu solid anti rayap, kusen aluminium tebal tahan karat cuaca pesisir, plafon PVC anti lembab tahan air pasang Sidareja, hingga renovasi sipil total — Caturaya Living mengkoordinasikan seluruh tim spesialis untuk Anda di bawah satu manajemen tepercaya.
+              Dari kusen kayu solid anti rayap, kusen aluminium tebal tahan karat cuaca pesisir, plafon PVC anti lembab tahan air pasang Sidareja, hingga renovasi sipil total — Eko Suyanto Workshop mengkoordinasikan seluruh tim spesialis untuk Anda di bawah satu manajemen tepercaya.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
@@ -276,7 +276,7 @@ export default function HomeClient({
                 </div>
                 
                 <a 
-                  href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan layanan ${col.title} dan ingin menanyakan estimasi awal.`)} 
+                  href={whatsappUrl(`Halo Eko Suyanto Workshop, saya tertarik dengan layanan ${col.title} dan ingin menanyakan estimasi awal.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-1 w-full py-3 border border-border-premium hover:border-accent bg-transparent hover:bg-accent text-primary hover:text-white rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all mt-4 cursor-pointer"
@@ -378,7 +378,7 @@ export default function HomeClient({
           <div className="lg:col-span-5 relative h-[450px] sm:h-[550px] w-full group rounded-[2px] overflow-hidden border border-border-premium/50 shadow-premium">
             <Image
               src="/images/home/tim-kontraktor.png"
-              alt="Tim spesialis Caturaya Living"
+              alt="Tim spesialis Eko Suyanto Workshop"
               fill
               sizes="(max-width: 980px) 100vw, 40vw"
               className="object-cover transition-transform duration-[8s] group-hover:scale-105"
@@ -401,7 +401,7 @@ export default function HomeClient({
             </div>
             
             <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
-              Caturaya Living mempersatukan jaringan mitra tukang ahli Sidareja yang terampil bertahun-tahun di bidangnya. Semua tim dikoordinasikan langsung agar pengerjaan properti Anda selesai rapi, kokoh, dan sesuai desain impian.
+              Eko Suyanto Workshop mempersatukan jaringan mitra tukang ahli Sidareja yang terampil bertahun-tahun di bidangnya. Semua tim dikoordinasikan langsung agar pengerjaan properti Anda selesai rapi, kokoh, dan sesuai desain impian.
             </p>
 
             <motion.div 
@@ -479,7 +479,7 @@ export default function HomeClient({
           <div className="flex flex-col gap-3 max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Katalog Portofolio</span>
             <h2 className="text-3xl sm:text-4xl font-semibold text-primary">
-              Hasil Realisasi Nyata Tim Caturaya Living
+              Hasil Realisasi Nyata Tim Eko Suyanto Workshop
             </h2>
           </div>
           <Link 
@@ -606,7 +606,7 @@ export default function HomeClient({
           <figure className="flex flex-col gap-4">
             <span className="text-4xl text-accent select-none leading-none">"</span>
             <blockquote className="text-lg sm:text-xl italic leading-relaxed max-w-2xl mx-auto text-white">
-              Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Caturaya Living, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.
+              Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Eko Suyanto Workshop, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.
             </blockquote>
             <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
             <figcaption className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">
@@ -627,7 +627,7 @@ export default function HomeClient({
             </h2>
             <div className="w-8 h-[1px] bg-accent/60 my-1"></div>
             <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
-              Ceritakan ide pengerjaan properti Anda, kirim ukuran aktual atau foto lokasi jika ada. Tim Caturaya Living siap mewujudkan pengerjaan yang kokoh, fungsional, dan bernilai seni tinggi.
+              Ceritakan ide pengerjaan properti Anda, kirim ukuran aktual atau foto lokasi jika ada. Tim Eko Suyanto Workshop siap mewujudkan pengerjaan yang kokoh, fungsional, dan bernilai seni tinggi.
             </p>
             <div className="flex flex-col gap-4 text-sm text-neutral-muted mt-2">
               <div className="flex gap-2.5">

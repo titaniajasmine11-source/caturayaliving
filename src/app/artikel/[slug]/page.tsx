@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props) {
   const article = articles.find((item) => item.slug === slug);
 
   return {
-    title: article ? `${article.title} | Caturaya Living` : "Artikel Caturaya Living",
+    title: article ? `${article.title} | Eko Suyanto Workshop` : "Artikel Eko Suyanto Workshop",
     description: article?.summary,
     alternates: article ? { canonical: absoluteUrl(`/artikel/${article.slug}`) } : undefined,
     openGraph: article ? {
-      title: `${article.title} | Caturaya Living`,
+      title: `${article.title} | Eko Suyanto Workshop`,
       description: article.summary,
       url: absoluteUrl(`/artikel/${article.slug}`),
     } : undefined,
@@ -100,7 +100,7 @@ export default async function ArticleDetailPage({ params }: Props) {
                 Langkah Selanjutnya
               </h2>
               <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
-                Kirimkan foto area lokasi, perkiraan ukuran ruangan, dan model inspirasi yang Anda inginkan melalui chat WhatsApp. Tim Caturaya Living akan membantu menganalisis kebutuhan awal, memberikan rekomendasi bahan baku optimal, serta menyusun estimasi anggaran proyek Anda secara transparan.
+                Kirimkan foto area lokasi, perkiraan ukuran ruangan, dan model inspirasi yang Anda inginkan melalui chat WhatsApp. Tim Eko Suyanto Workshop akan membantu menganalisis kebutuhan awal, memberikan rekomendasi bahan baku optimal, serta menyusun estimasi anggaran proyek Anda secara transparan.
               </p>
             </section>
           </div>
@@ -108,7 +108,7 @@ export default async function ArticleDetailPage({ params }: Props) {
           <div className="flex flex-wrap gap-4 mt-12 border-t border-border-premium/30 pt-8">
             <a 
               className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow-md shadow-accent/25"
-              href={whatsappUrl(`Halo Caturaya Living, saya baru saja membaca artikel "${article.title}" dan ingin berkonsultasi mengenai topik tersebut untuk proyek rumah saya.`)} 
+              href={whatsappUrl(`Halo Eko Suyanto Workshop, saya baru saja membaca artikel "${article.title}" dan ingin berkonsultasi mengenai topik tersebut untuk proyek rumah saya.`)} 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Konsultasi mengenai topik artikel ini via WhatsApp"

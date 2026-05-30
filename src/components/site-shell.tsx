@@ -54,13 +54,13 @@ export function SiteHeader() {
           <Link
             className="flex items-center gap-3 text-primary group"
             href="/"
-            aria-label="Caturaya Living Beranda"
+            aria-label="Eko Suyanto Workshop Beranda"
           >
             <div className="relative w-8 h-8 flex items-center justify-center bg-accent/5 border border-accent/15 rounded-[4px] p-1.5 transition-transform duration-500 group-hover:rotate-6">
-              <Image src="/images/logo-caturaya.png" alt="Caturaya Living Logo" width={22} height={22} priority />
+              <Image src="/images/logo-caturaya.png" alt="Eko Suyanto Workshop Logo" width={22} height={22} priority />
             </div>
             <span className="tracking-[0.25em] text-xs font-medium uppercase text-primary transition-colors group-hover:text-accent">
-              CATURAYA LIVING
+              Eko Suyanto Workshop
             </span>
           </Link>
 
@@ -182,10 +182,10 @@ export function SiteFooter() {
           <div className="flex flex-col gap-6">
             <Link className="flex items-center gap-3 text-white group" href="/">
               <div className="relative w-8 h-8 flex items-center justify-center bg-white/5 border border-white/10 rounded-[4px] p-1.5">
-                <Image src="/images/logo-caturaya.png" alt="Caturaya Living Logo" width={22} height={22} />
+                <Image src="/images/logo-caturaya.png" alt="Eko Suyanto Workshop Logo" width={22} height={22} />
               </div>
               <span className="tracking-[0.25em] text-xs font-medium uppercase text-white group-hover:text-accent transition-colors">
-                CATURAYA LIVING
+                Eko Suyanto Workshop
               </span>
             </Link>
             <p className="text-neutral-muted text-sm leading-relaxed max-w-xs">
@@ -293,11 +293,11 @@ export function SiteFooter() {
                 <span className="text-xs uppercase tracking-luxury-sm text-white font-medium">Ikuti Sosial Media</span>
                 <div className="flex gap-2">
                   <a
-                    href="https://instagram.com/caturayaliving"
+                    href="https://instagram.com/ekosuyanto.workshop"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center rounded-[2px] bg-white/5 text-neutral-muted hover:bg-accent hover:text-white border border-white/5 transition-all duration-300"
-                    aria-label="Ikuti Caturaya Living di Instagram"
+                    aria-label="Ikuti Eko Suyanto Workshop di Instagram"
                   >
                     <svg
                       className="w-3.5 h-3.5"
@@ -314,11 +314,11 @@ export function SiteFooter() {
                     </svg>
                   </a>
                   <a
-                    href="https://facebook.com/caturayaliving"
+                    href="https://facebook.com/ekosuyanto.workshop"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center rounded-[2px] bg-white/5 text-neutral-muted hover:bg-accent hover:text-white border border-white/5 transition-all duration-300"
-                    aria-label="Ikuti Caturaya Living di Facebook"
+                    aria-label="Ikuti Eko Suyanto Workshop di Facebook"
                   >
                     <svg
                       className="w-3.5 h-3.5"
@@ -340,7 +340,7 @@ export function SiteFooter() {
 
         {/* Footer Bottom copyright */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs uppercase tracking-luxury-sm text-neutral-muted text-center sm:text-left">
-          <span>&copy; {new Date().getFullYear()} Caturaya Living. Hak Cipta Dilindungi Undang-Undang.</span>
+          <span>&copy; {new Date().getFullYear()} Eko Suyanto Workshop. Hak Cipta Dilindungi Undang-Undang.</span>
           <span>Premium Interior, Aluminium & Fasad Specialist di Sidareja, Cilacap</span>
         </div>
       </div>
@@ -352,10 +352,10 @@ export function StickyWhatsapp() {
   return (
     <a
       className="fixed bottom-6 right-6 z-40 bg-primary border border-accent/25 hover:border-accent hover:bg-accent text-accent hover:text-white flex items-center gap-2 px-5 py-3 rounded-[2px] text-xs font-semibold tracking-wide uppercase shadow-premium transition-all duration-500"
-      href={whatsappUrl("Halo Caturaya Living, saya ingin berkonsultasi mengenai proyek properti saya.")}
+      href={whatsappUrl("Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai proyek properti saya.")}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Hubungi layanan Caturaya Living via WhatsApp"
+      aria-label="Hubungi layanan Eko Suyanto Workshop via WhatsApp"
     >
       <Phone size={12} />
       <span>Tanya Kami</span>

@@ -61,14 +61,14 @@ export default function TentangKamiPage() {
           <div className="inline-flex items-center gap-2 border-b border-accent/30 pb-1 w-fit mb-2">
             <Users size={12} className="text-accent" />
             <span className="text-xs font-semibold uppercase tracking-wide text-accent">
-              Profil Caturaya Living
+              Profil Eko Suyanto Workshop
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
             Full Kontraktor Properti — Satu Pintu, Semua Dikerjakan Rapi
           </h1>
           <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
-            Caturaya Living hadir sebagai kontraktor properti terpadu di Sidareja, Cilacap. Kami mempersatukan spesialisasi arsitektural (kayu, aluminium, PVC/HPL, kitchen set, fasad, renovasi bangunan) di bawah satu koordinator untuk menjamin kualitas terbaik tanpa kebingungan mengelola banyak tukang.
+            Eko Suyanto Workshop hadir sebagai kontraktor properti terpadu di Sidareja, Cilacap. Kami mempersatukan spesialisasi arsitektural (kayu, aluminium, PVC/HPL, kitchen set, fasad, renovasi bangunan) di bawah satu koordinator untuk menjamin kualitas terbaik tanpa kebingungan mengelola banyak tukang.
           </p>
         </header>
 
@@ -88,7 +88,7 @@ export default function TentangKamiPage() {
             <div className="bg-white border border-border-premium/50 p-6 rounded-[2px] flex items-start gap-4 shadow-sm">
               <ShieldCheck className="text-accent flex-shrink-0 mt-1" size={18} />
               <div className="flex flex-col gap-1">
-                <strong className="text-sm font-semibold text-primary">Caturaya Living sebagai Koordinator Tunggal</strong>
+                <strong className="text-sm font-semibold text-primary">Eko Suyanto Workshop sebagai Koordinator Tunggal</strong>
                 <p className="text-sm text-neutral-muted leading-relaxed">
                   Kami mengurus seluruh alur proyek dari survey ukuran, gambar sketsa konsep, fabrikasi material di workshop, instalasi di lokasi, hingga penyelesaian detail (finishing). Anda cukup berkomunikasi dengan satu koordinator proyek saja.
                 </p>

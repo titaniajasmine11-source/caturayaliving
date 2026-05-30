@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: Props) {
   const item = portfolio.find((project) => project.slug === slug);
 
   return {
-    title: item ? `${item.title} | Portofolio Caturaya Living` : "Portofolio Caturaya Living",
-    description: item ? `Dokumentasi realisasi proyek ${item.title} (${item.material}) di ${item.location} oleh Caturaya Living.` : undefined,
+    title: item ? `${item.title} | Portofolio Eko Suyanto Workshop` : "Portofolio Eko Suyanto Workshop",
+    description: item ? `Dokumentasi realisasi proyek ${item.title} (${item.material}) di ${item.location} oleh Eko Suyanto Workshop.` : undefined,
     alternates: item ? { canonical: absoluteUrl(`/portofolio/${item.slug}`) } : undefined,
     openGraph: item ? {
-      title: `${item.title} | Caturaya Living`,
+      title: `${item.title} | Eko Suyanto Workshop`,
       description: `Spesifikasi bahan ${item.material}. Pengerjaan durasi ${item.duration} di ${item.location}.`,
       images: [{ url: absoluteUrl(item.image) }],
     } : undefined,
@@ -74,7 +74,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
             <div className="relative h-[250px] sm:h-[400px] w-full rounded-[2px] overflow-hidden shadow-premium border border-border-premium/50 bg-neutral-100">
               <Image 
                 src={item.image} 
-                alt={`Dokumentasi proyek ${item.title} oleh Caturaya Living`} 
+                alt={`Dokumentasi proyek ${item.title} oleh Eko Suyanto Workshop`} 
                 fill 
                 priority 
                 sizes="(max-width: 980px) 100vw, 60vw" 
@@ -136,7 +136,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
               <div className="flex flex-col gap-3 mt-4 w-full">
                 <a 
                   className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all cursor-pointer shadow-sm group"
-                  href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan hasil pengerjaan proyek ${item.title} dan ingin menanyakan estimasi biaya jika dipasang di rumah saya.`)} 
+                  href={whatsappUrl(`Halo Eko Suyanto Workshop, saya tertarik dengan hasil pengerjaan proyek ${item.title} dan ingin menanyakan estimasi biaya jika dipasang di rumah saya.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label={`Tanya estimasi proyek serupa ${item.title} via WhatsApp`}
@@ -149,7 +149,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
                 <Link 
                   className="w-full text-center py-3 border border-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-wide rounded-[2px] transition-all cursor-pointer bg-transparent"
                   href="/portofolio" 
-                  aria-label="Lihat seluruh studi kasus Caturaya Living"
+                  aria-label="Lihat seluruh studi kasus Eko Suyanto Workshop"
                 >
                   Kembali ke Portofolio
                 </Link>

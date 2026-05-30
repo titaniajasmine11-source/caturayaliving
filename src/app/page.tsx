@@ -4,10 +4,10 @@ import { site } from "@/lib/site";
 import HomeClient from "@/components/HomeClient";
 
 export const metadata = {
-  title: "Caturaya Living | Full Kontraktor Properti – Interior, Eksterior & Bangunan Sidareja",
-  description: "Caturaya Living adalah kontraktor full-service di Sidareja, Cilacap. Melayani kusen kayu & aluminium, perabotan custom, kitchen set, HPL finishing, plafon, kanopi, jasa bangunan, dan renovasi total.",
+  title: "Eko Suyanto Workshop | Full Kontraktor Properti – Interior, Eksterior & Bangunan Sidareja",
+  description: "Eko Suyanto Workshop adalah kontraktor full-service di Sidareja, Cilacap. Melayani kusen kayu & aluminium, perabotan custom, kitchen set, HPL finishing, plafon, kanopi, jasa bangunan, dan renovasi total.",
   openGraph: {
-    title: "Caturaya Living | Full Kontraktor Properti Sidareja",
+    title: "Eko Suyanto Workshop | Full Kontraktor Properti Sidareja",
     description: "Satu koordinator untuk semua kebutuhan properti Anda: interior, eksterior, material kayu, aluminium, HPL, dan jasa bangunan.",
     url: site.url,
     siteName: site.name,

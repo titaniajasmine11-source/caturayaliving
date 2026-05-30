@@ -20,7 +20,7 @@ const leadStatuses = [
 ] as const;
 
 const replyTemplates = [
-  { label: "Balasan awal", text: "Halo Kak, terima kasih sudah menghubungi Caturaya Living.\n\nKami bantu untuk kebutuhan interior, aluminium, kitchen set, plafon, kanopi, dan home finishing di area Sidareja, Cilacap, dan sekitarnya.\n\nBoleh dibantu isi beberapa data dulu ya:\n1. Lokasi:\n2. Kebutuhan:\n3. Ukuran perkiraan:\n4. Ada foto lokasi/referensi?\n5. Kapan rencana pengerjaan?" },
+  { label: "Balasan awal", text: "Halo Kak, terima kasih sudah menghubungi Eko Suyanto Workshop.\n\nKami bantu untuk kebutuhan interior, aluminium, kitchen set, plafon, kanopi, dan home finishing di area Sidareja, Cilacap, dan sekitarnya.\n\nBoleh dibantu isi beberapa data dulu ya:\n1. Lokasi:\n2. Kebutuhan:\n3. Ukuran perkiraan:\n4. Ada foto lokasi/referensi?\n5. Kapan rencana pengerjaan?" },
   { label: "Follow-up estimasi", text: "Halo Kak, untuk estimasi awal kami perlu ukuran dan foto lokasi agar bisa memberi gambaran lebih tepat.\n\nJika ingin hasil lebih akurat, kami bisa jadwalkan survei lokasi." },
   { label: "Jadwal survei", text: "Baik Kak, untuk survei lokasi mohon konfirmasi:\nNama:\nAlamat lengkap:\nPatokan lokasi:\nHari/tanggal:\nJam:\nKebutuhan utama:" },
   { label: "Follow-up penawaran", text: "Halo Kak, kami ingin menindaklanjuti penawaran kebutuhan proyeknya. Apakah ada yang ingin ditanyakan atau disesuaikan dari bahan, model, atau budget?" },
@@ -89,7 +89,7 @@ export function AdminDashboard() {
     function loadLocalLeads(statusMessage: string) {
       let localLeads: Lead[] = [];
       try {
-        const parsed = JSON.parse(window.localStorage.getItem("caturaya-leads") ?? "[]") as unknown;
+        const parsed = JSON.parse(window.localStorage.getItem("eko-workshop-leads") ?? "[]") as unknown;
         localLeads = Array.isArray(parsed) ? parsed as Lead[] : [];
       } catch {
         localLeads = [];
@@ -123,7 +123,7 @@ export function AdminDashboard() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "caturaya-leads.json";
+    link.download = "eko-workshop-leads.json";
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -138,7 +138,7 @@ export function AdminDashboard() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "caturaya-leads.csv";
+    link.download = "eko-workshop-leads.csv";
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -149,7 +149,7 @@ export function AdminDashboard() {
     if (source !== "supabase") {
       const lead = { ...manualLead, createdAt: new Date().toISOString() };
       const nextLeads = [lead, ...leads];
-      window.localStorage.setItem("caturaya-leads", JSON.stringify(nextLeads.slice(0, 100)));
+      window.localStorage.setItem("eko-workshop-leads", JSON.stringify(nextLeads.slice(0, 100)));
       setLeads(nextLeads);
       setMessage("Lead manual disimpan ke browser-local.");
       return;
@@ -256,7 +256,7 @@ export function AdminDashboard() {
       <section className={styles.adminPanel}>
         <div className={styles.sectionHead}>
           <p className={styles.eyebrow}>{source === "supabase" ? "Koneksi Supabase Aktif" : "Sesi Offline (Local)"}</p>
-          <h2>Kelola Prospek & Pelanggan Caturaya Living</h2>
+          <h2>Kelola Prospek & Pelanggan Eko Suyanto Workshop</h2>
           <p style={{ fontSize: "14px", color: "var(--color-neutral-muted)", marginBottom: "16px" }}>{message}</p>
           
           <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "8px" }}>

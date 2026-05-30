@@ -6,8 +6,8 @@ import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Visual Planner Preview Arsitektural | Caturaya Living",
-  description: "Preview konsep desain 2D/3D visual arsitektural interior dan eksterior Anda bersama Caturaya Living.",
+  title: "Visual Planner Preview Arsitektural | Eko Suyanto Workshop",
+  description: "Preview konsep desain 2D/3D visual arsitektural interior dan eksterior Anda bersama Eko Suyanto Workshop.",
 };
 
 export default function PlannerPage() {
@@ -73,7 +73,7 @@ export default function PlannerPage() {
                 <div className="h-[180px] relative w-full overflow-hidden bg-accent-light flex items-center justify-center p-6 border-b border-border-premium/20">
                   <Image 
                     src={stage.image} 
-                    alt={`${stage.title} Caturaya Living`} 
+                    alt={`${stage.title} Eko Suyanto Workshop`} 
                     width={100} 
                     height={100} 
                     className="object-contain group-hover:scale-110 transition-transform duration-500" 
@@ -110,7 +110,7 @@ export default function PlannerPage() {
             </p>
             <a 
               className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl text-sm font-semibold uppercase tracking-wide shadow-lg shadow-accent/20 transition-all group"
-              href={whatsappUrl("Halo Caturaya Living, saya ingin konsultasi detail planner sketsa 2D/3D/4D untuk proyek rumah saya.")} 
+              href={whatsappUrl("Halo Eko Suyanto Workshop, saya ingin konsultasi detail planner sketsa 2D/3D/4D untuk proyek rumah saya.")} 
               target="_blank" 
               rel="noopener noreferrer"
             >

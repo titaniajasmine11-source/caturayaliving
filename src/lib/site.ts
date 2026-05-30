@@ -1,8 +1,8 @@
 export const site = {
-  name: "Caturaya Living",
+  name: "Eko Suyanto Workshop",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://caturayaliving.vercel.app",
   tagline: "Full kontraktor properti: interior, eksterior, kusen kayu & aluminium, kitchen set, perabotan custom, HPL/PVC finishing, plafon, kanopi, pagar, dan jasa bangunan.",
-  description: "Caturaya Living adalah kontraktor properti full-service di Sidareja, Cilacap. Kami mengelola proyek interior & eksterior secara menyeluruh dengan jaringan tim spesialis: tukang kayu, aluminium, PVC/HPL, dan tukang bangunan.",
+  description: "Eko Suyanto Workshop adalah kontraktor properti full-service di Sidareja, Cilacap. Kami mengelola proyek interior & eksterior secara menyeluruh dengan jaringan tim spesialis: tukang kayu, aluminium, PVC/HPL, dan tukang bangunan.",
   phonePrimary: "6285119467138",
   phonePrimaryLabel: "0851-1946-7138",
   phoneSecondary: "62895703018230",
@@ -22,7 +22,7 @@ export const site = {
 export function whatsappUrl(message?: string, phone = site.phonePrimary) {
   const text = encodeURIComponent(
     message ??
-      `Halo Caturaya Living, saya ingin konsultasi proyek.
+      `Halo Eko Suyanto Workshop, saya ingin konsultasi proyek.
 
 Nama:
 Lokasi / Alamat:
@@ -40,4 +40,3 @@ Target Selesai:`,
 export function absoluteUrl(path = "") {
   return new URL(path, site.url).toString();
 }
-

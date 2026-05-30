@@ -1,8 +1,8 @@
 import styles from "../../components/styles/admin.module.css";
 
 export const metadata = {
-  title: "Operasional Digital Caturaya Living",
-  description: "Panduan operasional digital Caturaya Living untuk Google Business Profile, kalender konten, SOP follow-up, dan workflow publikasi.",
+  title: "Operasional Digital Eko Suyanto Workshop",
+  description: "Panduan operasional digital Eko Suyanto Workshop untuk Google Business Profile, kalender konten, SOP follow-up, dan workflow publikasi.",
   robots: { index: false, follow: false },
 };
 

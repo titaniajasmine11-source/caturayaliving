@@ -74,7 +74,7 @@ export function VisualPlanner() {
     setNotes(design.notes);
   }
 
-  const message = `Halo Caturaya Living, saya ingin konsultasi hasil planner.
+  const message = `Halo Eko Suyanto Workshop, saya ingin konsultasi hasil planner.
  
 Nama: ${name || "-"}
 Nomor WhatsApp: ${phone || "-"}
@@ -280,7 +280,7 @@ Mohon dibantu arahan desain dan estimasi awal.`;
             target="_blank" 
             rel="noopener noreferrer" 
             onClick={() => trackEvent("planner_whatsapp", { room, model, material, items: items.length })}
-            aria-label="Kirim rancangan denah ke WhatsApp Caturaya Living"
+            aria-label="Kirim rancangan denah ke WhatsApp Eko Suyanto Workshop"
           >
             <span>Hubungi untuk Realisasi</span>
             <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />

@@ -126,7 +126,7 @@ export default function PortfolioClient({ portfolio }: PortfolioClientProps) {
                       <ArrowUpRight size={11} className="opacity-70 group-hover:opacity-100" />
                     </Link>
                     <a
-                      href={whatsappUrl(`Halo Caturaya Living, saya melihat portofolio proyek ${item.title} di website Anda dan ingin menanyakan estimasi harga untuk pengerjaan serupa.`)}
+                      href={whatsappUrl(`Halo Eko Suyanto Workshop, saya melihat portofolio proyek ${item.title} di website Anda dan ingin menanyakan estimasi harga untuk pengerjaan serupa.`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"

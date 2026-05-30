@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MapPin, Phone, ArrowUpRight, Compass, Shield } from "lucide-react";
 
 export const metadata = {
-  title: "Inspirasi Pengerjaan Berdasarkan Area Ruang Rumah | Caturaya Living",
+  title: "Inspirasi Pengerjaan Berdasarkan Area Ruang Rumah | Eko Suyanto Workshop",
   description: "Rencanakan renovasi ringan, kitchen set, plafon, kanopi, kusen aluminium, dan partisi berdasarkan bagian ruang rumah di Sidareja, Cilacap.",
 };
 
@@ -95,7 +95,7 @@ export default async function AreaRumahPage() {
                       <ArrowUpRight size={11} className="opacity-70 group-hover:opacity-100" />
                     </Link>
                     <a
-                      href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai penataan arsitektural untuk area ${area.title}.`)}
+                      href={whatsappUrl(`Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai penataan arsitektural untuk area ${area.title}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"

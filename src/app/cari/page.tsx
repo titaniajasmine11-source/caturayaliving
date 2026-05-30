@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Compass } from "lucide-react";
 
 export const metadata = {
-  title: "Cari Layanan & Inspirasi Properti | Caturaya Living",
-  description: "Cari layanan kusen aluminium, kitchen set custom, plafon, kanopi, artikel panduan, dan studi kasus proyek di Caturaya Living.",
+  title: "Cari Layanan & Inspirasi Properti | Eko Suyanto Workshop",
+  description: "Cari layanan kusen aluminium, kitchen set custom, plafon, kanopi, artikel panduan, dan studi kasus proyek di Eko Suyanto Workshop.",
 };
 
 export default async function SearchPage() {

@@ -14,7 +14,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Caturaya Living | Jasa Interior & Aluminium Premium Sidareja Cilacap",
+  title: "Eko Suyanto Workshop | Jasa Interior & Aluminium Premium Sidareja Cilacap",
   description:
     "Solusi arsitektural premium untuk interior, exterior, kusen aluminium, kitchen set, plafon, kanopi, pagar, dan home finishing di Sidareja, Cilacap, Jawa Tengah.",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "pagar minimalis Sidareja",
   ],
   openGraph: {
-    title: "Caturaya Living | Jasa Interior & Aluminium Premium Sidareja Cilacap",
+    title: "Eko Suyanto Workshop | Jasa Interior & Aluminium Premium Sidareja Cilacap",
     description:
       "Solusi arsitektural premium untuk interior, eksterior, kusen aluminium, kitchen set, plafon, kanopi, pagar, dan home finishing di Sidareja, Cilacap, dan sekitarnya.",
     url: site.url,

@@ -4,7 +4,7 @@ import LayananClient from "@/components/LayananClient";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Layanan Caturaya Living | Jasa Interior & Aluminium Premium Sidareja Cilacap",
+  title: "Layanan Eko Suyanto Workshop | Jasa Interior & Aluminium Premium Sidareja Cilacap",
   description: "Solusi arsitektural premium untuk interior, eksterior, kusen aluminium, kitchen set, plafon, kanopi, pagar, dan home finishing di Sidareja, Cilacap, Jawa Tengah.",
 };
 

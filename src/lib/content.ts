@@ -120,7 +120,7 @@ export const designStages = [
 export const process = ["Konsultasi & Ceritakan Kebutuhan", "Kirim Foto & Ukuran Lokasi", "Survei Lokasi", "RAB & Penawaran Harga", "Koordinasi Tim Spesialis", "Produksi & Fabrikasi", "Pemasangan di Lokasi", "Finishing & Serah Terima"];
 
 export const testimonials = [
-  { quote: "Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Caturaya Living, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.", name: "Bapak Heri – Sidareja" },
+  { quote: "Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Eko Suyanto Workshop, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.", name: "Bapak Heri – Sidareja" },
   { quote: "Kitchen set kayu HPL-nya bagus banget, beda dari toko biasa. Finishing rapi dan ukurannya pas banget dengan dapur saya yang tidak standar.", name: "Ibu Sari – Tegalsari" },
   { quote: "Renovasi kamar mandi plus pasang kusen aluminium baru. Komunikasi tim responsif, estimasi harga jelas sejak awal, tidak ada biaya kejutan.", name: "Bapak Doni – Cilacap" },
   { quote: "Perabotan custom ruang tamu yang saya minta sesuai ekspektasi. Kayu solid asli, finishing halus, dan pengiriman tepat waktu.", name: "Ibu Wati – Kedungreja" },
@@ -128,13 +128,13 @@ export const testimonials = [
 ];
 
 export const faqs = [
-  { question: "Apa itu full kontraktor? Apakah Caturaya Living bisa mengerjakan semua jenis proyek?", answer: "Ya. Sebagai full kontraktor, kami mengelola proyek dari awal sampai selesai — termasuk koordinasi tim tukang kayu, aluminium, PVC/HPL, dan tukang bangunan. Anda cukup satu kali konsultasi untuk semua kebutuhan." },
+  { question: "Apa itu full kontraktor? Apakah Eko Suyanto Workshop bisa mengerjakan semua jenis proyek?", answer: "Ya. Sebagai full kontraktor, kami mengelola proyek dari awal sampai selesai — termasuk koordinasi tim tukang kayu, aluminium, PVC/HPL, dan tukang bangunan. Anda cukup satu kali konsultasi untuk semua kebutuhan." },
   { question: "Apakah melayani kusen kayu, bukan hanya aluminium?", answer: "Tentu. Kami melayani kusen dari kayu solid (jati, mahoni, kayu lokal) maupun aluminium sesuai kebutuhan dan budget Anda." },
   { question: "Bisakah memesan perabotan rumah custom seperti meja, kursi, atau bufet?", answer: "Bisa. Tim tukang kayu kami mengerjakan berbagai perabotan custom: meja makan, kursi, bufet, rak buku, dan furniture lain sesuai desain dan ukuran ruang Anda." },
   { question: "Apa itu HPL dan kenapa direkomendasikan untuk finishing?", answer: "HPL (High Pressure Laminate) adalah lapisan finishing modern yang kuat, tahan goresan, tahan lembap, dan tersedia ratusan pilihan motif dan warna. Cocok untuk kitchen set, lemari, dan kabinet." },
   { question: "Apakah bisa menangani renovasi bangunan seperti pasang keramik atau dinding?", answer: "Bisa. Kami memiliki tim tukang bangunan untuk pekerjaan sipil ringan hingga berat: pemasangan keramik, plesteran, pembuatan dinding, dan renovasi ruangan secara menyeluruh." },
   { question: "Apakah bisa survei lokasi dulu sebelum estimasi?", answer: "Bisa dan sangat disarankan. Survei lokasi membantu kami mengukur langsung, memahami kondisi, dan memberikan estimasi harga yang lebih akurat." },
-  { question: "Bagaimana cara memulai proyek dengan Caturaya Living?", answer: "Mudah — hubungi kami lewat WhatsApp, ceritakan kebutuhan Anda, kirim foto lokasi jika ada, lalu kami atur jadwal konsultasi atau survei. Tidak ada biaya untuk konsultasi awal." },
+  { question: "Bagaimana cara memulai proyek dengan Eko Suyanto Workshop?", answer: "Mudah — hubungi kami lewat WhatsApp, ceritakan kebutuhan Anda, kirim foto lokasi jika ada, lalu kami atur jadwal konsultasi atau survei. Tidak ada biaya untuk konsultasi awal." },
   { question: "Apakah melayani area luar Sidareja?", answer: "Ya. Area utama kami adalah Sidareja, Cilacap, Tegalsari, Cipari, dan Kedungreja. Lokasi lebih jauh bisa dikonsultasikan terlebih dahulu tergantung jenis dan skala pekerjaan." },
 ];
 

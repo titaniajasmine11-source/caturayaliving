@@ -1,7 +1,7 @@
 import { AdminLoginForm } from "@/components/admin-login-form";
 
 export const metadata = {
-  title: "Login Admin | Caturaya Living",
+  title: "Login Admin | Eko Suyanto Workshop",
   robots: { index: false, follow: false },
 };
 

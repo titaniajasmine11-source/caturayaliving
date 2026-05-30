@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: Props) {
   const { category } = await params;
   const title = category.replaceAll("-", " ").replace(/\b\w/g, (char) => char.toUpperCase());
   return {
-    title: `Panduan ${title} | Caturaya Living`,
-    description: `Kumpulan artikel panduan teknis dan tips memilih material ${title} dari tim Caturaya Living Cilacap.`,
+    title: `Panduan ${title} | Eko Suyanto Workshop`,
+    description: `Kumpulan artikel panduan teknis dan tips memilih material ${title} dari tim Eko Suyanto Workshop Cilacap.`,
     openGraph: {
-      title: `Panduan ${title} | Caturaya Living`,
-      description: `Kumpulan artikel panduan teknis dan tips memilih material ${title} dari tim Caturaya Living Cilacap.`,
+      title: `Panduan ${title} | Eko Suyanto Workshop`,
+      description: `Kumpulan artikel panduan teknis dan tips memilih material ${title} dari tim Eko Suyanto Workshop Cilacap.`,
     }
   };
 }

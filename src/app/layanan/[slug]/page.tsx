@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props) {
   const service = services.find((item) => item.slug === slug);
 
   return {
-    title: service ? `${service.title} Premium Sidareja Cilacap | Caturaya Living` : "Layanan Caturaya Living",
+    title: service ? `${service.title} Premium Sidareja Cilacap | Eko Suyanto Workshop` : "Layanan Eko Suyanto Workshop",
     description: service?.summary,
     alternates: service ? { canonical: absoluteUrl(`/layanan/${service.slug}`) } : undefined,
     openGraph: service ? {
-      title: `${service.title} Premium Sidareja Cilacap | Caturaya Living`,
+      title: `${service.title} Premium Sidareja Cilacap | Eko Suyanto Workshop`,
       description: service.summary,
       images: [{ url: absoluteUrl(service.image) }],
     } : undefined,
@@ -87,7 +87,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             <div className="relative h-[250px] sm:h-[400px] w-full rounded-[2px] overflow-hidden shadow-premium border border-border-premium/50 bg-neutral-100">
               <Image 
                 src={service.image} 
-                alt={`${service.title} Caturaya Living`} 
+                alt={`${service.title} Eko Suyanto Workshop`} 
                 fill 
                 priority 
                 sizes="(max-width: 980px) 100vw, 60vw" 
@@ -205,7 +205,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div className="flex flex-col gap-3 mt-4 w-full">
                 <a 
                   className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all cursor-pointer shadow-sm group"
-                  href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai kebutuhan layanan ${service.title} untuk rumah saya.`)} 
+                  href={whatsappUrl(`Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai kebutuhan layanan ${service.title} untuk rumah saya.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label={`Konsultasi layanan ${service.title} via WhatsApp`}
@@ -218,7 +218,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <Link 
                   className="w-full text-center py-3 border border-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-wide rounded-[2px] transition-all cursor-pointer bg-transparent"
                   href="/layanan" 
-                  aria-label="Lihat seluruh katalog layanan Caturaya Living"
+                  aria-label="Lihat seluruh katalog layanan Eko Suyanto Workshop"
                 >
                   Semua Layanan
                 </Link>

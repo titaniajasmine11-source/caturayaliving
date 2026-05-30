@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Calculator, Compass } from "lucide-react";
 
 export const metadata = {
-  title: "Simulasi Harga Kitchen Set & Aluminium Premium | Caturaya Living",
+  title: "Simulasi Harga Kitchen Set & Aluminium Premium | Eko Suyanto Workshop",
   description: "Hitung perkiraan estimasi biaya awal kitchen set custom, kusen aluminium, pintu, dan plafon di area Sidareja, Cilacap.",
 };
 

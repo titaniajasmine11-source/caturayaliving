@@ -4,8 +4,8 @@ import Link from "next/link";
 import { MapPin, Phone, Clock, Compass } from "lucide-react";
 
 export const metadata = {
-  title: "Hubungi Caturaya Living | Jasa Konsultasi Properti Sidareja",
-  description: "Hubungi Caturaya Living Sidareja, Cilacap. Konsultasikan gratis kebutuhan kusen kayu & aluminium, perabotan rumah, kitchen set, kanopi, plafon, dan pagar.",
+  title: "Hubungi Eko Suyanto Workshop | Jasa Konsultasi Properti Sidareja",
+  description: "Hubungi Eko Suyanto Workshop Sidareja, Cilacap. Konsultasikan gratis kebutuhan kusen kayu & aluminium, perabotan rumah, kitchen set, kanopi, plafon, dan pagar.",
 };
 
 export default function KontakPage() {
@@ -29,7 +29,7 @@ export default function KontakPage() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
-            Hubungi Tim Caturaya Living
+            Hubungi Tim Eko Suyanto Workshop
           </h1>
           <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
             Kami siap merancang dan merealisasikan kebutuhan properti Anda. Kirim pesan WhatsApp langsung ke penanggung jawab tim di bawah, atau isi formulir konsultasi terstruktur untuk respon cepat.
@@ -106,7 +106,7 @@ export default function KontakPage() {
                   <span className="font-semibold text-primary pt-0.5">{site.phoneSecondaryLabel}</span>
                 </div>
                 <a 
-                  href={whatsappUrl("Halo Caturaya Living, saya ingin berkonsultasi mengenai proyek properti.", site.phoneSecondary)}
+                  href={whatsappUrl("Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai proyek properti.", site.phoneSecondary)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 border border-accent/25 hover:bg-accent text-accent hover:text-primary-dark text-xs font-semibold uppercase tracking-wide px-5 py-2.5 rounded-[2px] transition-colors cursor-pointer"

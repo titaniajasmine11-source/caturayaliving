@@ -113,7 +113,7 @@ export function PriceSimulator() {
   const format = (value: number) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(value);
 
   const label = labels[type];
-  const message = `Halo Caturaya Living, saya ingin konsultasi hasil simulasi harga.
+  const message = `Halo Eko Suyanto Workshop, saya ingin konsultasi hasil simulasi harga.
  
 Nama: ${name || "-"}
 Nomor WhatsApp: ${phone || "-"}
@@ -322,7 +322,7 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
           target="_blank" 
           rel="noopener noreferrer" 
           onClick={() => trackEvent("price_simulation_whatsapp", { type, estimate: middleEstimate })}
-          aria-label="Kirim simulasi harga ke WhatsApp Caturaya Living"
+          aria-label="Kirim simulasi harga ke WhatsApp Eko Suyanto Workshop"
         >
           <Phone size={12} />
           <span>Kirim ke WhatsApp</span>

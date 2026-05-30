@@ -63,7 +63,7 @@ export function ConsultationForm() {
       setStatus("fallback");
     }
 
-    const message = `Halo Caturaya Living, saya ingin konsultasi.
+    const message = `Halo Eko Suyanto Workshop, saya ingin konsultasi.
  
 Nama: ${form.name}
 Nomor WhatsApp: ${form.phone}

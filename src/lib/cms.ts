@@ -65,7 +65,7 @@ export async function getArticles() {
     return {
       slug: item.slug,
       title: item.title,
-      summary: item.summary ?? item.seo_description ?? "Panduan Caturaya Living.",
+      summary: item.summary ?? item.seo_description ?? "Panduan Eko Suyanto Workshop.",
       category: typeof body.category === "string" ? body.category : "Artikel",
       tags: stringArray(body.tags),
       readTime: typeof body.readTime === "string" ? body.readTime : "4 menit",
@@ -84,7 +84,7 @@ export async function getServices() {
     return {
       slug: item.slug,
       title: item.title,
-      summary: item.summary ?? item.seo_description ?? "Layanan Caturaya Living.",
+      summary: item.summary ?? item.seo_description ?? "Layanan Eko Suyanto Workshop.",
       detail: typeof body.detail === "string" ? body.detail : item.summary ?? "Konsultasikan kebutuhan ukuran, bahan, dan model sesuai lokasi.",
       image: typeof body.image === "string" ? body.image : "/images/visual-3d.svg",
       benefits: stringArray(body.benefits),
@@ -122,7 +122,7 @@ export async function getAreas() {
     return {
       slug: item.slug,
       title: item.title,
-      summary: item.summary ?? item.seo_description ?? "Inspirasi area rumah Caturaya Living.",
+      summary: item.summary ?? item.seo_description ?? "Inspirasi area rumah Eko Suyanto Workshop.",
       image: typeof body.image === "string" ? body.image : "/images/visual-2d.svg",
       recommended: stringArray(body.recommended),
     };
@@ -136,7 +136,7 @@ export async function getFaqs() {
   const cmsFaqs = await getCmsItems("faq");
   const mapped = cmsFaqs.map((item) => ({
     question: item.title,
-    answer: item.summary ?? (typeof bodyObject(item.body).answer === "string" ? bodyObject(item.body).answer as string : "Hubungi Caturaya Living untuk detail lebih lanjut."),
+    answer: item.summary ?? (typeof bodyObject(item.body).answer === "string" ? bodyObject(item.body).answer as string : "Hubungi Eko Suyanto Workshop untuk detail lebih lanjut."),
   }));
 
   const cmsQuestions = new Set(mapped.map((item) => item.question));
@@ -148,7 +148,7 @@ export async function getTestimonials() {
   const mapped = cmsTestimonials.map((item) => {
     const body = bodyObject(item.body);
     return {
-      quote: item.summary ?? (typeof body.quote === "string" ? body.quote : "Customer puas dengan komunikasi dan hasil pengerjaan Caturaya Living."),
+      quote: item.summary ?? (typeof body.quote === "string" ? body.quote : "Customer puas dengan komunikasi dan hasil pengerjaan Eko Suyanto Workshop."),
       name: item.title,
     };
   });

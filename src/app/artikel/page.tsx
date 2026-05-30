@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Compass, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Panduan & Artikel Properti Arsitektural | Caturaya Living",
+  title: "Panduan & Artikel Properti Arsitektural | Eko Suyanto Workshop",
   description: "Daftar panduan memilih kusen aluminium, kitchen set custom modern, plafon drop ceiling, kanopi teras, dan material properti di Cilacap.",
 };
 

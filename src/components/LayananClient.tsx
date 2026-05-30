@@ -65,7 +65,7 @@ export default function LayananClient({
             Solusi Satu Atap — Interior, Eksterior & Konstruksi Sipil
           </h1>
           <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
-            Caturaya Living mengelola proyek properti Anda dari konsep hingga terpasang rapi. Tukang kayu, spesialis aluminium, instalatur PVC/HPL, dan tukang bangunan dikoordinasikan secara profesional di bawah satu pintu manajemen.
+            Eko Suyanto Workshop mengelola proyek properti Anda dari konsep hingga terpasang rapi. Tukang kayu, spesialis aluminium, instalatur PVC/HPL, dan tukang bangunan dikoordinasikan secara profesional di bawah satu pintu manajemen.
           </p>
         </header>
 
@@ -184,7 +184,7 @@ export default function LayananClient({
                       Detail Info
                     </Link>
                     <a
-                      href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai pengerjaan ${service.title}.`)}
+                      href={whatsappUrl(`Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai pengerjaan ${service.title}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"
@@ -207,7 +207,7 @@ export default function LayananClient({
               Belum Menemukan Spesifikasi Layanan yang Sesuai?
             </h2>
             <p className="text-neutral-muted text-sm sm:text-base leading-relaxed max-w-xl">
-              Ceritakan kondisi rumah atau properti Anda secara rinci ke kami. Caturaya Living melayani pengerjaan sipil renovasi, pembuatan interior butik kustom, hingga fasad luar ruangan terpadu. Hubungi kami secara gratis.
+              Ceritakan kondisi rumah atau properti Anda secara rinci ke kami. Eko Suyanto Workshop melayani pengerjaan sipil renovasi, pembuatan interior butik kustom, hingga fasad luar ruangan terpadu. Hubungi kami secara gratis.
             </p>
             <a 
               href={whatsappUrl()} 

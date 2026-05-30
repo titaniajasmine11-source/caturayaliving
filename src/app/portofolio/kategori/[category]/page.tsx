@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: Props) {
   const { category } = await params;
   const title = category.replaceAll("-", " ").replace(/\b\w/g, (char) => char.toUpperCase());
   return {
-    title: `Portofolio ${title} | Caturaya Living`,
-    description: `Kumpulan hasil realisasi pengerjaan proyek ${title} di Sidareja, Cilacap, dan sekitarnya oleh Caturaya Living.`,
+    title: `Portofolio ${title} | Eko Suyanto Workshop`,
+    description: `Kumpulan hasil realisasi pengerjaan proyek ${title} di Sidareja, Cilacap, dan sekitarnya oleh Eko Suyanto Workshop.`,
     openGraph: {
-      title: `Portofolio ${title} | Caturaya Living`,
-      description: `Kumpulan hasil realisasi pengerjaan proyek ${title} di Sidareja, Cilacap, dan sekitarnya oleh Caturaya Living.`,
+      title: `Portofolio ${title} | Eko Suyanto Workshop`,
+      description: `Kumpulan hasil realisasi pengerjaan proyek ${title} di Sidareja, Cilacap, dan sekitarnya oleh Eko Suyanto Workshop.`,
     }
   };
 }
@@ -65,7 +65,7 @@ export default async function PortfolioCategoryPage({ params }: Props) {
             Portofolio {categoryName}
           </h1>
           <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
-            Menampilkan seluruh studi kasus realisasi proyek properti Caturaya Living yang masuk dalam kategori <strong>{categoryName}</strong>. Pengerjaan rapi, transparan, dan presisi di area Sidareja, Cilacap.
+            Menampilkan seluruh studi kasus realisasi proyek properti Eko Suyanto Workshop yang masuk dalam kategori <strong>{categoryName}</strong>. Pengerjaan rapi, transparan, dan presisi di area Sidareja, Cilacap.
           </p>
         </header>
 
@@ -113,7 +113,7 @@ export default async function PortfolioCategoryPage({ params }: Props) {
                       Studi Kasus
                     </Link>
                     <a 
-                      href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan hasil pengerjaan ${item.title} (kategori ${item.category}) dan ingin berkonsultasi mengenai proyek serupa.`)} 
+                      href={whatsappUrl(`Halo Eko Suyanto Workshop, saya tertarik dengan hasil pengerjaan ${item.title} (kategori ${item.category}) dan ingin berkonsultasi mengenai proyek serupa.`)} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wide rounded-xl shadow-sm transition-all flex items-center justify-center gap-1 cursor-pointer"

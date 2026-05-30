@@ -49,7 +49,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         model: process.env.RIZQUNA_TEXT_MODEL ?? "gpt-4o-mini",
         messages: [
-          { role: "system", content: "Tulis draft marketing ringkas Bahasa Indonesia untuk Caturaya Living, brand interior dan aluminium Sidareja Cilacap." },
+          { role: "system", content: "Tulis draft marketing ringkas Bahasa Indonesia untuk Eko Suyanto Workshop, brand interior dan aluminium Sidareja Cilacap." },
           { role: "user", content: `Buat ${type} untuk channel ${channel}. Topik: ${topic}` },
         ],
       }),
@@ -67,5 +67,5 @@ export async function POST(request: Request) {
 }
 
 function buildFallbackDraft(topic: string, channel: string, type: string) {
-  return `${type} ${channel}: ${topic}\n\nCaturaya Living membantu kebutuhan interior, aluminium, kitchen set, plafon, kanopi, dan finishing rumah area Sidareja-Cilacap. Kirim foto lokasi, ukuran perkiraan, dan budget untuk konsultasi awal via WhatsApp.`;
+  return `${type} ${channel}: ${topic}\n\nEko Suyanto Workshop membantu kebutuhan interior, aluminium, kitchen set, plafon, kanopi, dan finishing rumah area Sidareja-Cilacap. Kirim foto lokasi, ukuran perkiraan, dan budget untuk konsultasi awal via WhatsApp.`;
 }

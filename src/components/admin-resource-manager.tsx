@@ -204,7 +204,7 @@ export function AdminResourceManager() {
 
   async function generateImage() {
     const prompt = [
-      "Interior/home finishing realistic photo for Caturaya Living Sidareja Cilacap.",
+      "Interior/home finishing realistic photo for Eko Suyanto Workshop Sidareja Cilacap.",
       String(form.title || form.topic || form.service || form.slug || ""),
       String(form.summary || form.notes || ""),
       "modern Indonesian home, clean detail, no text, no watermark",

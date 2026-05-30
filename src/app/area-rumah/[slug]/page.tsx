@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props) {
   const area = areas.find((item) => item.slug === slug);
 
   return {
-    title: area ? `${area.title} | Area Rumah Caturaya Living` : "Area Rumah Caturaya Living",
+    title: area ? `${area.title} | Area Rumah Eko Suyanto Workshop` : "Area Rumah Eko Suyanto Workshop",
     description: area?.summary,
     alternates: area ? { canonical: absoluteUrl(`/area-rumah/${area.slug}`) } : undefined,
     openGraph: area ? {
-      title: `${area.title} | Caturaya Living`,
+      title: `${area.title} | Eko Suyanto Workshop`,
       description: area.summary,
       images: [{ url: absoluteUrl(area.image) }],
     } : undefined,
@@ -86,7 +86,7 @@ export default async function AreaDetailPage({ params }: Props) {
             <div className="relative h-[250px] sm:h-[400px] w-full rounded-[2px] overflow-hidden shadow-premium border border-border-premium/50 bg-neutral-100">
               <Image 
                 src={area.image} 
-                alt={`Desain visual area ${area.title} Caturaya Living`} 
+                alt={`Desain visual area ${area.title} Eko Suyanto Workshop`} 
                 fill 
                 priority 
                 sizes="(max-width: 980px) 100vw, 60vw" 
@@ -157,7 +157,7 @@ export default async function AreaDetailPage({ params }: Props) {
               <div className="flex flex-col gap-3 mt-4 w-full">
                 <a 
                   className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all cursor-pointer shadow-sm group"
-                  href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai rencana penataan dan pekerjaan untuk area ${area.title} rumah saya.`)} 
+                  href={whatsappUrl(`Halo Eko Suyanto Workshop, saya ingin berkonsultasi mengenai rencana penataan dan pekerjaan untuk area ${area.title} rumah saya.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label={`Konsultasi penataan area ${area.title} via WhatsApp`}
@@ -170,7 +170,7 @@ export default async function AreaDetailPage({ params }: Props) {
                 <Link 
                   className="w-full text-center py-3 border border-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-wide rounded-[2px] transition-all cursor-pointer bg-transparent"
                   href="/area-rumah" 
-                  aria-label="Lihat seluruh daftar area properti Caturaya Living"
+                  aria-label="Lihat seluruh daftar area properti Eko Suyanto Workshop"
                 >
                   Jelajahi Semua Area
                 </Link>
