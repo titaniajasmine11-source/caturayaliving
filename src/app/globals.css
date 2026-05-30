@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1C1A17;
-  --color-primary-dark: #121110;
-  --color-primary-neutral: #2C2925;
+  --color-primary: #221F1D;            /* Deep Graphite Charcoal */
+  --color-primary-dark: #1A1816;
+  --color-primary-neutral: #2C2825;
 
-  --color-accent: #A8753D;
-  --color-accent-hover: #C08B51;
-  --color-accent-light: #FAF8F5;
-  --color-accent-cream: #F3EFE9;
+  --color-accent: #E5835C;            /* Elegant Coral Accent */
+  --color-accent-hover: #F09673;
+  --color-accent-light: #FAF6F0;      /* Warm Cream Sand Background */
+  --color-accent-cream: #FFFDFB;      /* Card Soft White Background */
 
-  --color-neutral-text: #4E463E;
-  --color-neutral-muted: #7E7467;
+  --color-neutral-text: #59524C;      /* Legible Charcoal */
+  --color-neutral-muted: #8E8378;
 
-  --color-border-premium: #E6E0D8;
+  --color-border-premium: #EEE8DF;    /* Soft Warm Sand Border */
   
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Playfair Display', serif;
@@ -32,11 +32,11 @@
 }
 
 @utility shadow-premium {
-  box-shadow: 0 16px 36px -12px rgba(28, 26, 23, 0.04);
+  box-shadow: 0 16px 36px -12px rgba(90, 80, 70, 0.04);
 }
 
 @utility shadow-premium-lg {
-  box-shadow: 0 32px 64px -16px rgba(28, 26, 23, 0.08);
+  box-shadow: 0 32px 64px -16px rgba(90, 80, 70, 0.08);
 }
 
 @utility hide-scrollbar {
@@ -48,7 +48,7 @@
 }
 
 body {
-  @apply text-neutral-text bg-white antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col;
+  @apply text-neutral-text bg-accent-light antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col;
   font-family: var(--font-sans), Arial, sans-serif;
 }
 
