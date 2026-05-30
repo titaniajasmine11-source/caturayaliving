@@ -13,7 +13,7 @@ export default async function AreaRumahPage() {
   const areas = await getAreas();
 
   return (
-    <main className="bg-white min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-neutral-muted mb-8" aria-label="Breadcrumb">

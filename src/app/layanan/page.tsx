@@ -13,7 +13,7 @@ export default async function LayananPage() {
 
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-white pt-48 flex items-center justify-center">
+      <div className="min-h-screen bg-accent-light pt-48 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-10 h-10 border-4 border-accent border-t-transparent rounded-full animate-spin" />
           <span className="text-xs uppercase font-bold tracking-widest text-neutral-muted">Memuat Layanan...</span>

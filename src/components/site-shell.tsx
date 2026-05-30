@@ -45,7 +45,7 @@ export function SiteHeader() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/85 backdrop-blur-md py-4 shadow-sm border-b border-border/40"
+            ? "bg-accent-light/90 backdrop-blur-md py-4 shadow-premium border-b border-border-premium/60"
             : "bg-transparent py-6 border-b border-transparent"
         }`}
       >
@@ -121,7 +121,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 flex flex-col justify-between pb-8 lg:hidden"
+            className="fixed inset-0 z-40 bg-accent-light pt-24 px-6 flex flex-col justify-between pb-8 lg:hidden"
           >
             <div className="flex flex-col gap-5">
               {navigation.map((item, index) => {
