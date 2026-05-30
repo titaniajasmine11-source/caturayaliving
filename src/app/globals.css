@@ -10,13 +10,13 @@
   --color-accent-light: #FAF8F5;      /* Pure Warm Alabaster */
   --color-accent-cream: #FFFDFB;      /* Soft Warm Ivory */
 
-  --color-neutral-text: #4A443E;      /* Muted Organic Charcoal */
-  --color-neutral-muted: #877D72;     /* Stone Gray */
+  --color-neutral-text: #3D3730;      /* Warmer, darker — much better contrast */
+  --color-neutral-muted: #6B6259;     /* Darker muted — was #877D72, now readable */
 
   --color-border-premium: #EAE3D8;    /* Delicate Linen Border */
   
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 
 @utility glassmorphism {
@@ -48,21 +48,23 @@
 }
 
 @utility tracking-luxury {
-  letter-spacing: 0.25em;
+  letter-spacing: 0.12em;
 }
 
 @utility tracking-luxury-sm {
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
 }
 
 body {
   @apply text-neutral-text bg-accent-light antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col;
   font-family: var(--font-sans), Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), Georgia, serif;
-  @apply text-primary font-medium tracking-tight;
+  font-family: var(--font-display), Arial, sans-serif;
+  @apply text-primary font-semibold tracking-tight;
 }
 
 /* Skip content link for keyboard accessibility */
@@ -95,4 +97,3 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
-

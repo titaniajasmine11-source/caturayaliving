@@ -136,29 +136,29 @@ export default function HomeClient({
               className="inline-flex items-center gap-2 border-b border-accent/30 pb-1.5"
             >
               <Sparkle size={10} className="text-accent animate-pulse" />
-              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent leading-none">
+              <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent leading-none">
                 Full Kontraktor Properti · Sidareja, Cilacap
               </span>
             </motion.div>
 
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl sm:text-6xl lg:text-[72px] font-display font-light text-white tracking-tight leading-[1.05]"
+              className="text-4xl sm:text-6xl lg:text-[72px] font-semibold text-white tracking-tight leading-[1.05]"
             >
               Wujudkan Keindahan <br className="hidden sm:inline" />
-              <span className="font-display italic text-accent font-normal">Hunian Impian Anda</span>
+              <span className="italic text-accent font-normal">Hunian Impian Anda</span>
             </motion.h1>
 
             <motion.p 
               variants={fadeIn} 
-              className="text-xs sm:text-sm text-accent-light/70 leading-relaxed max-w-xl"
+              className="text-sm sm:text-base text-accent-light/70 leading-relaxed max-w-xl"
             >
               Dari kusen kayu solid anti rayap, kusen aluminium tebal tahan karat cuaca pesisir, plafon PVC anti lembab tahan air pasang Sidareja, hingga renovasi sipil total — Caturaya Living mengkoordinasikan seluruh tim spesialis untuk Anda di bawah satu manajemen tepercaya.
             </motion.p>
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
               <a 
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-[10px] font-semibold uppercase tracking-luxury px-8 py-4 rounded-[2px] transition-all duration-300 shadow-sm"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide px-8 py-4 rounded-[2px] transition-all duration-300 shadow-sm"
                 href={wa} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -166,7 +166,7 @@ export default function HomeClient({
                 Mulai Konsultasi Gratis
               </a>
               <Link 
-                className="inline-flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/5 text-white text-[10px] font-semibold uppercase tracking-luxury px-8 py-4 rounded-[2px] transition-all"
+                className="inline-flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/5 text-white text-xs font-semibold uppercase tracking-wide px-8 py-4 rounded-[2px] transition-all"
                 href="/portofolio"
               >
                 Lihat Portofolio
@@ -214,14 +214,14 @@ export default function HomeClient({
                 <div className="w-9 h-9 flex items-center justify-center bg-accent/5 border border-accent/10 rounded-[2px] text-accent transition-colors group-hover:bg-accent group-hover:text-primary">
                   {item.icon}
                 </div>
-                <span className="text-accent/20 font-display text-4xl font-light italic leading-none -mt-2">{item.idx}</span>
+                <span className="text-accent/20 text-4xl font-light italic leading-none -mt-2">{item.idx}</span>
               </div>
-              <h3 className="text-base font-display font-medium text-primary pt-3">{item.title}</h3>
-              <p className="text-xs text-neutral-muted leading-relaxed">{item.desc}</p>
+              <h3 className="text-base font-semibold text-primary pt-3">{item.title}</h3>
+              <p className="text-sm text-neutral-muted leading-relaxed">{item.desc}</p>
               
               <Link 
                 href="/layanan" 
-                className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-luxury text-primary hover:text-accent border-b border-transparent hover:border-accent pb-0.5 mt-6 transition-all"
+                className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-primary hover:text-accent border-b border-transparent hover:border-accent pb-0.5 mt-6 transition-all"
               >
                 <span>Konsultasi Proyek</span>
                 <ArrowRight size={10} />
@@ -234,8 +234,8 @@ export default function HomeClient({
       {/* ── 3. Explore Our Collections Grid ── */}
       <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="flex flex-col gap-3 mb-20 text-center max-w-xl mx-auto">
-          <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Layanan Unggulan</span>
-          <h2 className="text-3xl sm:text-4xl font-display font-light text-primary">Katalog Pengerjaan Spesialis</h2>
+          <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Layanan Unggulan</span>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-primary">Katalog Pengerjaan Spesialis</h2>
           <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
         </div>
 
@@ -266,11 +266,11 @@ export default function HomeClient({
               {/* Caption */}
               <div className="flex flex-col gap-2 flex-1 justify-between">
                 <div className="flex flex-col gap-2">
-                  <span className="text-[9px] uppercase font-semibold tracking-luxury text-accent font-sans">{col.category}</span>
-                  <h3 className="text-base font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
+                  <span className="text-xs uppercase font-semibold tracking-luxury-sm text-accent font-sans">{col.category}</span>
+                  <h3 className="text-base font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
                     {col.title}
                   </h3>
-                  <p className="text-[11px] text-neutral-muted leading-relaxed line-clamp-3">
+                  <p className="text-sm text-neutral-muted leading-relaxed line-clamp-3">
                     {col.desc}
                   </p>
                 </div>
@@ -279,7 +279,7 @@ export default function HomeClient({
                   href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan layanan ${col.title} dan ingin menanyakan estimasi awal.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1 w-full py-3 border border-border-premium hover:border-accent bg-transparent hover:bg-accent text-primary hover:text-white rounded-[2px] text-[10px] font-semibold tracking-luxury uppercase transition-all mt-4 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1 w-full py-3 border border-border-premium hover:border-accent bg-transparent hover:bg-accent text-primary hover:text-white rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all mt-4 cursor-pointer"
                 >
                   <span>Lihat Detail</span>
                 </a>
@@ -296,14 +296,14 @@ export default function HomeClient({
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20">
             <div className="flex flex-col gap-4 max-w-2xl">
-              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Layanan Lengkap</span>
-              <h2 className="text-3xl sm:text-4xl font-display font-light text-white leading-tight">
+              <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Layanan Lengkap</span>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
                 Koordinasikan Semua Kebutuhan Properti Anda
               </h2>
             </div>
             <Link 
               href="/layanan" 
-              className="group flex items-center gap-2 border border-white/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-[10px] font-semibold uppercase tracking-luxury transition-all duration-300"
+              className="group flex items-center gap-2 border border-white/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-xs font-semibold uppercase tracking-wide transition-all duration-300"
             >
               <span>Lihat Seluruh Layanan</span>
               <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -349,15 +349,15 @@ export default function HomeClient({
 
                   <div className="relative z-10 flex flex-col gap-2">
                     {(() => { const Icon = iconMap[cat.icon] || Compass; return <Icon size={18} className="text-accent" />; })()}
-                    <h3 className="text-lg font-display font-medium text-white group-hover:text-accent transition-colors pt-1">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-accent transition-colors pt-1">
                       {cat.label}
                     </h3>
-                    <p className="text-[11px] text-neutral-muted leading-relaxed max-w-sm">
+                    <p className="text-sm text-neutral-muted leading-relaxed max-w-sm">
                       {cat.description}
                     </p>
                     <Link 
                       href={`/layanan?kategori=${cat.id}`}
-                      className="text-[10px] font-semibold uppercase tracking-luxury text-accent group-hover:text-white border-b border-transparent group-hover:border-white pb-0.5 mt-3 transition-all w-fit flex items-center gap-1"
+                      className="text-xs font-semibold uppercase tracking-wide text-accent group-hover:text-white border-b border-transparent group-hover:border-white pb-0.5 mt-3 transition-all w-fit flex items-center gap-1"
                     >
                       <span>Pelajari Layanan</span>
                       <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
@@ -385,22 +385,22 @@ export default function HomeClient({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/30 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur px-6 py-5 rounded-[2px] border border-border-premium/30 shadow-sm z-10">
-              <span className="text-[9px] uppercase font-semibold tracking-luxury text-accent block mb-1">Manajemen Terstruktur</span>
-              <p className="text-[10px] text-neutral-muted leading-relaxed">Mengkoordinasikan tim spesialis kusen kayu anti rayap, aluminium tebal tahan karat, plafon PVC anti bocor, & konstruksi sipil kokoh di Cilacap.</p>
+              <span className="text-xs uppercase font-semibold tracking-luxury-sm text-accent block mb-1">Manajemen Terstruktur</span>
+              <p className="text-sm text-neutral-muted leading-relaxed">Mengkoordinasikan tim spesialis kusen kayu anti rayap, aluminium tebal tahan karat, plafon PVC anti bocor, & konstruksi sipil kokoh di Cilacap.</p>
             </div>
           </div>
 
           {/* Right Side: Specialists List */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="flex flex-col gap-3">
-              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Tim Spesialis Kami</span>
-              <h2 className="text-3xl sm:text-4xl font-display font-light text-primary leading-tight">
+              <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Tim Spesialis Kami</span>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-primary leading-tight">
                 Mitra Tukang Berpengalaman di Bidangnya
               </h2>
               <div className="w-8 h-[1px] bg-accent/60 mt-2"></div>
             </div>
             
-            <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
               Caturaya Living mempersatukan jaringan mitra tukang ahli Sidareja yang terampil bertahun-tahun di bidangnya. Semua tim dikoordinasikan langsung agar pengerjaan properti Anda selesai rapi, kokoh, dan sesuai desain impian.
             </p>
 
@@ -419,8 +419,8 @@ export default function HomeClient({
                 >
                   {(() => { const SpecIcon = iconMap[spec.icon] || Compass; return <SpecIcon size={16} className="text-accent mt-0.5" />; })()}
                   <div className="flex flex-col gap-1">
-                    <strong className="text-xs font-semibold text-primary">{spec.role}</strong>
-                    <p className="text-[11px] text-neutral-muted leading-relaxed">{spec.description}</p>
+                    <strong className="text-sm font-semibold text-primary">{spec.role}</strong>
+                    <p className="text-[13px] text-neutral-muted leading-relaxed">{spec.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -433,8 +433,8 @@ export default function HomeClient({
       <section className="py-24 bg-primary text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <div className="flex flex-col gap-3">
-            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Zonasi Area Rumah</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-light text-white">
+            <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Zonasi Area Rumah</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-white">
               Pilih Bagian Rumah yang Ingin Dipercantik
             </h2>
           </div>
@@ -459,10 +459,10 @@ export default function HomeClient({
                 </div>
                 
                 <div className="relative z-10">
-                  <span className="text-accent text-[9px] font-semibold uppercase tracking-luxury block mb-1">
+                  <span className="text-accent text-xs font-semibold uppercase tracking-luxury-sm block mb-1">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="text-base font-display font-medium text-white group-hover:text-accent transition-colors flex items-center gap-1.5">
+                  <h3 className="text-base font-semibold text-white group-hover:text-accent transition-colors flex items-center gap-1.5">
                     <span>{area.title}</span>
                     <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </h3>
@@ -477,14 +477,14 @@ export default function HomeClient({
       <section className="py-28 max-w-7xl mx-auto px-6" id="portofolio">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20">
           <div className="flex flex-col gap-3 max-w-2xl">
-            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Katalog Portofolio</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-light text-primary">
+            <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Katalog Portofolio</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-primary">
               Hasil Realisasi Nyata Tim Caturaya Living
             </h2>
           </div>
           <Link 
             href="/portofolio" 
-            className="group flex items-center gap-2 border border-primary/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-[10px] font-semibold uppercase tracking-luxury transition-all duration-300"
+            className="group flex items-center gap-2 border border-primary/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-xs font-semibold uppercase tracking-wide transition-all duration-300"
           >
             <span>Lihat Semua Portofolio</span>
             <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -512,27 +512,27 @@ export default function HomeClient({
                   sizes="(max-width: 980px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-750" 
                 />
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-[9px] uppercase font-semibold tracking-luxury text-accent px-3 py-1 rounded-[2px] border border-border-premium/20 shadow-sm">
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-xs uppercase font-semibold tracking-luxury-sm text-accent px-3 py-1 rounded-[2px] border border-border-premium/20 shadow-sm">
                   {item.category}
                 </div>
               </div>
               <div className="p-8 flex flex-col gap-3 flex-1 justify-between">
                 <div className="flex flex-col gap-2">
-                  <span className="text-[9px] uppercase font-semibold tracking-luxury text-neutral-muted flex items-center gap-1.5">
+                  <span className="text-xs uppercase font-semibold tracking-luxury-sm text-neutral-muted flex items-center gap-1.5">
                     <MapPin size={10} className="text-accent" />
                     <span>{item.location}</span>
                   </span>
-                  <h3 className="text-base font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
+                  <h3 className="text-base font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] text-neutral-muted leading-relaxed line-clamp-3">
+                  <p className="text-sm text-neutral-muted leading-relaxed line-clamp-3">
                     {item.material}.
                   </p>
                 </div>
                 
                 <Link 
                   href={`/portofolio/${item.slug}`}
-                  className="text-[10px] font-semibold uppercase tracking-luxury text-primary border-t border-border-premium/20 pt-4 mt-6 flex items-center gap-1 group-hover:text-accent transition-colors w-fit"
+                  className="text-xs font-semibold uppercase tracking-wide text-primary border-t border-border-premium/20 pt-4 mt-6 flex items-center gap-1 group-hover:text-accent transition-colors w-fit"
                 >
                   <span>Lihat Studi Kasus</span>
                   <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
@@ -547,8 +547,8 @@ export default function HomeClient({
       <section className="py-28 bg-accent-light border-t border-b border-border-premium/50" id="faq">
         <div className="max-w-3xl mx-auto px-6">
           <div className="flex flex-col gap-3 mb-20 text-center">
-            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Tanya Jawab</span>
-            <h2 className="text-3xl font-display font-light text-primary">
+            <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Tanya Jawab</span>
+            <h2 className="text-3xl font-semibold text-primary">
               Pertanyaan yang Sering Diajukan
             </h2>
             <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
@@ -585,7 +585,7 @@ export default function HomeClient({
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="pb-6 text-xs text-neutral-muted leading-relaxed pt-2">
+                        <div className="pb-6 text-sm text-neutral-muted leading-relaxed pt-2">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -601,15 +601,15 @@ export default function HomeClient({
       {/* ── 9. Editorial Testimonial ── */}
       <section className="py-28 bg-primary text-accent-light relative">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
-          <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Testimonial</span>
+          <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Testimonial</span>
           
           <figure className="flex flex-col gap-4">
-            <span className="text-4xl font-display text-accent select-none leading-none">“</span>
-            <blockquote className="text-lg sm:text-xl font-display italic leading-relaxed max-w-2xl mx-auto text-white">
+            <span className="text-4xl text-accent select-none leading-none">"</span>
+            <blockquote className="text-lg sm:text-xl italic leading-relaxed max-w-2xl mx-auto text-white">
               Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Caturaya Living, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.
             </blockquote>
             <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
-            <figcaption className="text-[9px] font-semibold uppercase tracking-luxury text-accent">
+            <figcaption className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">
               Bapak Heri – Sidareja
             </figcaption>
           </figure>
@@ -621,15 +621,15 @@ export default function HomeClient({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           <div className="lg:col-span-7 flex flex-col gap-5 text-left">
-            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Konsultasi</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-light text-primary leading-tight">
+            <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Konsultasi</span>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-primary leading-tight">
               Mulai Konsultasikan Proyek Properti Anda Sekarang
             </h2>
             <div className="w-8 h-[1px] bg-accent/60 my-1"></div>
-            <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
               Ceritakan ide pengerjaan properti Anda, kirim ukuran aktual atau foto lokasi jika ada. Tim Caturaya Living siap mewujudkan pengerjaan yang kokoh, fungsional, dan bernilai seni tinggi.
             </p>
-            <div className="flex flex-col gap-4 text-xs text-neutral-muted mt-2">
+            <div className="flex flex-col gap-4 text-sm text-neutral-muted mt-2">
               <div className="flex gap-2.5">
                 <MapPin size={14} className="text-accent mt-0.5 flex-shrink-0" />
                 <span className="leading-relaxed">
@@ -643,12 +643,12 @@ export default function HomeClient({
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="bg-white border border-border-premium/50 rounded-[2px] p-8 flex flex-col gap-6 shadow-premium relative overflow-hidden text-left">
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none" />
-              <h3 className="text-xs uppercase tracking-luxury font-semibold text-primary">Kontak Konsultasi Cepat</h3>
+              <h3 className="text-xs uppercase tracking-wide font-semibold text-primary">Kontak Konsultasi Cepat</h3>
               
               <div className="flex flex-col gap-4">
-                <div className="flex justify-between items-center text-xs border-b border-border-premium/30 pb-3">
+                <div className="flex justify-between items-center text-sm border-b border-border-premium/30 pb-3">
                   <div className="flex flex-col">
-                    <span className="text-[9px] text-neutral-muted uppercase tracking-luxury font-semibold">Tholib (WhatsApp Utama)</span>
+                    <span className="text-xs text-neutral-muted uppercase tracking-wide font-semibold">Tholib (WhatsApp Utama)</span>
                     <span className="font-semibold text-primary pt-0.5">{site.phonePrimaryLabel}</span>
                   </div>
                   <a 
@@ -661,9 +661,9 @@ export default function HomeClient({
                   </a>
                 </div>
 
-                <div className="flex justify-between items-center text-xs border-b border-border-premium/30 pb-3">
+                <div className="flex justify-between items-center text-sm border-b border-border-premium/30 pb-3">
                   <div className="flex flex-col">
-                    <span className="text-[9px] text-neutral-muted uppercase tracking-luxury font-semibold">Eko (WhatsApp Alternatif)</span>
+                    <span className="text-xs text-neutral-muted uppercase tracking-wide font-semibold">Eko (WhatsApp Alternatif)</span>
                     <span className="font-semibold text-primary pt-0.5">{site.phoneSecondaryLabel}</span>
                   </div>
                   <a 
@@ -681,7 +681,7 @@ export default function HomeClient({
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 bg-primary hover:bg-accent text-white text-center rounded-[2px] text-[10px] font-semibold tracking-luxury uppercase transition-all duration-300 shadow-sm"
+                className="w-full py-4 bg-primary hover:bg-accent text-white text-center rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm"
               >
                 Mulai Konsultasi Online
               </a>

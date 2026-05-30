@@ -94,55 +94,55 @@ Mohon dibantu arahan desain dan estimasi awal.`;
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Nama Lengkap</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Nama Lengkap</label>
             <input 
               value={name} 
               onChange={(event) => setName(event.target.value)} 
               placeholder="Nama Anda" 
-              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
+              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
             />
           </div>
           
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Nomor WhatsApp</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Nomor WhatsApp</label>
             <input 
               value={phone} 
               onChange={(event) => setPhone(event.target.value)} 
               placeholder="Contoh: 085119467138" 
-              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
+              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Bagian Ruang Proyek</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Bagian Ruang Proyek</label>
             <select 
               value={room} 
               onChange={(event) => setRoom(event.target.value)}
-              className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-3 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary transition-all duration-300 shadow-sm cursor-pointer"
+              className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-3 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary transition-all duration-300 shadow-sm cursor-pointer"
             >
               {roomTemplates.map((item) => <option key={item}>{item}</option>)}
             </select>
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Layout / Konsep</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Layout / Konsep</label>
             <select 
               value={model} 
               onChange={(event) => setModel(event.target.value)}
-              className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-3 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary transition-all duration-300 shadow-sm cursor-pointer"
+              className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-3 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary transition-all duration-300 shadow-sm cursor-pointer"
             >
               {models.map((item) => <option key={item}>{item}</option>)}
             </select>
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Warna / Material Utama</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Warna / Material Utama</label>
             <select 
               value={material} 
               onChange={(event) => setMaterial(event.target.value)}
-              className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-3 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary transition-all duration-300 shadow-sm cursor-pointer"
+              className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-3 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary transition-all duration-300 shadow-sm cursor-pointer"
             >
               {materials.map((item) => <option key={item}>{item}</option>)}
             </select>
@@ -151,42 +151,42 @@ Mohon dibantu arahan desain dan estimasi awal.`;
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Lebar Area (meter)</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Lebar Area (meter)</label>
             <input 
               type="number" 
               min="1" 
               step="0.5" 
               value={width} 
               onChange={(event) => setWidth(positiveNumber(event.target.value))} 
-              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
+              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
             />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Panjang Area (meter)</label>
+            <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Panjang Area (meter)</label>
             <input 
               type="number" 
               min="1" 
               step="0.5" 
               value={length} 
               onChange={(event) => setLength(positiveNumber(event.target.value))} 
-              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
+              className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm"
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted mb-1">Catatan Tambahan</label>
+          <label className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted mb-1">Catatan Tambahan</label>
           <textarea 
             value={notes} 
             onChange={(event) => setNotes(event.target.value)} 
             placeholder="Contoh: ingin kitchen set kombinasi graphite, ada jendela di sisi atas." 
-            className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm min-h-[80px] resize-y"
+            className="w-full bg-accent-light/30 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-sm focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 shadow-sm min-h-[80px] resize-y"
           />
         </div>
 
         <div className="text-left mt-2">
-          <span className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted block mb-3">
+          <span className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted block mb-3">
             Pilih Elemen Interior / Eksterior (Klik untuk menambah)
           </span>
           <div className="flex flex-wrap gap-2">
@@ -213,7 +213,7 @@ Mohon dibantu arahan desain dan estimasi awal.`;
 
         <div className="mt-4">
           <button 
-            className="w-full text-center py-3 border border-border-premium hover:border-primary text-[10px] font-semibold uppercase tracking-luxury rounded-[2px] transition-all bg-white cursor-pointer" 
+            className="w-full text-center py-3 border border-border-premium hover:border-primary text-xs font-semibold uppercase tracking-wide rounded-[2px] transition-all bg-white cursor-pointer" 
             type="button" 
             onClick={saveDesign}
           >
@@ -222,14 +222,14 @@ Mohon dibantu arahan desain dan estimasi awal.`;
         </div>
 
         {saveStatus && (
-          <p className="p-3 bg-accent/5 border border-accent/20 text-accent text-xs rounded-[2px] text-center font-medium" role="alert" aria-live="polite">
+          <p className="p-3 bg-accent/5 border border-accent/20 text-accent text-sm rounded-[2px] text-center font-medium" role="alert" aria-live="polite">
             {saveStatus}
           </p>
         )}
 
         {savedDesigns.length > 0 && (
           <div className="mt-4 pt-6 border-t border-border-premium/30 text-left">
-            <span className="text-[9px] font-semibold uppercase tracking-luxury text-neutral-muted block mb-3">
+            <span className="text-xs font-semibold uppercase tracking-luxury-sm text-neutral-muted block mb-3">
               Riwayat Desain Anda (Browser-Local)
             </span>
             <div className="flex flex-wrap gap-2">
@@ -238,7 +238,7 @@ Mohon dibantu arahan desain dan estimasi awal.`;
                   type="button" 
                   onClick={() => loadDesign(design)} 
                   key={design.id}
-                  className="px-3 py-1.5 text-[11px] font-semibold bg-white border border-border-premium hover:border-accent hover:text-accent rounded-[2px] transition-all cursor-pointer"
+                  className="px-3 py-1.5 text-[13px] font-semibold bg-white border border-border-premium hover:border-accent hover:text-accent rounded-[2px] transition-all cursor-pointer"
                 >
                   {design.room} ({design.model})
                 </button>
@@ -265,17 +265,17 @@ Mohon dibantu arahan desain dan estimasi awal.`;
 
         {/* Blueprint Estimate outcome card */}
         <div className="bg-white border border-border-premium/50 p-6 sm:p-8 rounded-[2px] shadow-premium text-left">
-          <p className="text-[9px] font-semibold uppercase tracking-luxury text-accent mb-2">
+          <p className="text-xs font-semibold uppercase tracking-luxury-sm text-accent mb-2">
             Ringkasan Konseptual
           </p>
-          <h4 className="text-lg font-display font-medium text-primary mb-2">
+          <h4 className="text-lg font-semibold text-primary mb-2">
             {model} Layout / {material}
           </h4>
-          <p className="text-xs text-neutral-muted leading-relaxed mb-6">
+          <p className="text-sm text-neutral-muted leading-relaxed mb-6">
             Dimensi: {width} x {length} meter, dengan {items.length} elemen arsitektural terpasang dalam rencana blueprint.
           </p>
           <a 
-            className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-accent hover:text-white text-white hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-[10px] font-semibold tracking-luxury uppercase transition-all cursor-pointer shadow-md group"
+            className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-accent hover:text-white text-white hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all cursor-pointer shadow-md group"
             href={whatsappUrl(message)} 
             target="_blank" 
             rel="noopener noreferrer" 

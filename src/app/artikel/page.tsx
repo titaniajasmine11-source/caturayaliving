@@ -28,7 +28,7 @@ export default async function ArtikelPage() {
             <Compass size={14} className="text-accent animate-spin-slow" />
             <span className="text-xs font-bold uppercase tracking-widest text-accent">Pusat Edukasi & Rekomendasi</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-medium text-primary tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
             Artikel, Panduan & Edukasi Properti
           </h1>
           <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
@@ -67,22 +67,22 @@ export default async function ArtikelPage() {
               >
                 <div className="flex flex-col gap-3">
                   <div className="flex justify-between items-center w-full">
-                    <span className="text-[10px] bg-accent/10 text-accent font-bold uppercase tracking-widest px-2.5 py-1 rounded-md">
+                    <span className="text-xs bg-accent/10 text-accent font-bold uppercase tracking-widest px-2.5 py-1 rounded-md">
                       {article.category}
                     </span>
-                    <span className="text-[10px] text-neutral-muted uppercase tracking-widest font-bold">
+                    <span className="text-xs text-neutral-muted uppercase tracking-widest font-bold">
                       {article.readTime}
                     </span>
                   </div>
-                  <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug mt-2">
+                  <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug mt-2">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3 bg-accent-light/10 border border-border-premium/20 p-3 rounded-xl mt-1">
+                  <p className="text-sm text-neutral-muted leading-relaxed line-clamp-3 bg-accent-light/10 border border-border-premium/20 p-3 rounded-xl mt-1">
                     {article.summary}
                   </p>
                 </div>
                 
-                <span className="text-[11px] font-bold text-accent group-hover:translate-x-1 transition-transform flex items-center gap-1 mt-6">
+                <span className="text-[13px] font-bold text-accent group-hover:translate-x-1 transition-transform flex items-center gap-1 mt-6">
                   <span>Baca Selengkapnya</span>
                   <ArrowRight size={12} />
                 </span>

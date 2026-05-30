@@ -47,7 +47,7 @@ export default function LayananClient({
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[10px] uppercase tracking-luxury text-neutral-muted mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-muted mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-accent">Beranda</Link>
           <span className="text-neutral-300">/</span>
           <span className="text-primary font-medium">Layanan</span>
@@ -57,14 +57,14 @@ export default function LayananClient({
         <header className="max-w-3xl flex flex-col gap-4 mb-16 text-left">
           <div className="inline-flex items-center gap-2 border-b border-accent/30 pb-1 w-fit mb-2">
             <Compass size={12} className="text-accent animate-spin-slow" />
-            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">
+            <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">
               Portal Layanan Lengkap
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-light text-primary tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
             Solusi Satu Atap — Interior, Eksterior & Konstruksi Sipil
           </h1>
-          <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
             Caturaya Living mengelola proyek properti Anda dari konsep hingga terpasang rapi. Tukang kayu, spesialis aluminium, instalatur PVC/HPL, dan tukang bangunan dikoordinasikan secara profesional di bawah satu pintu manajemen.
           </p>
         </header>
@@ -79,7 +79,7 @@ export default function LayananClient({
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`text-[11px] font-semibold tracking-luxury-sm uppercase pb-4 relative transition-colors focus:outline-none cursor-pointer ${
+                  className={`text-[13px] font-semibold tracking-luxury-sm uppercase pb-4 relative transition-colors focus:outline-none cursor-pointer ${
                     isActive ? "text-accent" : "text-neutral-muted hover:text-primary"
                   }`}
                 >
@@ -104,15 +104,15 @@ export default function LayananClient({
         {activeCategoryData && (
           <div className="bg-white border border-border-premium/45 p-6 sm:p-8 rounded-[2px] mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-left shadow-sm">
             <div className="flex flex-col gap-1.5">
-              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent flex items-center gap-1.5">
+              <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent flex items-center gap-1.5">
                 <span>Kategori:</span>
                 <span className="bg-accent/5 border border-accent/15 px-2 py-0.5 rounded-[2px] font-semibold">{activeCategoryData.label}</span>
               </span>
-              <p className="text-xs text-neutral-muted leading-relaxed max-w-xl">
+              <p className="text-sm text-neutral-muted leading-relaxed max-w-xl">
                 {activeCategoryData.description}
               </p>
             </div>
-            <div className="flex gap-2 flex-shrink-0 text-[10px] font-semibold text-primary uppercase tracking-luxury bg-accent-light/30 border border-border-premium/65 px-4 py-2 rounded-[2px]">
+            <div className="flex gap-2 flex-shrink-0 text-xs font-semibold text-primary uppercase tracking-wide bg-accent-light/30 border border-border-premium/65 px-4 py-2 rounded-[2px]">
               <Shield size={12} className="text-accent mt-0.5" />
               <span>Garansi Kerapian Pengerjaan</span>
             </div>
@@ -143,7 +143,7 @@ export default function LayananClient({
                     sizes="(max-width: 980px) 100vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-750" 
                   />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-[9px] uppercase font-semibold tracking-luxury text-accent px-3 py-1.5 rounded-[2px] border border-border-premium/30 shadow-sm flex items-center gap-1.5">
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-xs uppercase font-semibold tracking-wide text-accent px-3 py-1.5 rounded-[2px] border border-border-premium/30 shadow-sm flex items-center gap-1.5">
                     {activeCategoryData && (() => {
                       const CardIcon = categoryIconMap[activeCategoryData.icon] || Compass;
                       return <CardIcon size={10} className="text-accent" />;
@@ -154,13 +154,13 @@ export default function LayananClient({
 
                 <div className="p-8 flex flex-col gap-4 flex-1 justify-between">
                   <div className="flex flex-col gap-2.5">
-                    <h3 className="text-base font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
                       {service.title}
                     </h3>
-                    <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3">
+                    <p className="text-sm text-neutral-muted leading-relaxed line-clamp-3">
                       {service.summary}
                     </p>
-                    <p className="text-[11px] text-neutral-muted italic font-medium leading-relaxed bg-accent-light/40 border border-border-premium/20 p-3.5 rounded-[2px] mt-1">
+                    <p className="text-[13px] text-neutral-muted italic font-medium leading-relaxed bg-accent-light/40 border border-border-premium/20 p-3.5 rounded-[2px] mt-1">
                       {service.detail}
                     </p>
 
@@ -168,7 +168,7 @@ export default function LayananClient({
                     {service.benefits && (
                       <div className="flex flex-wrap gap-1.5 mt-2">
                         {service.benefits.slice(0, 3).map((b: string) => (
-                          <span key={b} className="text-[9px] uppercase tracking-luxury-sm bg-accent-light/70 border border-border-premium/30 px-2 py-0.5 rounded-[2px] text-neutral-muted font-medium">
+                          <span key={b} className="text-xs uppercase tracking-luxury-sm bg-accent-light/70 border border-border-premium/30 px-2 py-0.5 rounded-[2px] text-neutral-muted font-medium">
                             ✓ {b}
                           </span>
                         ))}
@@ -179,7 +179,7 @@ export default function LayananClient({
                   <div className="flex gap-3 border-t border-border-premium/20 pt-4 mt-2">
                     <Link
                       href={`/layanan/${service.slug}`}
-                      className="flex-1 text-center py-2.5 border border-border-premium hover:border-primary bg-transparent text-primary hover:bg-primary hover:text-white text-[10px] font-semibold uppercase tracking-luxury rounded-[2px] transition-all duration-300"
+                      className="flex-1 text-center py-2.5 border border-border-premium hover:border-primary bg-transparent text-primary hover:bg-primary hover:text-white text-xs font-semibold uppercase tracking-wide rounded-[2px] transition-all duration-300"
                     >
                       Detail Info
                     </Link>
@@ -187,7 +187,7 @@ export default function LayananClient({
                       href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai pengerjaan ${service.title}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-[10px] font-semibold uppercase tracking-luxury rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"
+                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-xs font-semibold uppercase tracking-wide rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"
                     >
                       <Phone size={11} />
                       <span>Tanya WA</span>
@@ -203,17 +203,17 @@ export default function LayananClient({
         <section className="bg-primary text-white rounded-[2px] overflow-hidden p-8 sm:p-16 text-center mt-24 relative border border-white/5">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col gap-6 items-center">
-            <h2 className="text-2xl sm:text-3xl font-display font-light leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
               Belum Menemukan Spesifikasi Layanan yang Sesuai?
             </h2>
-            <p className="text-neutral-muted text-xs leading-relaxed max-w-xl">
+            <p className="text-neutral-muted text-sm sm:text-base leading-relaxed max-w-xl">
               Ceritakan kondisi rumah atau properti Anda secara rinci ke kami. Caturaya Living melayani pengerjaan sipil renovasi, pembuatan interior butik kustom, hingga fasad luar ruangan terpadu. Hubungi kami secara gratis.
             </p>
             <a 
               href={whatsappUrl()} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark px-8 py-4 rounded-[2px] text-[10px] font-semibold uppercase tracking-luxury shadow-lg transition-all group mt-2"
+              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark px-8 py-4 rounded-[2px] text-xs font-semibold uppercase tracking-wide shadow-lg transition-all group mt-2"
               aria-label="Konsultasi gratis via WhatsApp"
             >
               <Phone size={13} />

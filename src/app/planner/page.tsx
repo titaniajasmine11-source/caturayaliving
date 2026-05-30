@@ -30,7 +30,7 @@ export default function PlannerPage() {
               Rancang Bangun Denah
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-medium text-primary tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
             Visual Konseptual Proyek Rumah
           </h1>
           <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
@@ -42,10 +42,10 @@ export default function PlannerPage() {
         <section className="mb-16 bg-white border border-border-premium/50 p-6 sm:p-10 rounded-[32px] shadow-premium">
           <header className="mb-8 border-b border-border-premium/30 pb-6">
             <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Konfigurator Briefing</p>
-            <h2 className="text-2xl sm:text-3xl font-display font-medium text-primary tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-primary tracking-tight">
               Buat Rancangan Kasar Area Rumah Anda
             </h2>
-            <p className="text-xs text-neutral-muted mt-2">
+            <p className="text-sm text-neutral-muted mt-2">
               Pilih spesifikasi area, rancang dimensi ukuran kasar, dan pilih elemen untuk menghasilkan rangkuman konseptual instan.
             </p>
           </header>
@@ -56,7 +56,7 @@ export default function PlannerPage() {
         <section className="mb-24">
           <header className="max-w-2xl flex flex-col gap-3 mb-12">
             <p className="text-xs font-bold uppercase tracking-widest text-accent">Tahapan Perencanaan</p>
-            <h2 className="text-2xl sm:text-3xl font-display font-medium text-primary tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-primary tracking-tight">
               Proses Pematangan Konsep Visual Kami
             </h2>
             <p className="text-sm text-neutral-muted leading-relaxed">
@@ -78,7 +78,7 @@ export default function PlannerPage() {
                     height={100} 
                     className="object-contain group-hover:scale-110 transition-transform duration-500" 
                   />
-                  <span className="absolute bottom-3 right-3 bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded">
+                  <span className="absolute bottom-3 right-3 bg-primary text-white text-xs uppercase font-bold tracking-widest px-2.5 py-1 rounded">
                     {stage.label}
                   </span>
                 </div>
@@ -87,7 +87,7 @@ export default function PlannerPage() {
                     <h3 className="text-base font-bold text-primary group-hover:text-accent transition-colors">
                       {stage.title}
                     </h3>
-                    <p className="text-xs text-neutral-muted leading-relaxed">
+                    <p className="text-sm text-neutral-muted leading-relaxed">
                       {stage.description}
                     </p>
                   </div>
@@ -102,14 +102,14 @@ export default function PlannerPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/15 via-transparent to-transparent pointer-events-none" />
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col gap-6 items-center">
             <p className="text-xs font-bold uppercase tracking-widest text-accent">Output Konsultasi Desain</p>
-            <h2 className="text-2xl sm:text-3xl font-display font-medium leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold leading-tight">
               Ingin Visualisasi Khusus (Sketsa/2D/3D) untuk Rumah Anda?
             </h2>
             <p className="text-neutral-muted text-sm leading-relaxed">
               Kirimkan foto lokasi, perkiraan ukuran, dan referensi model. Tim arsitektur kami akan memproses arahan visual (sketsa, 2D, atau 3D) yang sesuai kebutuhan Anda.
             </p>
             <a 
-              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl text-sm font-semibold uppercase tracking-wider shadow-lg shadow-accent/20 transition-all group"
+              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl text-sm font-semibold uppercase tracking-wide shadow-lg shadow-accent/20 transition-all group"
               href={whatsappUrl("Halo Caturaya Living, saya ingin konsultasi detail planner sketsa 2D/3D/4D untuk proyek rumah saya.")} 
               target="_blank" 
               rel="noopener noreferrer"

@@ -61,7 +61,7 @@ export default async function PortfolioCategoryPage({ params }: Props) {
             <Compass size={14} className="text-accent animate-spin-slow" />
             <span className="text-xs font-bold uppercase tracking-widest text-accent">Kategori Proyek Realisasi</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-medium text-primary tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
             Portofolio {categoryName}
           </h1>
           <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
@@ -88,18 +88,18 @@ export default async function PortfolioCategoryPage({ params }: Props) {
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-xs uppercase font-bold tracking-widest text-accent px-3 py-1 rounded-full border border-white/50 shadow-sm">
                     {item.category}
                   </div>
-                  <div className="absolute bottom-4 right-4 bg-primary/85 backdrop-blur text-white text-[10px] uppercase font-bold px-3 py-1 rounded-md">
+                  <div className="absolute bottom-4 right-4 bg-primary/85 backdrop-blur text-white text-xs uppercase font-bold px-3 py-1 rounded-md">
                     {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
 
                 <div className="p-8 flex flex-col gap-4 flex-1 justify-between text-left">
                   <div className="flex flex-col gap-2">
-                    <span className="text-[10px] font-bold text-accent uppercase tracking-wider">{item.category} / {item.location}</span>
-                    <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
+                    <span className="text-xs font-bold text-accent uppercase tracking-wider">{item.category} / {item.location}</span>
+                    <h3 className="text-lg font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3 bg-accent-light/10 border border-border-premium/20 p-3 rounded-xl mt-1">
+                    <p className="text-sm text-neutral-muted leading-relaxed line-clamp-3 bg-accent-light/10 border border-border-premium/20 p-3 rounded-xl mt-1">
                       {item.material}. Estimasi durasi {item.duration}.
                     </p>
                   </div>
@@ -107,7 +107,7 @@ export default async function PortfolioCategoryPage({ params }: Props) {
                   <div className="flex gap-3 border-t border-border-premium/30 pt-4 mt-2">
                     <Link 
                       href={`/portofolio/${item.slug}`} 
-                      className="flex-1 text-center py-2.5 bg-primary-dark/5 hover:bg-primary-dark hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center justify-center"
+                      className="flex-1 text-center py-2.5 bg-primary-dark/5 hover:bg-primary-dark hover:text-white text-xs font-bold uppercase tracking-wide rounded-xl transition-all cursor-pointer flex items-center justify-center"
                       aria-label={`Tinjau studi kasus ${item.title}`}
                     >
                       Studi Kasus
@@ -116,7 +116,7 @@ export default async function PortfolioCategoryPage({ params }: Props) {
                       href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan hasil pengerjaan ${item.title} (kategori ${item.category}) dan ingin berkonsultasi mengenai proyek serupa.`)} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-sm transition-all flex items-center justify-center gap-1 cursor-pointer"
+                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wide rounded-xl shadow-sm transition-all flex items-center justify-center gap-1 cursor-pointer"
                       aria-label={`Tanya estimasi proyek serupa ${item.title} via WhatsApp`}
                     >
                       <Phone size={12} />

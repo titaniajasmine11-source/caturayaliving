@@ -38,18 +38,18 @@ export function ContentSearch({ items }: { items: SearchItem[] }) {
             className="group flex flex-col gap-2 p-5 bg-accent-light/10 border border-border-premium/30 hover:border-accent rounded-2xl transition-all cursor-pointer h-full justify-between shadow-premium"
           >
             <div className="flex flex-col gap-2">
-              <span className="text-[9px] bg-accent/10 border border-accent/20 px-2 py-0.5 rounded-md text-accent font-bold uppercase tracking-widest w-fit">
+              <span className="text-xs bg-accent/10 border border-accent/20 px-2 py-0.5 rounded-md text-accent font-bold uppercase tracking-widest w-fit">
                 {item.type}
               </span>
               <strong className="text-base font-semibold text-primary group-hover:text-accent transition-colors leading-snug mt-1">
                 {item.title}
               </strong>
-              <p className="text-xs text-neutral-muted leading-relaxed line-clamp-2 mt-1">
+              <p className="text-sm text-neutral-muted leading-relaxed line-clamp-2 mt-1">
                 {item.summary}
               </p>
             </div>
             
-            <span className="text-[11px] font-bold text-accent group-hover:translate-x-1 transition-transform flex items-center gap-1 mt-4">
+            <span className="text-[13px] font-bold text-accent group-hover:translate-x-1 transition-transform flex items-center gap-1 mt-4">
               <span>Buka {item.type}</span>
               <ArrowRight size={12} />
             </span>
@@ -58,7 +58,7 @@ export function ContentSearch({ items }: { items: SearchItem[] }) {
       </div>
 
       {results.length === 0 && (
-        <div className="p-8 text-center text-xs uppercase font-bold tracking-widest text-neutral-muted bg-accent-light/20 border border-border-premium/20 rounded-2xl mt-4">
+        <div className="p-8 text-center text-sm uppercase font-bold tracking-widest text-neutral-muted bg-accent-light/20 border border-border-premium/20 rounded-2xl mt-4">
           Tidak ada hasil pencarian yang cocok dengan kata kunci Anda.
         </div>
       )}

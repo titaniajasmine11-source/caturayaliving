@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader, StickyWhatsapp } from "@/components/site-shell";
 import { site } from "@/lib/site";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="id" className={plusJakarta.variable}>
       <body className="font-sans antialiased text-neutral-text bg-accent-light">
         <a href="#main-content" className="skip-link">
           Langsung ke konten utama

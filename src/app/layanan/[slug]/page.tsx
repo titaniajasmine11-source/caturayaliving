@@ -57,7 +57,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[10px] uppercase tracking-luxury text-neutral-muted mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-xs uppercase tracking-wide text-neutral-muted mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-accent">Beranda</Link>
           <span className="text-neutral-300">/</span>
           <Link href="/layanan" className="hover:text-accent">Layanan</Link>
@@ -73,12 +73,12 @@ export default async function ServiceDetailPage({ params }: Props) {
             <header className="flex flex-col gap-4 text-left">
               <div className="inline-flex items-center gap-2 border-b border-accent/30 pb-1 w-fit mb-2">
                 <Compass size={12} className="text-accent animate-spin-slow" />
-                <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Layanan Spesialis Properti</span>
+                <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Layanan Spesialis Properti</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-display font-light text-primary tracking-tight leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl font-semibold text-primary tracking-tight leading-[1.1]">
                 {service.title}
               </h1>
-              <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
                 {service.summary}
               </p>
             </header>
@@ -97,20 +97,20 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             {/* Scope of works card */}
             <div className="bg-white border border-border-premium/50 rounded-[2px] p-6 sm:p-10 shadow-premium flex flex-col gap-6 text-left">
-              <h2 className="text-lg sm:text-xl font-display font-medium text-primary border-b border-border-premium/20 pb-4">
+              <h2 className="text-lg sm:text-xl font-semibold text-primary border-b border-border-premium/20 pb-4">
                 Lingkup Pekerjaan & Detail Layanan
               </h2>
-              <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-muted leading-relaxed">
                 {service.detail}
               </p>
               
-              <h2 className="text-lg sm:text-xl font-display font-medium text-primary border-b border-border-premium/20 pb-4 mt-4">
+              <h2 className="text-lg sm:text-xl font-semibold text-primary border-b border-border-premium/20 pb-4 mt-4">
                 Keunggulan Utama Layanan
               </h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-2.5 text-xs text-neutral-muted">
-                    <span className="bg-accent/5 border border-accent/15 text-accent p-1 rounded-[2px] text-[10px] font-bold mt-0.5 flex items-center justify-center w-5 h-5 flex-shrink-0">
+                  <li key={benefit} className="flex items-start gap-2.5 text-sm text-neutral-muted">
+                    <span className="bg-accent/5 border border-accent/15 text-accent p-1 rounded-[2px] text-xs font-bold mt-0.5 flex items-center justify-center w-5 h-5 flex-shrink-0">
                       <Check size={11} />
                     </span>
                     <span className="font-medium leading-relaxed">{benefit}</span>
@@ -122,18 +122,18 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Deliverables section */}
             <section className="bg-white border border-border-premium/50 rounded-[2px] p-6 sm:p-10 shadow-premium text-left">
               <header className="mb-6">
-                <p className="text-[9px] font-semibold uppercase tracking-luxury text-accent mb-2">Tahapan Hasil Kerja</p>
-                <h2 className="text-lg sm:text-xl font-display font-medium text-primary tracking-tight">
+                <p className="text-xs font-semibold uppercase tracking-luxury-sm text-accent mb-2">Tahapan Hasil Kerja</p>
+                <h2 className="text-lg sm:text-xl font-semibold text-primary tracking-tight">
                   Apa yang Anda Dapatkan Sejak Konsultasi Awal?
                 </h2>
               </header>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {service.deliverables.map((item, index) => (
                   <div key={item} className="bg-accent-light/30 border border-border-premium/30 p-4 rounded-[2px] flex flex-col gap-2">
-                    <span className="text-[9px] font-semibold tracking-luxury text-accent">
+                    <span className="text-xs font-semibold tracking-luxury-sm text-accent">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-xs font-semibold text-primary">{item}</span>
+                    <span className="text-sm font-semibold text-primary">{item}</span>
                   </div>
                 ))}
               </div>
@@ -142,8 +142,8 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Kesesuaian Ruang */}
             <section className="bg-white border border-border-premium/50 rounded-[2px] p-6 sm:p-10 shadow-premium text-left">
               <header className="mb-6">
-                <p className="text-[9px] font-semibold uppercase tracking-luxury text-accent mb-2">Kesesuaian Ruang</p>
-                <h2 className="text-lg sm:text-xl font-display font-medium text-primary tracking-tight">
+                <p className="text-xs font-semibold uppercase tracking-luxury-sm text-accent mb-2">Kesesuaian Ruang</p>
+                <h2 className="text-lg sm:text-xl font-semibold text-primary tracking-tight">
                   Bagian Ruangan yang Sering Membutuhkan Layanan Ini
                 </h2>
               </header>
@@ -164,8 +164,8 @@ export default async function ServiceDetailPage({ params }: Props) {
             {relatedPortfolio.length > 0 && (
               <section className="bg-white border border-border-premium/50 rounded-[2px] p-6 sm:p-10 shadow-premium text-left">
                 <header className="mb-6">
-                  <p className="text-[9px] font-semibold uppercase tracking-luxury text-accent mb-2">Referensi Kasus</p>
-                  <h2 className="text-lg sm:text-xl font-display font-medium text-primary tracking-tight">
+                  <p className="text-xs font-semibold uppercase tracking-luxury-sm text-accent mb-2">Referensi Kasus</p>
+                  <h2 className="text-lg sm:text-xl font-semibold text-primary tracking-tight">
                     Proyek Terkait Kategori {service.title.split(" ")[0]}
                   </h2>
                 </header>
@@ -176,13 +176,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                       href={`/portofolio/${item.slug}`} 
                       key={item.title}
                     >
-                      <span className="text-[8px] font-semibold uppercase tracking-luxury text-accent">
+                      <span className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">
                         {item.category} / {item.location}
                       </span>
                       <h3 className="text-sm font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-[11px] text-neutral-muted leading-relaxed line-clamp-2 mt-auto">
+                      <p className="text-[13px] text-neutral-muted leading-relaxed line-clamp-2 mt-auto">
                         {item.material}
                       </p>
                     </Link>
@@ -196,15 +196,15 @@ export default async function ServiceDetailPage({ params }: Props) {
           <aside className="lg:col-span-4 bg-primary text-white p-8 rounded-[2px] border border-white/5 shadow-premium lg:sticky lg:top-28 flex flex-col gap-6 text-left relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
             <div className="relative z-10 flex flex-col gap-4">
-              <p className="text-[9px] font-semibold uppercase tracking-luxury text-accent">Konsultasi Layanan</p>
-              <h3 className="text-xl font-display font-light leading-tight">Diskusikan Proyek Rumah Anda</h3>
-              <p className="text-neutral-muted text-xs leading-relaxed">
+              <p className="text-xs font-semibold uppercase tracking-luxury-sm text-accent">Konsultasi Layanan</p>
+              <h3 className="text-xl font-semibold leading-tight">Diskusikan Proyek Rumah Anda</h3>
+              <p className="text-neutral-muted text-sm leading-relaxed">
                 Konsultasikan rencana pemasangan {service.title.toLowerCase()} untuk rumah Anda secara detail. Kami akan memberikan perkiraan harga awal dan menjadwalkan survei lokasi Sidareja gratis.
               </p>
               
               <div className="flex flex-col gap-3 mt-4 w-full">
                 <a 
-                  className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-[10px] font-bold uppercase tracking-luxury transition-all cursor-pointer shadow-sm group"
+                  className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark py-3.5 px-6 rounded-[2px] text-xs font-bold uppercase tracking-wide transition-all cursor-pointer shadow-sm group"
                   href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai kebutuhan layanan ${service.title} untuk rumah saya.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -216,7 +216,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </a>
                 
                 <Link 
-                  className="w-full text-center py-3 border border-white/10 hover:border-white/40 text-white text-[10px] font-bold uppercase tracking-luxury rounded-[2px] transition-all cursor-pointer bg-transparent"
+                  className="w-full text-center py-3 border border-white/10 hover:border-white/40 text-white text-xs font-bold uppercase tracking-wide rounded-[2px] transition-all cursor-pointer bg-transparent"
                   href="/layanan" 
                   aria-label="Lihat seluruh katalog layanan Caturaya Living"
                 >

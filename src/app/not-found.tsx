@@ -12,21 +12,21 @@ export default function NotFound() {
           <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-2">
             <Compass size={32} className="animate-spin-slow" />
           </div>
-          <p className="text-xs font-bold uppercase tracking-widest text-accent">404 Error</p>
-          <h1 className="text-3xl sm:text-4xl font-display font-medium text-primary tracking-tight">Halaman Tidak Ditemukan</h1>
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent">404 Error</p>
+          <h1 className="text-3xl sm:text-4xl font-semibold text-primary tracking-tight">Halaman Tidak Ditemukan</h1>
           <p className="text-neutral-muted text-sm leading-relaxed max-w-md">
             Maaf, halaman yang Anda cari tidak dapat ditemukan atau telah dipindahkan ke lokasi lain. Silakan kembali ke beranda atau hubungi kami langsung via WhatsApp untuk bantuan cepat.
           </p>
           
           <div className="flex flex-wrap gap-4 justify-center mt-6 w-full">
             <Link 
-              className="text-center py-3.5 px-6 border border-border-premium/65 hover:border-accent hover:text-accent text-neutral-muted hover:bg-white text-xs font-bold uppercase tracking-widest rounded-xl transition-all cursor-pointer bg-accent-light/10 font-semibold shadow-sm"
+              className="text-center py-3.5 px-6 border border-border-premium/65 hover:border-accent hover:text-accent text-neutral-muted hover:bg-white text-xs font-semibold uppercase tracking-wide rounded-xl transition-all cursor-pointer bg-accent-light/10 shadow-sm"
               href="/"
             >
               Kembali ke Beranda
             </Link>
             <a 
-              className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow-lg shadow-accent/15 group"
+              className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white py-3.5 px-6 rounded-xl text-xs font-semibold uppercase tracking-wide transition-all cursor-pointer shadow-lg shadow-accent/15 group"
               href={whatsappUrl()} 
               target="_blank" 
               rel="noopener noreferrer"
