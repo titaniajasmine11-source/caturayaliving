@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Layout 2D interior</title>
+  <desc id="desc">Denah 2D ruang dengan zonasi dapur, living room, storage, dan sirkulasi.</desc>
+  <rect width="1200" height="820" fill="#efe7dc"/>
+  <rect x="110" y="90" width="980" height="640" fill="#fffaf2" stroke="#2d2925" stroke-width="10"/>
+  <path d="M110 340h980M470 90v640M760 340v390" fill="none" stroke="#2d2925" stroke-width="8"/>
+  <rect x="155" y="135" width="270" height="155" fill="#d6c3ac" stroke="#a8753d" stroke-width="4"/>
+  <rect x="520" y="135" width="510" height="155" fill="#f1e6d8" stroke="#a8753d" stroke-width="4"/>
+  <rect x="155" y="390" width="270" height="290" fill="#ead8c4" stroke="#a8753d" stroke-width="4"/>
+  <rect x="520" y="390" width="190" height="290" fill="#ded1c2" stroke="#a8753d" stroke-width="4"/>
+  <rect x="815" y="410" width="210" height="210" rx="105" fill="#f5efe7" stroke="#a8753d" stroke-width="4"/>
+  <path d="M605 535c95-25 175-2 240 70" fill="none" stroke="#53624d" stroke-width="8" stroke-linecap="round" stroke-dasharray="22 18"/>
+  <text x="230" y="222" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2d2925">Kitchen</text>
+  <text x="690" y="222" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2d2925">Living</text>
+  <text x="232" y="545" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2d2925">Storage</text>
+  <text x="552" y="545" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2d2925">Entry</text>
+  <text x="840" y="528" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2d2925">Flow</text>
+</svg>

@@ -1,0 +1,411 @@
+/* Universal Grid Systems */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.stageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.quoteGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.articleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Service Card (homepage/layanan listing) */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-base);
+}
+
+.card > span {
+  display: inline-block;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(168, 117, 61, 0.15);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.card h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-neutral);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+  transition: var(--transition-base);
+}
+
+.card a::after {
+  content: " →";
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(168, 117, 61, 0.2);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover a {
+  color: var(--color-accent-hover);
+}
+
+.card:hover a::after {
+  transform: translateX(4px);
+}
+
+/* Category card (Hero section complementary elements) */
+.categoryCard {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.categoryImage {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.categoryCard h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: 6px;
+}
+
+.categoryCard p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-neutral);
+}
+
+.categoryCard:hover {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* Portfolio / Project Card */
+.project {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.projectImage {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.projectImage > span {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(28, 26, 23, 0.8);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.projectBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projectBody > span {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.projectBody h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.projectBody p {
+  font-size: 13px;
+  color: var(--color-neutral);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.projectBody a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  width: fit-content;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+}
+
+.projectBody a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-hover);
+}
+
+.project:hover .projectImage img {
+  transform: scale(1.05);
+}
+
+/* Stage Card (Sketsa, 2D, 3D, 4D Visuals) */
+.stageCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.stageImage {
+  position: relative;
+  height: 160px;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.stageImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.stageImage span {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(28, 26, 23, 0.85);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+}
+
+.stageCard h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: 8px;
+}
+
+.stageCard p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-neutral);
+}
+
+.stageCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+/* Testimonials / Quotes */
+.quote {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: var(--color-bg-alt);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.quote blockquote {
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.quote figcaption {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-neutral-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quote:hover {
+  background: #FFFFFF;
+  box-shadow: var(--shadow-md);
+}
+
+/* SEO Articles Grid Cards */
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.articleCard > span {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.articleCard h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.articleCard p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-neutral);
+  flex: 1;
+}
+
+.articleCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-hover);
+}
+
+.articleCard:hover h3 {
+  color: var(--color-accent);
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 980px) {
+  .card, .project, .quote {
+    padding: 24px;
+  }
+}

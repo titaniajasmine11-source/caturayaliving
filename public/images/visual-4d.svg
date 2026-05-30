@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Preview 4D progres interior</title>
+  <desc id="desc">Visual 4D berupa timeline progres dari pengukuran, produksi, pemasangan, hingga serah terima.</desc>
+  <rect width="1200" height="820" fill="#f4eee6"/>
+  <rect x="90" y="120" width="1020" height="470" fill="#d8cec2"/>
+  <path d="M90 590h1020v130H90z" fill="#ad7b4a"/>
+  <rect x="170" y="220" width="260" height="270" fill="#f2e8dc"/>
+  <rect x="470" y="300" width="420" height="190" rx="26" fill="#fff4e8"/>
+  <rect x="520" y="340" width="92" height="78" rx="14" fill="#d9c8b5"/>
+  <rect x="630" y="340" width="92" height="78" rx="14" fill="#b9824d"/>
+  <rect x="740" y="340" width="92" height="78" rx="14" fill="#d9c8b5"/>
+  <path d="M190 650h820" stroke="#2d2925" stroke-width="7" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <circle cx="250" cy="650" r="32" fill="#2d2925"/><text x="250" y="662" font-size="30" fill="#fff8ea">1</text><text x="250" y="720" font-size="24" fill="#2d2925">Ukur</text>
+    <circle cx="485" cy="650" r="32" fill="#2d2925"/><text x="485" y="662" font-size="30" fill="#fff8ea">2</text><text x="485" y="720" font-size="24" fill="#2d2925">Desain</text>
+    <circle cx="720" cy="650" r="32" fill="#2d2925"/><text x="720" y="662" font-size="30" fill="#fff8ea">3</text><text x="720" y="720" font-size="24" fill="#2d2925">Produksi</text>
+    <circle cx="955" cy="650" r="32" fill="#2d2925"/><text x="955" y="662" font-size="30" fill="#fff8ea">4</text><text x="955" y="720" font-size="24" fill="#2d2925">Pasang</text>
+  </g>
+  <path d="M965 272c-34-76-8-135 60-178M980 282c-78-44-104-102-78-172M1000 284c48-62 107-88 178-72" fill="none" stroke="#53624d" stroke-width="12" stroke-linecap="round"/>
+</svg>

@@ -1,37 +1,46 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { SiteFooter, SiteHeader, StickyWhatsapp } from "@/components/site-shell";
+import { site } from "@/lib/site";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://caturayaliving.vercel.app"),
-  title: "Caturaya Living | Interior & Aluminium Sidareja Cilacap",
+  metadataBase: new URL(site.url),
+  title: "Caturaya Living | Jasa Interior & Aluminium Premium Sidareja Cilacap",
   description:
-    "Caturaya Living melayani interior, aluminium, kitchen set, plafon, kanopi, partisi, dan home finishing di Sidareja, Cilacap, dan sekitarnya.",
+    "Solusi arsitektural premium untuk interior, exterior, kusen aluminium, kitchen set, plafon, kanopi, pagar, dan home finishing di Sidareja, Cilacap, Jawa Tengah.",
   keywords: [
     "jasa aluminium Sidareja",
     "jasa kitchen set Sidareja",
     "jasa plafon Cilacap",
     "jasa kanopi Sidareja",
     "interior custom Cilacap",
+    "kontraktor eksterior Cilacap",
+    "pagar minimalis Sidareja",
   ],
   openGraph: {
-    title: "Caturaya Living | Interior & Aluminium Sidareja Cilacap",
+    title: "Caturaya Living | Jasa Interior & Aluminium Premium Sidareja Cilacap",
     description:
-      "Solusi interior, aluminium, kitchen set, plafon, kanopi, partisi, dan home finishing untuk Sidareja, Cilacap, dan sekitarnya.",
-    url: "https://caturayaliving.vercel.app",
-    siteName: "Caturaya Living",
+      "Solusi arsitektural premium untuk interior, eksterior, kusen aluminium, kitchen set, plafon, kanopi, pagar, dan home finishing di Sidareja, Cilacap, dan sekitarnya.",
+    url: site.url,
+    siteName: site.name,
     locale: "id_ID",
     type: "website",
+  },
+  alternates: {
+    canonical: site.url,
   },
 };
 
@@ -41,8 +50,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="id" className={`${inter.variable} ${playfair.variable}`}>
+      <body style={{ fontFamily: "var(--font-sans), Arial, sans-serif" }}>
+        <a href="#main-content" className="skip-link">
+          Langsung ke konten utama
+        </a>
+        <SiteHeader />
+        <main id="main-content" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+          {children}
+        </main>
+        <SiteFooter />
+        <StickyWhatsapp />
+      </body>
     </html>
   );
 }

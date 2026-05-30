@@ -1,0 +1,343 @@
+.plannerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 40px;
+  align-items: start;
+  width: 100%;
+}
+
+.plannerControls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.plannerControls label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  text-align: left;
+}
+
+.plannerControls input,
+.plannerControls select,
+.plannerControls textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.plannerControls input:hover,
+.plannerControls select:hover,
+.plannerControls textarea:hover {
+  border-color: var(--color-border-hover);
+}
+
+.plannerControls input:focus,
+.plannerControls select:focus,
+.plannerControls textarea:focus {
+  outline: none;
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(168, 117, 61, 0.15);
+}
+
+.plannerControls textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Item Catalog buttons */
+.itemCatalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.itemCatalog button {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  cursor: pointer;
+  color: var(--color-neutral);
+  transition: var(--transition-base);
+}
+
+.itemCatalog button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.itemCatalog button.activeItem {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(168, 117, 61, 0.2);
+}
+
+.savedDesigns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.savedDesigns button {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.savedDesigns button:hover {
+  border-color: var(--color-neutral-dark);
+}
+
+/* Canvas/Blueprint Preview Panel */
+.plannerPreview {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.roomPreview {
+  position: relative;
+  height: 320px;
+  background: #1C2430; /* Blueprint dark blue slate background */
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grid overlay background to simulate graphing blueprints */
+.roomPreview::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+.previewLabel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Beautiful architectural blueprint elements instead of simple solid blocks */
+.previewCabinet,
+.previewUpper,
+.previewWindow,
+.previewDoor,
+.previewSofa,
+.previewPartition,
+.previewBackdrop,
+.previewCanopy {
+  position: absolute;
+  border: 2px solid #5BC0BE; /* Light technical teal/cyan for lines */
+  background: rgba(91, 192, 190, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #5BC0BE;
+  font-weight: bold;
+}
+
+/* Cabinet Bawah (bottom cabinet along left edge) */
+.previewCabinet {
+  bottom: 30px;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: 40px;
+  border-radius: var(--radius-sm);
+}
+
+.previewCabinet::after {
+  content: "KABINET BAWAH";
+  letter-spacing: 0.05em;
+}
+
+/* Upper Cabinet (above bottom cabinet, styled as dashed lines) */
+.previewUpper {
+  bottom: 80px;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: 30px;
+  border-style: dashed;
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.05);
+  border-radius: var(--radius-sm);
+}
+
+.previewUpper::after {
+  content: "KABINET ATAS";
+}
+
+/* Window (centered on top wall) */
+.previewWindow {
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 12px;
+  background: rgba(168, 117, 61, 0.1);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.previewWindow::after {
+  content: "JENDELA";
+}
+
+/* Door (bottom right corner with swing arch indicator) */
+.previewDoor {
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  border-left: 2px solid #f43f5e; /* Rose swing indicator */
+  border-bottom: 2px solid #f43f5e;
+  border-bottom-left-radius: 100%;
+}
+
+.previewDoor::after {
+  content: "PINTU";
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  color: #f43f5e;
+  font-size: 8px;
+}
+
+/* Sofa (placed in center of room template) */
+.previewSofa {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  border-color: #a855f7; /* Purple */
+  background: rgba(168, 85, 247, 0.08);
+  color: #a855f7;
+}
+
+.previewSofa::after {
+  content: "SOFA AREA";
+}
+
+/* Partition divider (along mid vertical coordinate) */
+.previewPartition {
+  top: 30px;
+  left: 35%;
+  height: calc(100% - 60px);
+  width: 8px;
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.previewPartition::after {
+  content: "PARTISI";
+  writing-mode: vertical-rl;
+  font-size: 9px;
+}
+
+/* Backdrop TV (on right wall) */
+.previewBackdrop {
+  right: 30px;
+  top: 35%;
+  height: 80px;
+  width: 14px;
+  border-color: #eab308;
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.previewBackdrop::after {
+  content: "TV";
+  font-size: 8px;
+}
+
+/* Canopy (acting as a carport frame covering the top half) */
+.previewCanopy {
+  top: 30px;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: 120px;
+  border-style: dotted;
+  border-width: 3px;
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.05);
+  color: #f97316;
+}
+
+.previewCanopy::after {
+  content: "KANOPI EKSTERIOR";
+  font-size: 11px;
+}
+
+@media (max-width: 980px) {
+  .plannerGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .plannerPreview {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .plannerControls {
+    padding: 24px 20px;
+  }
+}

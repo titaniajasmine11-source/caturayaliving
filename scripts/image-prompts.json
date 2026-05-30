@@ -1,0 +1,86 @@
+[
+  {
+    "id": "home-hero",
+    "output": "public/images/home/hero-home-interior.webp",
+    "size": "1792x1024",
+    "prompt": "Modern premium Indonesian home interior, elegant living room connected with kitchen area, warm natural light, beige sofa, wood floor, clean home renovation style, realistic photography, no text, no people, no watermark, wide angle."
+  },
+  {
+    "id": "home-service-kusen",
+    "output": "public/images/home/service-kusen-aluminium.webp",
+    "size": "1024x1024",
+    "prompt": "Close up of modern aluminium window frame and door frame in Indonesian home, graphite aluminium, clean wall, warm daylight, premium renovation photography, no text, no people, no watermark."
+  },
+  {
+    "id": "home-service-kitchen",
+    "output": "public/images/home/service-kitchen-set.webp",
+    "size": "1024x1024",
+    "prompt": "Modern minimalist kitchen set in warm Indonesian home, white and wood cabinets, clean countertop, soft warm lighting, premium realistic photography, no text, no people, no watermark."
+  },
+  {
+    "id": "home-service-plafon",
+    "output": "public/images/home/service-plafon.webp",
+    "size": "1024x1024",
+    "prompt": "Clean modern gypsum ceiling and PVC ceiling detail in Indonesian living room, warm lighting, beige interior, premium renovation style, realistic photo, no text, no people, no watermark."
+  },
+  {
+    "id": "home-service-kanopi",
+    "output": "public/images/home/service-kanopi.webp",
+    "size": "1024x1024",
+    "prompt": "Modern carport canopy for Indonesian house, graphite frame, clean beige facade, warm daylight, realistic premium exterior renovation photography, no text, no people, no watermark."
+  },
+  {
+    "id": "home-why-survey",
+    "output": "public/images/home/why-choose-us-team-survey.webp",
+    "size": "1024x1024",
+    "prompt": "Professional home renovation survey scene in Indonesian house, measuring tape, material samples, notebook on clean table, warm premium style, no visible faces, no text, no watermark."
+  },
+  {
+    "id": "area-kitchen-hero",
+    "output": "public/images/areas/kitchen/hero-kitchen.webp",
+    "size": "1792x1024",
+    "prompt": "Warm minimalist Indonesian kitchen with custom kitchen set, white and wood tone, clean countertop, storage cabinets, natural light, realistic photography, no text, no people, no watermark."
+  },
+  {
+    "id": "area-living-hero",
+    "output": "public/images/areas/living-room/hero-living-room.webp",
+    "size": "1792x1024",
+    "prompt": "Modern warm Indonesian living room with TV backdrop, custom cabinet, beige sofa, wood accent, clean premium home finishing, realistic photography, no text, no people, no watermark."
+  },
+  {
+    "id": "area-teras-hero",
+    "output": "public/images/areas/teras-depan/hero-teras-depan.webp",
+    "size": "1792x1024",
+    "prompt": "Clean front terrace of Indonesian home with aluminium door and window, warm beige facade, neat ceiling, modern simple renovation, realistic photo, no text, no people, no watermark."
+  },
+  {
+    "id": "area-master-hero",
+    "output": "public/images/areas/master-room/hero-master-room.webp",
+    "size": "1792x1024",
+    "prompt": "Warm modern master bedroom in Indonesian home with custom wardrobe, wood tone, beige wall, clean lighting, premium home interior photography, no text, no people, no watermark."
+  },
+  {
+    "id": "service-kusen-hero",
+    "output": "public/images/services/kusen-aluminium/hero-kusen-aluminium.webp",
+    "size": "1792x1024",
+    "prompt": "Modern aluminium window and door installation in clean Indonesian home, graphite frame, bright wall, precise finishing, premium renovation photography, no text, no people, no watermark."
+  },
+  {
+    "id": "service-kitchen-hero",
+    "output": "public/images/services/kitchen-set/hero-kitchen-set.webp",
+    "size": "1792x1024",
+    "prompt": "Premium custom kitchen set in Indonesian home, L shape cabinet, white and warm wood, clean backsplash, elegant realistic photography, no text, no people, no watermark."
+  },
+  {
+    "id": "service-plafon-hero",
+    "output": "public/images/services/plafon/hero-plafon.webp",
+    "size": "1792x1024",
+    "prompt": "Modern clean ceiling design in Indonesian living room, gypsum drop ceiling, warm LED lighting, beige interior, realistic premium photo, no text, no people, no watermark."
+  },
+  {
+    "id": "service-kanopi-hero",
+    "output": "public/images/services/kanopi/hero-kanopi.webp",
+    "size": "1792x1024",
+    "prompt": "Modern canopy carport in front of Indonesian house, graphite metal frame, clean roof, warm daylight, premium exterior renovation photo, no text, no people, no watermark."
+  }
+]

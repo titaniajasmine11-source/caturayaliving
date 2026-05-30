@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Sketsa konsep interior</title>
+  <desc id="desc">Sketsa garis ruang interior dengan sofa, kabinet, tanaman, dan panel dinding.</desc>
+  <rect width="1200" height="820" fill="#f6f0e8"/>
+  <path d="M120 680h960M180 620h380M650 620h330M220 180h760v440H220z" fill="none" stroke="#3d342b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".72"/>
+  <path d="M220 180l-90-90M980 180l90-90M220 620l-90 90M980 620l90 90" fill="none" stroke="#b68146" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+  <path d="M300 480h420v110H300zM330 420h360v70H330zM740 448h120v142H740z" fill="none" stroke="#3d342b" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M342 452c35-30 72-30 108 0M478 452c35-30 72-30 108 0" fill="none" stroke="#b68146" stroke-width="5" stroke-linecap="round"/>
+  <path d="M825 360c-54 12-88 55-84 109M840 376c-18-57-56-87-116-92M862 400c45-34 90-39 137-12" fill="none" stroke="#53624d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M784 590h96l-14 92h-68z" fill="none" stroke="#3d342b" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M450 230h260v150H450zM490 260h70M490 295h160M490 330h110" fill="none" stroke="#3d342b" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+  <path d="M270 705c180-55 360-55 540 0" fill="none" stroke="#b68146" stroke-width="4" stroke-dasharray="18 16" opacity=".7"/>
+</svg>
