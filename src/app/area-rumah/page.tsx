@@ -13,27 +13,27 @@ export default async function AreaRumahPage() {
   const areas = await getAreas();
 
   return (
-    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24">
+    <main className="bg-accent-light min-h-screen text-neutral-text pt-32 pb-24 text-left">
       <div className="max-w-7xl mx-auto px-6">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-neutral-muted mb-8" aria-label="Breadcrumb">
+        <nav className="flex items-center gap-2 text-[10px] uppercase tracking-luxury text-neutral-muted mb-8" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-accent">Beranda</Link>
           <span className="text-neutral-300">/</span>
-          <span className="text-primary">Area Rumah</span>
+          <span className="text-primary font-medium">Area Rumah</span>
         </nav>
 
         {/* Page Header */}
-        <header className="max-w-3xl flex flex-col gap-4 mb-16">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full w-fit">
-            <Compass size={14} className="text-accent animate-spin-slow" />
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">
+        <header className="max-w-3xl flex flex-col gap-4 mb-16 text-left">
+          <div className="inline-flex items-center gap-2 border-b border-accent/30 pb-1 w-fit mb-2">
+            <Compass size={12} className="text-accent animate-spin-slow" />
+            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">
               Zonasi Tata Ruang
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-medium text-primary tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl font-display font-light text-primary tracking-tight leading-[1.1]">
             Inspirasi Pengerjaan Berdasarkan Area Rumah
           </h1>
-          <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
+          <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
             Rencanakan penataan dan pembangunan berdasarkan bagian rumah Anda. Tiap area memiliki karakteristik arsitektural yang khas: ketahanan cuaca eksterior, efisiensi sirkulasi dapur, hingga kenyamanan detail interior ruang keluarga.
           </p>
         </header>
@@ -43,30 +43,30 @@ export default async function AreaRumahPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {areas.map((area, index) => (
               <article 
-                className="bg-white border border-border-premium/50 rounded-[32px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-300 flex flex-col h-full"
+                className="bg-white border border-border-premium/50 rounded-[2px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-500 flex flex-col h-full"
                 key={area.slug}
               >
                 {/* Image */}
-                <div className="h-[220px] relative w-full overflow-hidden">
+                <div className="h-[220px] relative w-full overflow-hidden bg-accent-light/10">
                   <Image 
                     src={area.image} 
                     alt={area.title}
                     fill 
                     sizes="(max-width: 980px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                    className="object-cover group-hover:scale-105 transition-transform duration-750" 
                   />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-[10px] uppercase font-bold tracking-widest text-accent px-3 py-1 rounded-full border border-white/50 shadow-sm">
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-[9px] uppercase font-semibold tracking-luxury text-accent px-3 py-1.5 rounded-[2px] border border-border-premium/25 shadow-sm">
                     Tata Ruang
                   </div>
-                  <div className="absolute bottom-4 right-4 bg-primary/80 backdrop-blur text-white text-[10px] uppercase font-semibold px-3 py-1 rounded-md">
+                  <div className="absolute bottom-4 right-4 bg-primary/80 backdrop-blur text-white text-[9px] font-semibold px-2.5 py-1 rounded-[2px] border border-white/5">
                     {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
 
                 {/* Body */}
                 <div className="p-8 flex flex-col gap-4 flex-1 justify-between">
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
+                  <div className="flex flex-col gap-2.5">
+                    <h3 className="text-base font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                       {area.title}
                     </h3>
                     <p className="text-xs text-neutral-muted leading-relaxed">
@@ -74,10 +74,10 @@ export default async function AreaRumahPage() {
                     </p>
                     
                     {/* Recommendations */}
-                    <div className="flex flex-wrap gap-1.5 mt-2 pt-2 border-t border-border-premium/30">
-                      <span className="text-[10px] font-bold text-accent uppercase tracking-wider mt-0.5">Rekomendasi:</span>
+                    <div className="flex flex-wrap gap-1.5 mt-2 pt-3 border-t border-border-premium/20 items-center">
+                      <span className="text-[9px] font-semibold text-accent uppercase tracking-luxury-sm">Rekomendasi:</span>
                       {area.recommended.map((rec: string) => (
-                        <span key={rec} className="text-[10px] font-semibold text-primary-neutral bg-accent-light/60 px-2 py-0.5 rounded">
+                        <span key={rec} className="text-[10px] font-medium text-neutral-text bg-accent-light/60 border border-border-premium/30 px-2 py-0.5 rounded-[2px]">
                           {rec}
                         </span>
                       ))}
@@ -85,23 +85,23 @@ export default async function AreaRumahPage() {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex gap-3 border-t border-border-premium/30 pt-4 mt-2">
+                  <div className="flex gap-3 border-t border-border-premium/20 pt-4 mt-2">
                     <Link
                       href={`/area-rumah/${area.slug}`}
-                      className="flex-1 text-center py-2.5 bg-primary-dark/5 hover:bg-primary-dark hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-1"
+                      className="flex-1 text-center py-2.5 border border-border-premium hover:border-primary bg-transparent text-primary hover:bg-primary hover:text-white text-[10px] font-semibold uppercase tracking-luxury rounded-[2px] transition-all duration-300 flex items-center justify-center gap-1 group"
                       aria-label={`Lihat rincian lengkap mengenai penataan area ${area.title}`}
                     >
                       <span>Detail Ruang</span>
-                      <ArrowUpRight size={12} />
+                      <ArrowUpRight size={11} className="opacity-70 group-hover:opacity-100" />
                     </Link>
                     <a
                       href={whatsappUrl(`Halo Caturaya Living, saya ingin berkonsultasi mengenai penataan arsitektural untuk area ${area.title}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-sm transition-all flex items-center justify-center gap-1"
+                      className="flex-1 text-center py-2.5 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-[10px] font-semibold uppercase tracking-luxury rounded-[2px] shadow-sm transition-all duration-300 flex items-center justify-center gap-1"
                       aria-label={`Tanya mengenai penataan area ${area.title} via WhatsApp`}
                     >
-                      <Phone size={12} />
+                      <Phone size={11} />
                       <span>Tanya WA</span>
                     </a>
                   </div>

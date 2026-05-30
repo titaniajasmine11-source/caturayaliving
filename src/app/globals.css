@@ -1,42 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #221F1D;            /* Deep Graphite Charcoal */
-  --color-primary-dark: #1A1816;
-  --color-primary-neutral: #2C2825;
+  --color-primary: #181615;            /* Obsidian Charcoal */
+  --color-primary-dark: #0F0E0E;
+  --color-primary-neutral: #22201E;
 
-  --color-accent: #E5835C;            /* Elegant Coral Accent */
-  --color-accent-hover: #F09673;
-  --color-accent-light: #FAF6F0;      /* Warm Cream Sand Background */
-  --color-accent-cream: #FFFDFB;      /* Card Soft White Background */
+  --color-accent: #BFA280;            /* Champagne Gold / Architectural Brass */
+  --color-accent-hover: #CBB194;
+  --color-accent-light: #FAF8F5;      /* Pure Warm Alabaster */
+  --color-accent-cream: #FFFDFB;      /* Soft Warm Ivory */
 
-  --color-neutral-text: #59524C;      /* Legible Charcoal */
-  --color-neutral-muted: #8E8378;
+  --color-neutral-text: #4A443E;      /* Muted Organic Charcoal */
+  --color-neutral-muted: #877D72;     /* Stone Gray */
 
-  --color-border-premium: #EEE8DF;    /* Soft Warm Sand Border */
+  --color-border-premium: #EAE3D8;    /* Delicate Linen Border */
   
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Playfair Display', serif;
 }
 
 @utility glassmorphism {
-  @apply bg-white/80 backdrop-blur-md border border-white/20;
+  @apply bg-white/75 backdrop-blur-md border border-white/30;
 }
 
 @utility glassmorphism-dark {
-  @apply bg-primary-dark/85 backdrop-blur-md border border-white/5;
+  @apply bg-primary-dark/80 backdrop-blur-md border border-white/5;
 }
 
 @utility border-premium-subtle {
-  @apply border border-border-premium/50;
+  @apply border border-border-premium/40;
 }
 
 @utility shadow-premium {
-  box-shadow: 0 16px 36px -12px rgba(90, 80, 70, 0.04);
+  box-shadow: 0 12px 30px -15px rgba(24, 22, 21, 0.02), 0 0 0 1px rgba(234, 227, 216, 0.3);
 }
 
 @utility shadow-premium-lg {
-  box-shadow: 0 32px 64px -16px rgba(90, 80, 70, 0.08);
+  box-shadow: 0 24px 48px -16px rgba(24, 22, 21, 0.04), 0 0 0 1px rgba(234, 227, 216, 0.4);
 }
 
 @utility hide-scrollbar {
@@ -45,6 +45,14 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+@utility tracking-luxury {
+  letter-spacing: 0.25em;
+}
+
+@utility tracking-luxury-sm {
+  letter-spacing: 0.15em;
 }
 
 body {
@@ -87,3 +95,4 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+

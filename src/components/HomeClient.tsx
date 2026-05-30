@@ -58,7 +58,7 @@ export default function HomeClient({
   };
 
   const fadeIn = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } }
   };
 
@@ -67,13 +67,12 @@ export default function HomeClient({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.05
+        staggerChildren: 0.08,
+        delayChildren: 0.02
       }
     }
   };
 
-  // Re-map 4 primary collections based on the Elm & Meadow look
   const collectionCollections = [
     {
       category: "Desain Interior",
@@ -118,11 +117,11 @@ export default function HomeClient({
             fill 
             priority
             sizes="100vw"
-            className="object-cover animate-slow-zoom opacity-45"
+            className="object-cover animate-slow-zoom opacity-35"
           />
           {/* Dark premium gradient overlay for maximum readability and accessibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary-dark/80 to-transparent" />
-          <div className="absolute inset-0 bg-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/75 to-transparent" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -130,21 +129,21 @@ export default function HomeClient({
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="flex flex-col gap-6 items-start text-left max-w-2xl"
+            className="flex flex-col gap-6 items-start text-left max-w-3xl"
           >
             <motion.div 
               variants={fadeIn} 
-              className="inline-flex items-center gap-2 bg-accent/20 border border-accent/35 px-4 py-1.5 rounded-full"
+              className="inline-flex items-center gap-2 border-b border-accent/30 pb-1.5"
             >
-              <Sparkle size={12} className="text-accent animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-white leading-none">
+              <Sparkle size={10} className="text-accent animate-pulse" />
+              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent leading-none">
                 Full Kontraktor Properti · Sidareja, Cilacap
               </span>
             </motion.div>
 
             <motion.h1 
               variants={fadeIn}
-              className="text-4xl sm:text-5xl lg:text-[60px] font-display font-medium text-white tracking-tight leading-[1.1]"
+              className="text-4xl sm:text-6xl lg:text-[72px] font-display font-light text-white tracking-tight leading-[1.05]"
             >
               Wujudkan Keindahan <br className="hidden sm:inline" />
               <span className="font-display italic text-accent font-normal">Hunian Impian Anda</span>
@@ -152,14 +151,14 @@ export default function HomeClient({
 
             <motion.p 
               variants={fadeIn} 
-              className="text-sm sm:text-base text-accent-light/80 leading-relaxed max-w-lg"
+              className="text-xs sm:text-sm text-accent-light/70 leading-relaxed max-w-xl"
             >
               Dari kusen kayu solid anti rayap, kusen aluminium tebal tahan karat cuaca pesisir, plafon PVC anti lembab tahan air pasang Sidareja, hingga renovasi sipil total — Caturaya Living mengkoordinasikan seluruh tim spesialis untuk Anda di bawah satu manajemen tepercaya.
             </motion.p>
 
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
               <a 
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full shadow-lg shadow-accent/20 transition-all duration-300"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-[10px] font-semibold uppercase tracking-luxury px-8 py-4 rounded-[2px] transition-all duration-300 shadow-sm"
                 href={wa} 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -167,7 +166,7 @@ export default function HomeClient({
                 Mulai Konsultasi Gratis
               </a>
               <Link 
-                className="inline-flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/5 text-white text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full transition-all"
+                className="inline-flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/5 text-white text-[10px] font-semibold uppercase tracking-luxury px-8 py-4 rounded-[2px] transition-all"
                 href="/portofolio"
               >
                 Lihat Portofolio
@@ -177,8 +176,8 @@ export default function HomeClient({
         </div>
       </section>
 
-      {/* ── 2. Three Overlapping Value Cards (Elm & Meadow Styled) ── */}
-      <section className="relative z-20 -mt-20 sm:-mt-24 mb-24 max-w-7xl mx-auto px-6">
+      {/* ── 2. Three Value Cards (Editorial Architectural Grid) ── */}
+      <section className="relative z-20 -mt-20 sm:-mt-24 mb-28 max-w-7xl mx-auto px-6">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -188,17 +187,20 @@ export default function HomeClient({
         >
           {[
             { 
-              icon: <Layers size={18} />, 
+              idx: "01",
+              icon: <Layers size={16} />, 
               title: "Desain Sepanjang Masa", 
               desc: "Desain interior & eksterior yang kokoh, menyatukan kehangatan kayu alami pilihan dan aluminium modern yang tangguh menghadapi cuaca ekstrim Cilacap." 
             },
             { 
-              icon: <Heart size={18} />, 
+              idx: "02",
+              icon: <Heart size={16} />, 
               title: "Kenyamanan Alami", 
               desc: "Setiap sudut ruangan dirancang presisi demi alur aktivitas harian yang efisien, mulai dari ketahanan karat kanopi carport luar hingga kerapian kitchen set." 
             },
             { 
-              icon: <Sparkle size={18} />, 
+              idx: "03",
+              icon: <Sparkle size={16} />, 
               title: "Material Terkurasi", 
               desc: "Penggunaan bahan premium tahan air pasang dan udara lembab pesisir (teakwood jati solid, profil aluminium graphite, PVC waterproof) yang dirakit langsung oleh tukang ahli." 
             },
@@ -206,17 +208,20 @@ export default function HomeClient({
             <motion.div 
               variants={fadeIn}
               key={item.title}
-              className="bg-white rounded-[36px] p-8 sm:p-10 shadow-premium border border-border-premium/50 flex flex-col items-start gap-4 transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1 group"
+              className="bg-white rounded-[2px] p-8 sm:p-10 shadow-premium border border-border-premium/50 flex flex-col items-start gap-4 transition-all duration-500 hover:shadow-premium-lg hover:-translate-y-1 group"
             >
-              <div className="w-10 h-10 flex items-center justify-center bg-accent/10 border border-accent/15 rounded-xl shadow-sm text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                {item.icon}
+              <div className="flex justify-between items-center w-full">
+                <div className="w-9 h-9 flex items-center justify-center bg-accent/5 border border-accent/10 rounded-[2px] text-accent transition-colors group-hover:bg-accent group-hover:text-primary">
+                  {item.icon}
+                </div>
+                <span className="text-accent/20 font-display text-4xl font-light italic leading-none -mt-2">{item.idx}</span>
               </div>
-              <h3 className="text-lg font-display font-medium text-primary pt-2">{item.title}</h3>
+              <h3 className="text-base font-display font-medium text-primary pt-3">{item.title}</h3>
               <p className="text-xs text-neutral-muted leading-relaxed">{item.desc}</p>
               
               <Link 
                 href="/layanan" 
-                className="inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-white text-[10px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full mt-4 transition-colors"
+                className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-luxury text-primary hover:text-accent border-b border-transparent hover:border-accent pb-0.5 mt-6 transition-all"
               >
                 <span>Konsultasi Proyek</span>
                 <ArrowRight size={10} />
@@ -226,12 +231,12 @@ export default function HomeClient({
         </motion.div>
       </section>
 
-      {/* ── 3. Explore Our Collections Grid (Elm & Meadow Styled 4-Column) ── */}
-      <section className="py-16 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col gap-3 mb-16 text-center max-w-xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-widest text-accent">Layanan Unggulan</span>
-          <h2 className="text-3xl sm:text-4xl font-display font-medium text-primary">Katalog Pengerjaan Spesialis</h2>
-          <div className="w-8 h-[1px] bg-accent mx-auto mt-2"></div>
+      {/* ── 3. Explore Our Collections Grid ── */}
+      <section className="py-20 max-w-7xl mx-auto px-6">
+        <div className="flex flex-col gap-3 mb-20 text-center max-w-xl mx-auto">
+          <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Layanan Unggulan</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-light text-primary">Katalog Pengerjaan Spesialis</h2>
+          <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
         </div>
 
         <motion.div 
@@ -245,23 +250,23 @@ export default function HomeClient({
             <motion.article 
               variants={fadeIn}
               key={col.title}
-              className="bg-white border border-border-premium/50 rounded-[32px] p-5 shadow-premium hover:shadow-premium-lg transition-all duration-300 flex flex-col h-full group"
+              className="bg-white border border-border-premium/50 rounded-[2px] p-4 shadow-premium hover:shadow-premium-lg transition-all duration-500 flex flex-col h-full group"
             >
               {/* Vertical Rectangular Image */}
-              <div className="h-[280px] w-full relative rounded-2xl overflow-hidden mb-5">
+              <div className="h-[280px] w-full relative rounded-[2px] overflow-hidden mb-5">
                 <Image 
                   src={col.image} 
                   alt={col.title}
                   fill 
                   sizes="(max-width: 980px) 100vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                  className="object-cover group-hover:scale-105 transition-transform duration-750" 
                 />
               </div>
 
               {/* Caption */}
               <div className="flex flex-col gap-2 flex-1 justify-between">
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-[9px] uppercase font-bold tracking-widest text-accent font-sans">{col.category}</span>
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] uppercase font-semibold tracking-luxury text-accent font-sans">{col.category}</span>
                   <h3 className="text-base font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                     {col.title}
                   </h3>
@@ -274,9 +279,9 @@ export default function HomeClient({
                   href={whatsappUrl(`Halo Caturaya Living, saya tertarik dengan layanan ${col.title} dan ingin menanyakan estimasi awal.`)} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1 w-full py-2.5 bg-accent/5 hover:bg-accent text-accent hover:text-white rounded-full text-[10px] font-bold uppercase tracking-wider transition-all mt-4 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1 w-full py-3 border border-border-premium hover:border-accent bg-transparent hover:bg-accent text-primary hover:text-white rounded-[2px] text-[10px] font-semibold tracking-luxury uppercase transition-all mt-4 cursor-pointer"
                 >
-                  <span>Lihat Detail Pengerjaan</span>
+                  <span>Lihat Detail</span>
                 </a>
               </div>
             </motion.article>
@@ -289,19 +294,19 @@ export default function HomeClient({
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-neutral/20 via-primary-dark to-primary-dark pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20">
             <div className="flex flex-col gap-4 max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-widest text-accent">Layanan Lengkap</span>
-              <h2 className="text-3xl sm:text-4xl font-display font-medium text-white">
+              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Layanan Lengkap</span>
+              <h2 className="text-3xl sm:text-4xl font-display font-light text-white leading-tight">
                 Koordinasikan Semua Kebutuhan Properti Anda
               </h2>
             </div>
             <Link 
               href="/layanan" 
-              className="group flex items-center gap-2 border border-white/20 hover:border-accent hover:text-accent px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+              className="group flex items-center gap-2 border border-white/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-[10px] font-semibold uppercase tracking-luxury transition-all duration-300"
             >
               <span>Lihat Seluruh Layanan</span>
-              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
 
@@ -325,26 +330,26 @@ export default function HomeClient({
 
               return (
                 <motion.article 
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.08 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
                   key={cat.id}
-                  className={`${spanning} relative rounded-[32px] overflow-hidden group shadow-lg border border-white/5 flex flex-col justify-end p-8`}
+                  className={`${spanning} relative rounded-[2px] overflow-hidden group border border-white/5 flex flex-col justify-end p-8`}
                 >
                   <div className="absolute inset-0 bg-primary-dark z-0 pointer-events-none">
                     <Image 
                       src={bgImages[index] || "/images/home/hero-home-interior.webp"} 
                       alt={cat.label}
                       fill
-                      className="object-cover opacity-25 group-hover:opacity-30 group-hover:scale-105 transition-all duration-[6s]"
+                      className="object-cover opacity-20 group-hover:opacity-25 group-hover:scale-105 transition-all duration-[8s]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/60 to-transparent" />
                   </div>
 
                   <div className="relative z-10 flex flex-col gap-2">
-                    {(() => { const Icon = iconMap[cat.icon] || Compass; return <Icon size={22} />; })()}
-                    <h3 className="text-lg font-display font-medium text-white group-hover:text-accent transition-colors">
+                    {(() => { const Icon = iconMap[cat.icon] || Compass; return <Icon size={18} className="text-accent" />; })()}
+                    <h3 className="text-lg font-display font-medium text-white group-hover:text-accent transition-colors pt-1">
                       {cat.label}
                     </h3>
                     <p className="text-[11px] text-neutral-muted leading-relaxed max-w-sm">
@@ -352,10 +357,10 @@ export default function HomeClient({
                     </p>
                     <Link 
                       href={`/layanan?kategori=${cat.id}`}
-                      className="text-[10px] font-bold uppercase tracking-wider text-accent group-hover:text-white flex items-center gap-1 mt-2 transition-colors w-fit"
+                      className="text-[10px] font-semibold uppercase tracking-luxury text-accent group-hover:text-white border-b border-transparent group-hover:border-white pb-0.5 mt-3 transition-all w-fit flex items-center gap-1"
                     >
                       <span>Pelajari Layanan</span>
-                      <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>
                 </motion.article>
@@ -366,11 +371,11 @@ export default function HomeClient({
       </section>
 
       {/* ── 5. Jaringan Tim Spesialis & Full Contractor ── */}
-      <section className="py-24 max-w-7xl mx-auto px-6" id="tim">
+      <section className="py-28 max-w-7xl mx-auto px-6" id="tim">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Side: Parallax Image */}
-          <div className="lg:col-span-5 relative h-[450px] sm:h-[550px] w-full group rounded-[36px] overflow-hidden border border-border-premium/50 shadow-premium">
+          <div className="lg:col-span-5 relative h-[450px] sm:h-[550px] w-full group rounded-[2px] overflow-hidden border border-border-premium/50 shadow-premium">
             <Image
               src="/images/home/tim-kontraktor.png"
               alt="Tim spesialis Caturaya Living"
@@ -378,24 +383,24 @@ export default function HomeClient({
               sizes="(max-width: 980px) 100vw, 40vw"
               className="object-cover transition-transform duration-[8s] group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur px-6 py-4 rounded-2xl border border-white/50 shadow-sm z-10">
-              <span className="text-xs uppercase font-bold tracking-widest text-accent block mb-1">Manajemen Terstruktur</span>
-              <p className="text-[10px] text-neutral-muted leading-tight">Mengkoordinasikan tim spesialis kusen kayu anti rayap, aluminium tebal tahan karat, plafon PVC anti bocor, & konstruksi sipil kokoh di Cilacap.</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/30 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur px-6 py-5 rounded-[2px] border border-border-premium/30 shadow-sm z-10">
+              <span className="text-[9px] uppercase font-semibold tracking-luxury text-accent block mb-1">Manajemen Terstruktur</span>
+              <p className="text-[10px] text-neutral-muted leading-relaxed">Mengkoordinasikan tim spesialis kusen kayu anti rayap, aluminium tebal tahan karat, plafon PVC anti bocor, & konstruksi sipil kokoh di Cilacap.</p>
             </div>
           </div>
 
           {/* Right Side: Specialists List */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-accent">Tim Spesialis Kami</span>
-              <h2 className="text-3xl sm:text-4xl font-display font-medium text-primary leading-tight">
+              <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Tim Spesialis Kami</span>
+              <h2 className="text-3xl sm:text-4xl font-display font-light text-primary leading-tight">
                 Mitra Tukang Berpengalaman di Bidangnya
               </h2>
-              <div className="w-8 h-[1px] bg-accent mt-2"></div>
+              <div className="w-8 h-[1px] bg-accent/60 mt-2"></div>
             </div>
             
-            <p className="text-sm text-neutral-muted leading-relaxed">
+            <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
               Caturaya Living mempersatukan jaringan mitra tukang ahli Sidareja yang terampil bertahun-tahun di bidangnya. Semua tim dikoordinasikan langsung agar pengerjaan properti Anda selesai rapi, kokoh, dan sesuai desain impian.
             </p>
 
@@ -410,9 +415,9 @@ export default function HomeClient({
                 <motion.div 
                   variants={fadeIn}
                   key={spec.role} 
-                  className="flex gap-4 p-5 rounded-2xl bg-white border border-border-premium/55 hover:border-accent/25 transition-all duration-300 shadow-sm"
+                  className="flex gap-4 p-5 rounded-[2px] bg-white border border-border-premium/50 hover:border-accent/30 transition-all duration-500 shadow-sm"
                 >
-                  {(() => { const SpecIcon = iconMap[spec.icon] || Compass; return <SpecIcon size={20} className="text-accent mt-0.5" />; })()}
+                  {(() => { const SpecIcon = iconMap[spec.icon] || Compass; return <SpecIcon size={16} className="text-accent mt-0.5" />; })()}
                   <div className="flex flex-col gap-1">
                     <strong className="text-xs font-semibold text-primary">{spec.role}</strong>
                     <p className="text-[11px] text-neutral-muted leading-relaxed">{spec.description}</p>
@@ -428,8 +433,8 @@ export default function HomeClient({
       <section className="py-24 bg-primary text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <div className="flex flex-col gap-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">Zonasi Area Rumah</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-medium text-white">
+            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Zonasi Area Rumah</span>
+            <h2 className="text-3xl sm:text-4xl font-display font-light text-white">
               Pilih Bagian Rumah yang Ingin Dipercantik
             </h2>
           </div>
@@ -441,20 +446,22 @@ export default function HomeClient({
               <Link 
                 href={`/area-rumah/${area.slug}`} 
                 key={area.slug}
-                className="w-[280px] sm:w-[320px] h-[200px] relative rounded-[32px] overflow-hidden group shadow-premium flex flex-col justify-end p-6 border border-white/5"
+                className="w-[280px] sm:w-[320px] h-[200px] relative rounded-[2px] overflow-hidden group shadow-premium flex flex-col justify-end p-6 border border-white/5"
               >
                 <div className="absolute inset-0 bg-primary-dark z-0 pointer-events-none">
                   <Image 
                     src={area.image || "/images/home/hero-home-interior.webp"} 
                     alt={area.title}
                     fill
-                    className="object-cover opacity-35 group-hover:opacity-40 group-hover:scale-105 transition-all duration-[6s]"
+                    className="object-cover opacity-30 group-hover:opacity-35 group-hover:scale-105 transition-all duration-[8s]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-primary-dark/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/30 to-transparent" />
                 </div>
                 
                 <div className="relative z-10">
-                  <span className="text-accent text-[10px] font-bold uppercase tracking-widest block mb-1">0{idx + 1}</span>
+                  <span className="text-accent text-[9px] font-semibold uppercase tracking-luxury block mb-1">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
                   <h3 className="text-base font-display font-medium text-white group-hover:text-accent transition-colors flex items-center gap-1.5">
                     <span>{area.title}</span>
                     <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -467,20 +474,20 @@ export default function HomeClient({
       </section>
 
       {/* ── 7. Portofolio Proyek ── */}
-      <section className="py-24 max-w-7xl mx-auto px-6" id="portofolio">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+      <section className="py-28 max-w-7xl mx-auto px-6" id="portofolio">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-20">
           <div className="flex flex-col gap-3 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">Katalog Portofolio</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-medium text-primary">
+            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Katalog Portofolio</span>
+            <h2 className="text-3xl sm:text-4xl font-display font-light text-primary">
               Hasil Realisasi Nyata Tim Caturaya Living
             </h2>
           </div>
           <Link 
             href="/portofolio" 
-            className="group flex items-center gap-2 border border-primary/20 hover:border-accent hover:text-accent px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+            className="group flex items-center gap-2 border border-primary/10 hover:border-accent hover:text-accent px-6 py-3.5 rounded-[2px] text-[10px] font-semibold uppercase tracking-luxury transition-all duration-300"
           >
             <span>Lihat Semua Portofolio</span>
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
 
@@ -494,7 +501,7 @@ export default function HomeClient({
           {portfolio.slice(0, 6).map((item, index) => (
             <motion.article 
               variants={fadeIn}
-              className="bg-white border border-border-premium/50 rounded-[32px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-300 flex flex-col h-full"
+              className="bg-white border border-border-premium/50 rounded-[2px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-500 flex flex-col h-full"
               key={item.title}
             >
               <div className="h-[230px] relative w-full overflow-hidden">
@@ -503,32 +510,32 @@ export default function HomeClient({
                   alt={item.title}
                   fill 
                   sizes="(max-width: 980px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                  className="object-cover group-hover:scale-105 transition-transform duration-750" 
                 />
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-[10px] uppercase font-bold tracking-widest text-accent px-3 py-1 rounded-full border border-white/50 shadow-sm">
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur text-[9px] uppercase font-semibold tracking-luxury text-accent px-3 py-1 rounded-[2px] border border-border-premium/20 shadow-sm">
                   {item.category}
                 </div>
               </div>
               <div className="p-8 flex flex-col gap-3 flex-1 justify-between">
                 <div className="flex flex-col gap-2">
-                  <span className="text-[9px] uppercase font-bold tracking-widest text-neutral-muted flex items-center gap-1.5">
+                  <span className="text-[9px] uppercase font-semibold tracking-luxury text-neutral-muted flex items-center gap-1.5">
                     <MapPin size={10} className="text-accent" />
                     <span>{item.location}</span>
                   </span>
-                  <h3 className="text-base font-semibold text-primary group-hover:text-accent transition-colors leading-snug">
+                  <h3 className="text-base font-display font-medium text-primary group-hover:text-accent transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-neutral-muted leading-relaxed line-clamp-3">
+                  <p className="text-[11px] text-neutral-muted leading-relaxed line-clamp-3">
                     {item.material}.
                   </p>
                 </div>
                 
                 <Link 
                   href={`/portofolio/${item.slug}`}
-                  className="text-[10px] font-bold uppercase tracking-wider text-primary border-t border-border-premium/30 pt-4 flex items-center gap-1.5 group-hover:text-accent transition-colors mt-4 w-fit"
+                  className="text-[10px] font-semibold uppercase tracking-luxury text-primary border-t border-border-premium/20 pt-4 mt-6 flex items-center gap-1 group-hover:text-accent transition-colors w-fit"
                 >
                   <span>Lihat Studi Kasus</span>
-                  <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </motion.article>
@@ -536,35 +543,35 @@ export default function HomeClient({
         </motion.div>
       </section>
 
-      {/* ── 8. FAQ Accordion (Premium Animated) ── */}
-      <section className="py-24 bg-accent-light border-t border-b border-border-premium/50" id="faq">
+      {/* ── 8. FAQ Accordion (Premium Elegant Minimalist) ── */}
+      <section className="py-28 bg-accent-light border-t border-b border-border-premium/50" id="faq">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="flex flex-col gap-3 mb-16 text-center">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">Tanya Jawab</span>
-            <h2 className="text-2xl sm:text-3xl font-display font-medium text-primary">
-              Pertanyaan yang Sering Diajukan Customer
+          <div className="flex flex-col gap-3 mb-20 text-center">
+            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Tanya Jawab</span>
+            <h2 className="text-3xl font-display font-light text-primary">
+              Pertanyaan yang Sering Diajukan
             </h2>
-            <div className="w-8 h-[1px] bg-accent mx-auto mt-2"></div>
+            <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
             {faqs.map((faq, index) => {
               const isOpen = activeFaq === index;
               return (
                 <div 
                   key={faq.question}
-                  className="bg-white border border-border-premium/50 rounded-2xl shadow-sm overflow-hidden transition-all duration-300 hover:border-accent/30"
+                  className="border-b border-border-premium/60 py-4 transition-all duration-300"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-6 text-left font-semibold text-primary gap-4 focus:outline-none text-sm"
+                    className="w-full flex items-center justify-between py-4 text-left font-medium text-primary gap-4 focus:outline-none text-sm group"
                     aria-expanded={isOpen}
                   >
-                    <span>{faq.question}</span>
+                    <span className="group-hover:text-accent transition-colors">{faq.question}</span>
                     <motion.div
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
-                      className="w-8 h-8 rounded-full bg-accent-light flex items-center justify-center text-accent flex-shrink-0"
+                      className="text-accent flex-shrink-0"
                     >
                       <ChevronDown size={14} />
                     </motion.div>
@@ -578,7 +585,7 @@ export default function HomeClient({
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="px-6 pb-6 text-xs text-neutral-muted leading-relaxed border-t border-border-premium/20 pt-4">
+                        <div className="pb-6 text-xs text-neutral-muted leading-relaxed pt-2">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -592,17 +599,17 @@ export default function HomeClient({
       </section>
 
       {/* ── 9. Editorial Testimonial ── */}
-      <section className="py-24 bg-primary text-accent-light relative">
+      <section className="py-28 bg-primary text-accent-light relative">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
-          <span className="text-xs font-bold uppercase tracking-widest text-accent">Testimonial</span>
+          <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Testimonial</span>
           
           <figure className="flex flex-col gap-4">
-            <span className="text-5xl font-display text-accent select-none leading-none">“</span>
+            <span className="text-4xl font-display text-accent select-none leading-none">“</span>
             <blockquote className="text-lg sm:text-xl font-display italic leading-relaxed max-w-2xl mx-auto text-white">
               Awalnya saya pikir harus cari banyak tukang berbeda. Ternyata cukup hubungi Caturaya Living, semua dikoordinasi — dari kusen, kitchen set, sampai plafon. Hasilnya rapi dan selesai tepat waktu.
             </blockquote>
-            <div className="w-8 h-[1px] bg-accent mx-auto mt-2"></div>
-            <figcaption className="text-[10px] font-bold uppercase tracking-widest text-accent">
+            <div className="w-8 h-[1px] bg-accent/60 mx-auto mt-2"></div>
+            <figcaption className="text-[9px] font-semibold uppercase tracking-luxury text-accent">
               Bapak Heri – Sidareja
             </figcaption>
           </figure>
@@ -610,21 +617,22 @@ export default function HomeClient({
       </section>
 
       {/* ── 10. Kontak & Konsultasi ── */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-border-premium/50" id="kontak">
+      <section className="py-28 max-w-7xl mx-auto px-6" id="kontak">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          <div className="lg:col-span-7 flex flex-col gap-5">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">Konsultasi</span>
-            <h2 className="text-3xl sm:text-4xl font-display font-medium text-primary leading-tight">
+          <div className="lg:col-span-7 flex flex-col gap-5 text-left">
+            <span className="text-[10px] font-semibold uppercase tracking-luxury text-accent">Konsultasi</span>
+            <h2 className="text-3xl sm:text-4xl font-display font-light text-primary leading-tight">
               Mulai Konsultasikan Proyek Properti Anda Sekarang
             </h2>
-            <p className="text-sm text-neutral-muted leading-relaxed">
+            <div className="w-8 h-[1px] bg-accent/60 my-1"></div>
+            <p className="text-xs sm:text-sm text-neutral-muted leading-relaxed">
               Ceritakan ide pengerjaan properti Anda, kirim ukuran aktual atau foto lokasi jika ada. Tim Caturaya Living siap mewujudkan pengerjaan yang kokoh, fungsional, dan bernilai seni tinggi.
             </p>
             <div className="flex flex-col gap-4 text-xs text-neutral-muted mt-2">
-              <div className="flex gap-2">
-                <MapPin size={16} className="text-accent mt-0.5 flex-shrink-0" />
-                <span>
+              <div className="flex gap-2.5">
+                <MapPin size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                <span className="leading-relaxed">
                   <strong>Sidareja, Cilacap, Jawa Tengah</strong><br />
                   Melayani pesanan area Sidareja, Tegalsari, Cipari, Kedungreja, Gandrungmangu, hingga Cilacap kota.
                 </span>
@@ -633,38 +641,38 @@ export default function HomeClient({
           </div>
 
           <div className="lg:col-span-5 flex flex-col gap-4">
-            <div className="bg-white border border-border-premium/65 rounded-3xl p-8 flex flex-col gap-6 shadow-premium relative overflow-hidden">
+            <div className="bg-white border border-border-premium/50 rounded-[2px] p-8 flex flex-col gap-6 shadow-premium relative overflow-hidden text-left">
               <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none" />
-              <h3 className="text-base font-semibold text-primary">Kontak Konsultasi Cepat</h3>
+              <h3 className="text-xs uppercase tracking-luxury font-semibold text-primary">Kontak Konsultasi Cepat</h3>
               
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center text-xs border-b border-border-premium/30 pb-3">
                   <div className="flex flex-col">
-                    <span className="text-[10px] text-neutral-muted uppercase tracking-wider font-bold">Tholib (WhatsApp Utama)</span>
+                    <span className="text-[9px] text-neutral-muted uppercase tracking-luxury font-semibold">Tholib (WhatsApp Utama)</span>
                     <span className="font-semibold text-primary pt-0.5">{site.phonePrimaryLabel}</span>
                   </div>
                   <a 
                     href={whatsappUrl(undefined, site.phonePrimary)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 flex items-center justify-center rounded-full bg-accent text-white hover:bg-accent-hover transition-colors"
+                    className="w-8 h-8 flex items-center justify-center rounded-[2px] border border-accent/20 text-accent hover:bg-accent hover:text-primary transition-colors"
                   >
-                    <Phone size={14} />
+                    <Phone size={12} />
                   </a>
                 </div>
 
                 <div className="flex justify-between items-center text-xs border-b border-border-premium/30 pb-3">
                   <div className="flex flex-col">
-                    <span className="text-[10px] text-neutral-muted uppercase tracking-wider font-bold">Eko (WhatsApp Alternatif)</span>
+                    <span className="text-[9px] text-neutral-muted uppercase tracking-luxury font-semibold">Eko (WhatsApp Alternatif)</span>
                     <span className="font-semibold text-primary pt-0.5">{site.phoneSecondaryLabel}</span>
                   </div>
                   <a 
                     href={whatsappUrl(undefined, site.phoneSecondary)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 flex items-center justify-center rounded-full bg-accent text-white hover:bg-accent-hover transition-colors"
+                    className="w-8 h-8 flex items-center justify-center rounded-[2px] border border-accent/20 text-accent hover:bg-accent hover:text-primary transition-colors"
                   >
-                    <Phone size={14} />
+                    <Phone size={12} />
                   </a>
                 </div>
               </div>
@@ -673,9 +681,9 @@ export default function HomeClient({
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 bg-primary hover:bg-accent text-white text-center rounded-full text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
+                className="w-full py-4 bg-primary hover:bg-accent text-white text-center rounded-[2px] text-[10px] font-semibold tracking-luxury uppercase transition-all duration-300 shadow-sm"
               >
-                Mulai Konsultasi Online Gratis
+                Mulai Konsultasi Online
               </a>
             </div>
           </div>

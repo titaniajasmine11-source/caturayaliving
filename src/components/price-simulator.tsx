@@ -114,7 +114,7 @@ export function PriceSimulator() {
 
   const label = labels[type];
   const message = `Halo Caturaya Living, saya ingin konsultasi hasil simulasi harga.
-
+ 
 Nama: ${name || "-"}
 Nomor WhatsApp: ${phone || "-"}
 Jenis: ${label}
@@ -125,7 +125,7 @@ Tinggi: ${height} m
 Jumlah unit: ${quantity}
 Lokasi: ${location}
 Estimasi awal: ${format(lowEstimate)} - ${format(highEstimate)}
-
+ 
 Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
 
   function changeType(value: keyof typeof rates) {
@@ -136,27 +136,27 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
   const isLoading = rateSource === "loading";
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full text-left">
       
       {/* Inputs Form */}
-      <div className="lg:col-span-8 bg-white border border-border-premium/50 rounded-3xl p-6 sm:p-8 shadow-premium grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+      <div className="lg:col-span-8 bg-white border border-border-premium/50 rounded-[2px] p-6 sm:p-8 shadow-premium grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
         {isLoading && (
-          <div className="sm:col-span-2 bg-accent-light/40 border border-accent/20 text-accent text-xs p-4 rounded-xl flex items-center gap-2" aria-live="polite">
-            <span className="w-2.5 h-2.5 bg-accent rounded-full animate-ping" />
-            <span>Sinkronisasi basis referensi harga terbaru dari server...</span>
+          <div className="sm:col-span-2 bg-accent-light/40 border border-accent/25 text-accent text-xs p-4 rounded-[2px] flex items-center gap-2" aria-live="polite">
+            <span className="w-2 h-2 bg-accent rounded-full animate-ping" />
+            <span className="tracking-wide">Sinkronisasi basis referensi harga terbaru dari server...</span>
           </div>
         )}
 
         {/* 1. Select Simulation Type */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary flex items-center gap-1.5">
-            <Calculator size={13} className="text-accent" />
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary flex items-center gap-1.5 mb-1">
+            <Calculator size={12} className="text-accent" />
             <span>Jenis Pekerjaan</span>
           </label>
           <select 
             value={type} 
             onChange={(event) => changeType(event.target.value as keyof typeof rates)}
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm font-semibold text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs font-semibold text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 cursor-pointer"
           >
             <option value="kitchen">Kitchen Set</option>
             <option value="aluminium">Kusen Aluminium</option>
@@ -168,12 +168,12 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
         </div>
         
         {/* 2. Select Package/Material */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary">Kategori Material/Paket</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary mb-1">Kategori Material/Paket</label>
           <select 
             value={packageType} 
             onChange={(event) => setPackageType(event.target.value)}
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm font-semibold text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs font-semibold text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10 cursor-pointer"
           >
             {packageOptions[type].map((option) => (
               <option value={option} key={option}>
@@ -184,8 +184,8 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
         </div>
 
         {/* 3. Length Input */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary">Panjang (Meter)</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary mb-1">Panjang (Meter)</label>
           <input 
             type="number" 
             min="1" 
@@ -193,13 +193,13 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={length} 
             onChange={(event) => setLength(positiveNumber(event.target.value))} 
             aria-label="Panjang area dalam satuan meter"
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
 
         {/* 4. Width Input */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary">Lebar (Meter)</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary mb-1">Lebar (Meter)</label>
           <input 
             type="number" 
             min="1" 
@@ -208,13 +208,13 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             onChange={(event) => setWidth(positiveNumber(event.target.value))} 
             aria-label="Lebar area dalam satuan meter"
             disabled={type === "aluminium" || type === "doorWindow"}
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary disabled:opacity-50 disabled:cursor-not-allowed focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary disabled:opacity-50 disabled:cursor-not-allowed focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
 
         {/* 5. Height Input */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary">Tinggi / Tebal (Meter)</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary mb-1">Tinggi / Tebal (Meter)</label>
           <input 
             type="number" 
             min="0.5" 
@@ -223,13 +223,13 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             onChange={(event) => setHeight(positiveNumber(event.target.value))} 
             aria-label="Tinggi atau ketebalan area dalam satuan meter"
             disabled={type === "kitchen" || type === "plafon" || type === "kanopi"}
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary disabled:opacity-50 disabled:cursor-not-allowed focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary disabled:opacity-50 disabled:cursor-not-allowed focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
 
         {/* 6. Quantity Input */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary">Jumlah Unit (Pcs)</label>
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary mb-1">Jumlah Unit (Pcs)</label>
           <input 
             type="number" 
             min="1" 
@@ -237,7 +237,7 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={quantity} 
             onChange={(event) => setQuantity(positiveNumber(event.target.value))} 
             aria-label="Jumlah unit produk yang disimulasikan"
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
 
@@ -245,8 +245,8 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
         <div className="sm:col-span-2 border-t border-border-premium/20 my-2" />
 
         {/* 7. Installation Location */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary flex items-center gap-1">
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary flex items-center gap-1 mb-1">
             <MapPin size={12} className="text-accent" />
             <span>Kecamatan Pemasangan</span>
           </label>
@@ -254,13 +254,13 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={location} 
             onChange={(event) => setLocation(event.target.value)} 
             placeholder="Contoh: Sidareja"
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
 
         {/* 8. Full Name */}
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary flex items-center gap-1">
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary flex items-center gap-1 mb-1">
             <User size={12} className="text-accent" />
             <span>Nama Lengkap</span>
           </label>
@@ -268,40 +268,40 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
             value={name} 
             onChange={(event) => setName(event.target.value)} 
             placeholder="Contoh: Bapak Tholib" 
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
 
         {/* 9. Phone (Span 2) */}
-        <div className="sm:col-span-2 flex flex-col gap-1.5">
-          <label className="text-xs uppercase font-bold tracking-widest text-primary">Nomor WhatsApp</label>
+        <div className="sm:col-span-2 flex flex-col gap-1">
+          <label className="text-[10px] uppercase font-semibold tracking-luxury text-primary mb-1">Nomor WhatsApp</label>
           <input 
             value={phone} 
             onChange={(event) => setPhone(event.target.value)} 
             placeholder="Contoh: 085119467138" 
-            className="w-full bg-accent-light/35 border border-border-premium/65 px-4 py-3 rounded-xl text-sm text-primary focus:border-accent transition-colors"
+            className="w-full bg-accent-light/35 border border-border-premium hover:border-accent/60 px-4 py-3 rounded-[2px] text-xs text-primary focus:border-accent transition-all duration-300 outline-none focus:ring-1 focus:ring-accent/10"
           />
         </div>
       </div>
 
       {/* Outcome/Estimate Box */}
-      <aside className="lg:col-span-4 bg-primary text-white rounded-3xl p-8 shadow-premium border border-white/5 relative overflow-hidden flex flex-col gap-6 h-full justify-between">
+      <aside className="lg:col-span-4 bg-primary text-white rounded-[2px] p-8 shadow-premium border border-white/5 relative overflow-hidden flex flex-col gap-6 h-full justify-between">
         <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full pointer-events-none" />
         
         <div className="flex flex-col gap-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-accent flex items-center gap-1.5">
-            <Info size={14} />
+          <span className="text-[9px] font-semibold uppercase tracking-luxury text-accent flex items-center gap-1.5">
+            <Info size={12} />
             <span>Hasil Simulasi Estimasi</span>
           </span>
-          <div className="w-10 h-0.5 bg-accent"></div>
+          <div className="w-8 h-[1px] bg-accent/60"></div>
           
-          <div className="flex flex-col gap-1 mt-2">
-            <span className="text-xs text-neutral-muted uppercase tracking-wider font-semibold">Rentang Anggaran</span>
+          <div className="flex flex-col gap-1.5 mt-2">
+            <span className="text-[9px] uppercase tracking-luxury-sm text-neutral-muted font-semibold">Rentang Anggaran</span>
             {isLoading ? (
-              <div className="h-10 bg-white/5 border border-white/10 rounded-xl shimmer w-full" />
+              <div className="h-8 bg-white/5 border border-white/10 rounded-[2px] animate-pulse w-full" />
             ) : (
-              <strong className="text-2xl sm:text-3xl font-display font-medium text-white tracking-tight leading-tight">
-                {format(lowEstimate)} <span className="text-neutral-muted text-lg font-sans font-normal">-</span> {format(highEstimate)}
+              <strong className="text-2xl sm:text-3xl font-display font-light text-white tracking-tight leading-none mt-1">
+                {format(lowEstimate)} <span className="text-neutral-muted text-base font-sans font-normal">-</span> {format(highEstimate)}
               </strong>
             )}
           </div>
@@ -317,16 +317,16 @@ Catatan: Saya paham estimasi final menunggu survei dan pilihan material.`;
         </div>
 
         <a 
-          className="w-full py-4 bg-accent hover:bg-accent-hover text-white text-center rounded-xl text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group mt-4" 
+          className="w-full py-4 bg-accent hover:bg-accent-hover text-primary hover:text-primary-dark text-center rounded-[2px] text-[10px] font-semibold tracking-luxury uppercase shadow-sm transition-all flex items-center justify-center gap-2 group mt-4 cursor-pointer" 
           href={whatsappUrl(message)} 
           target="_blank" 
           rel="noopener noreferrer" 
           onClick={() => trackEvent("price_simulation_whatsapp", { type, estimate: middleEstimate })}
           aria-label="Kirim simulasi harga ke WhatsApp Caturaya Living"
         >
-          <Phone size={14} />
-          <span>Kirim Simulasi ke WhatsApp</span>
-          <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+          <Phone size={12} />
+          <span>Kirim ke WhatsApp</span>
+          <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
         </a>
       </aside>
     </div>
