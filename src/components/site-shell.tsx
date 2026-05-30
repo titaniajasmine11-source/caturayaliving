@@ -9,7 +9,17 @@ import { Menu, X, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ConsultationModal } from "./consultation-modal";
 
-const navigation = [
+const desktopNavigation = [
+  { href: "/", label: "Beranda" },
+  { href: "/layanan", label: "Layanan" },
+  { href: "/portofolio", label: "Portofolio" },
+  { href: "/simulasi-harga", label: "Simulasi" },
+  { href: "/artikel", label: "Artikel" },
+  { href: "/tentang-kami", label: "Tentang" },
+  { href: "/kontak", label: "Kontak" },
+];
+
+const mobileNavigation = [
   { href: "/", label: "Beranda" },
   { href: "/area-rumah", label: "Area Rumah" },
   { href: "/layanan", label: "Layanan" },
@@ -41,56 +51,38 @@ export function SiteHeader({ onConsultClick }: { onConsultClick: () => void }) {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  const isHomePage = pathname === "/";
-  const useLightHeader = isHomePage && !isScrolled;
-
-  const headerTextClass = useLightHeader ? "text-white" : "text-primary";
-  const headerMutedTextClass = useLightHeader ? "text-white/80 hover:text-accent" : "text-primary/70 hover:text-accent";
-  const headerCtaClass = useLightHeader
-    ? "border-white hover:border-accent text-white hover:bg-accent hover:text-white"
-    : "border-primary hover:border-accent text-primary hover:bg-accent hover:text-white";
-  const hamburgerTextClass = useLightHeader ? "text-white" : "text-primary";
-
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-accent-light/95 backdrop-blur-md py-3 shadow-premium border-b border-border-premium/50"
-            : "bg-transparent py-5 border-b border-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md py-3.5 shadow-premium border-b border-border-premium/50 transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Brand Logo */}
           <Link
-            className={`flex items-center gap-3 group transition-colors duration-300 ${headerTextClass}`}
+            className="flex items-center gap-3 group transition-colors duration-300 text-primary"
             href="/"
             aria-label="Eko Suyanto Workshop Beranda"
           >
-            <div className={`relative w-8 h-8 flex items-center justify-center rounded-[4px] p-1.5 transition-transform duration-500 group-hover:rotate-6 ${
-              useLightHeader 
-                ? "bg-white/10 border border-white/20" 
-                : "bg-accent/5 border border-accent/15"
-            }`}>
+            <div className="relative w-8 h-8 flex items-center justify-center rounded-[4px] p-1.5 transition-transform duration-500 group-hover:rotate-6 bg-accent/5 border border-accent/15">
               <Image src="/images/logo-caturaya.png" alt="Eko Suyanto Workshop Logo" width={22} height={22} priority />
             </div>
-            <span className={`tracking-[0.25em] text-xs font-medium uppercase transition-colors duration-300 ${headerTextClass} group-hover:text-accent`}>
+            <span className="tracking-[0.2em] text-[10px] font-semibold uppercase transition-colors duration-300 text-primary group-hover:text-accent">
               Eko Suyanto Workshop
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Menu utama">
-            {navigation.map((item) => {
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6" aria-label="Menu utama">
+            {desktopNavigation.map((item) => {
               const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
               return (
                 <Link
                   href={item.href}
                   key={item.href}
-                  className={`text-xs font-medium uppercase tracking-luxury-sm transition-all duration-300 relative py-1 ${
+                  className={`text-[10px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 relative py-1 ${
                     isActive
                       ? "text-accent"
-                      : headerMutedTextClass
+                      : "text-primary/70 hover:text-accent"
                   }`}
                 >
                   {item.label}
@@ -109,16 +101,16 @@ export function SiteHeader({ onConsultClick }: { onConsultClick: () => void }) {
           {/* Desktop CTA */}
           <button
             onClick={onConsultClick}
-            className={`hidden lg:flex items-center gap-2 border px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm cursor-pointer ${headerCtaClass}`}
+            className="hidden lg:flex items-center gap-2 border px-3.5 py-2 rounded-[2px] text-[10px] font-bold tracking-wide uppercase transition-all duration-300 shadow-sm cursor-pointer border-primary hover:border-accent text-primary hover:bg-accent hover:text-white"
             aria-label="Konsultasi cepat via WhatsApp"
           >
-            <Phone size={11} />
+            <Phone size={10} />
             <span>Konsultasi</span>
           </button>
 
           {/* Hamburger button (Mobile) */}
           <button
-            className={`lg:hidden p-2 focus:outline-none transition-colors duration-300 ${hamburgerTextClass}`}
+            className="lg:hidden p-2 focus:outline-none transition-colors duration-300 text-primary"
             onClick={toggleMenu}
             aria-label="Buka menu navigasi"
             aria-expanded={isMenuOpen}
@@ -139,7 +131,7 @@ export function SiteHeader({ onConsultClick }: { onConsultClick: () => void }) {
             className="fixed inset-0 z-40 bg-accent-light pt-24 px-6 flex flex-col justify-between pb-12 lg:hidden border-b border-border-premium/50"
           >
             <div className="flex flex-col gap-4">
-              {navigation.map((item, index) => {
+              {mobileNavigation.map((item, index) => {
                 const isActive = pathname === item.href;
                 return (
                   <motion.div
@@ -164,7 +156,7 @@ export function SiteHeader({ onConsultClick }: { onConsultClick: () => void }) {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: navigation.length * 0.04 }}
+              transition={{ delay: mobileNavigation.length * 0.04 }}
               className="flex flex-col gap-4"
             >
               <button
