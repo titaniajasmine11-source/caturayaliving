@@ -58,7 +58,7 @@ export default async function LayananPage() {
                       fill 
                       sizes="(max-width: 980px) 50vw, 33vw" 
                     />
-                    <span style={{ background: "var(--color-accent)", borderRadius: "var(--radius-sm)", width: "auto", padding: "3px 10px", borderRadius: "20px" }}>
+                    <span style={{ background: "var(--color-accent)", padding: "3px 10px", borderRadius: "20px", width: "auto" }}>
                       {cat.icon}
                     </span>
                   </div>
