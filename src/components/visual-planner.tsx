@@ -3,6 +3,7 @@
 import { whatsappUrl } from "@/lib/site";
 import { trackEvent } from "@/lib/tracking";
 import { useState } from "react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import styles from "./styles/planner.module.css";
 
 const roomTemplates = ["Kitchen", "Living Room", "Master Room", "Teras/Carport", "Ruko/Tempat Usaha"];
@@ -87,64 +88,117 @@ Catatan: ${notes || "-"}
 Mohon dibantu arahan desain dan estimasi awal.`;
 
   return (
-    <div className={styles.plannerGrid}>
-      <div className={styles.plannerControls}>
-        <label>
-          Nama Lengkap
-          <input value={name} onChange={(event) => setName(event.target.value)} placeholder="Nama Anda" />
-        </label>
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+      {/* Control Panel Column */}
+      <div className="lg:col-span-7 bg-accent-light/10 border border-border-premium/40 rounded-3xl p-6 sm:p-8 flex flex-col gap-5">
         
-        <label>
-          Nomor WhatsApp
-          <input value={phone} onChange={(event) => setPhone(event.target.value)} placeholder="Contoh: 085119467138" />
-        </label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Nama Lengkap</label>
+            <input 
+              value={name} 
+              onChange={(event) => setName(event.target.value)} 
+              placeholder="Nama Anda" 
+              className="w-full bg-white border border-border-premium/50 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all shadow-sm focus:ring-2 focus:ring-accent/10"
+            />
+          </div>
+          
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Nomor WhatsApp</label>
+            <input 
+              value={phone} 
+              onChange={(event) => setPhone(event.target.value)} 
+              placeholder="Contoh: 085119467138" 
+              className="w-full bg-white border border-border-premium/50 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all shadow-sm focus:ring-2 focus:ring-accent/10"
+            />
+          </div>
+        </div>
 
-        <label>
-          Bagian Ruang Proyek
-          <select value={room} onChange={(event) => setRoom(event.target.value)}>
-            {roomTemplates.map((item) => <option key={item}>{item}</option>)}
-          </select>
-        </label>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Bagian Ruang Proyek</label>
+            <select 
+              value={room} 
+              onChange={(event) => setRoom(event.target.value)}
+              className="w-full bg-white border border-border-premium/50 px-3 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary transition-all shadow-sm cursor-pointer"
+            >
+              {roomTemplates.map((item) => <option key={item}>{item}</option>)}
+            </select>
+          </div>
 
-        <label>
-          Model Tata Letak / Konsep
-          <select value={model} onChange={(event) => setModel(event.target.value)}>
-            {models.map((item) => <option key={item}>{item}</option>)}
-          </select>
-        </label>
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Layout / Konsep</label>
+            <select 
+              value={model} 
+              onChange={(event) => setModel(event.target.value)}
+              className="w-full bg-white border border-border-premium/50 px-3 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary transition-all shadow-sm cursor-pointer"
+            >
+              {models.map((item) => <option key={item}>{item}</option>)}
+            </select>
+          </div>
 
-        <label>
-          Warna / Tekstur Material Utama
-          <select value={material} onChange={(event) => setMaterial(event.target.value)}>
-            {materials.map((item) => <option key={item}>{item}</option>)}
-          </select>
-        </label>
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Warna / Material Utama</label>
+            <select 
+              value={material} 
+              onChange={(event) => setMaterial(event.target.value)}
+              className="w-full bg-white border border-border-premium/50 px-3 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary transition-all shadow-sm cursor-pointer"
+            >
+              {materials.map((item) => <option key={item}>{item}</option>)}
+            </select>
+          </div>
+        </div>
 
-        <label>
-          Lebar Area (meter)
-          <input type="number" min="1" step="0.5" value={width} onChange={(event) => setWidth(positiveNumber(event.target.value))} />
-        </label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Lebar Area (meter)</label>
+            <input 
+              type="number" 
+              min="1" 
+              step="0.5" 
+              value={width} 
+              onChange={(event) => setWidth(positiveNumber(event.target.value))} 
+              className="w-full bg-white border border-border-premium/50 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary transition-all shadow-sm"
+            />
+          </div>
 
-        <label>
-          Panjang Area (meter)
-          <input type="number" min="1" step="0.5" value={length} onChange={(event) => setLength(positiveNumber(event.target.value))} />
-        </label>
+          <div className="flex flex-col gap-1 text-left">
+            <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Panjang Area (meter)</label>
+            <input 
+              type="number" 
+              min="1" 
+              step="0.5" 
+              value={length} 
+              onChange={(event) => setLength(positiveNumber(event.target.value))} 
+              className="w-full bg-white border border-border-premium/50 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary transition-all shadow-sm"
+            />
+          </div>
+        </div>
 
-        <label className={styles.fullField}>
-          Catatan Tambahan
-          <textarea value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Contoh: ingin kitchen set kombinasi graphite, ada jendela di sisi atas." />
-        </label>
+        <div className="flex flex-col gap-1 text-left">
+          <label className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted mb-1">Catatan Tambahan</label>
+          <textarea 
+            value={notes} 
+            onChange={(event) => setNotes(event.target.value)} 
+            placeholder="Contoh: ingin kitchen set kombinasi graphite, ada jendela di sisi atas." 
+            className="w-full bg-white border border-border-premium/50 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-accent text-primary placeholder-neutral-400 transition-all shadow-sm min-h-[80px] resize-y"
+          />
+        </div>
 
-        <div style={{ marginTop: "12px", textAlign: "left" }}>
-          <span style={{ fontSize: "13px", fontWeight: "600", color: "var(--color-neutral-dark)", display: "block", marginBottom: "8px" }}>
-            Pilih Elemen Interior/Eksterior (Klik untuk menambah)
+        <div className="text-left mt-2">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted block mb-3">
+            Pilih Elemen Interior / Eksterior (Klik untuk menambah)
           </span>
-          <div className={styles.itemCatalog}>
+          <div className="flex flex-wrap gap-2">
             {catalog.map((item) => {
               const active = items.includes(item);
               return (
                 <button 
-                  className={active ? styles.activeItem : ""} 
+                  className={`py-2 px-3.5 text-xs font-semibold rounded-full border transition-all ${
+                    active 
+                      ? "bg-accent border-accent text-white shadow-sm shadow-accent/20" 
+                      : "bg-white border-border-premium/60 text-neutral-muted hover:border-accent hover:text-accent cursor-pointer"
+                  }`}
                   type="button" 
                   onClick={() => toggleItem(item)} 
                   key={item}
@@ -157,24 +211,35 @@ Mohon dibantu arahan desain dan estimasi awal.`;
           </div>
         </div>
 
-        <button className="secondary" style={{ marginTop: "12px", width: "100%" }} type="button" onClick={saveDesign}>
-          Simpan Desain Lokal
-        </button>
+        <div className="mt-4">
+          <button 
+            className="w-full text-center py-3 border border-border-premium/60 hover:border-accent hover:text-accent text-xs font-bold uppercase tracking-widest rounded-xl transition-all bg-white cursor-pointer" 
+            type="button" 
+            onClick={saveDesign}
+          >
+            Simpan Desain Lokal
+          </button>
+        </div>
 
         {saveStatus && (
-          <p className={styles.formNotice} role="alert" aria-live="polite" style={{ marginTop: "12px", padding: "12px", background: "var(--color-accent-light)", color: "var(--color-accent)", fontSize: "12px", borderRadius: "var(--radius-md)" }}>
+          <p className="p-3 bg-accent/10 border border-accent/20 text-accent text-xs rounded-xl text-center font-medium" role="alert" aria-live="polite">
             {saveStatus}
           </p>
         )}
 
         {savedDesigns.length > 0 && (
-          <div style={{ marginTop: "20px", textAlign: "left" }}>
-            <span style={{ fontSize: "12px", fontWeight: "700", color: "var(--color-neutral-muted)", textTransform: "uppercase", letterSpacing: "0.05em", display: "block", marginBottom: "8px" }}>
-              Riwayat Desain Anda
+          <div className="mt-4 pt-6 border-t border-border-premium/30 text-left">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-muted block mb-3">
+              Riwayat Desain Anda (Browser-Local)
             </span>
-            <div className={styles.savedDesigns}>
+            <div className="flex flex-wrap gap-2">
               {savedDesigns.map((design) => (
-                <button type="button" onClick={() => loadDesign(design)} key={design.id}>
+                <button 
+                  type="button" 
+                  onClick={() => loadDesign(design)} 
+                  key={design.id}
+                  className="px-3 py-1.5 text-[11px] font-semibold bg-white border border-border-premium/60 hover:border-accent hover:text-accent rounded-lg transition-all cursor-pointer"
+                >
                   {design.room} ({design.model})
                 </button>
               ))}
@@ -183,7 +248,8 @@ Mohon dibantu arahan desain dan estimasi awal.`;
         )}
       </div>
 
-      <aside className={styles.plannerPreview}>
+      {/* Blueprint Visualizer Column */}
+      <aside className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32 w-full">
         {/* Architectural canvas room blueprint */}
         <div className={styles.roomPreview} data-material={material.toLowerCase().replaceAll(" ", "-")} aria-label="Kanvas denah arsitektural visualizer"> 
           <span className={styles.previewLabel}>{room} Blueprint</span>
@@ -197,26 +263,27 @@ Mohon dibantu arahan desain dan estimasi awal.`;
           {items.includes("Kanopi") && <i className={styles.previewCanopy} />}
         </div>
 
-        <div className={styles.estimateBox} style={{ background: "var(--color-bg-card)", border: "1px solid var(--color-border)", padding: "28px", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-md)" }}>
-          <p className={styles.eyebrow} style={{ fontSize: "11px", fontWeight: "700", color: "var(--color-accent)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "8px" }}>
+        {/* Blueprint Estimate outcome card */}
+        <div className="bg-white border border-border-premium/50 p-6 sm:p-8 rounded-3xl shadow-premium text-left">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">
             Ringkasan Konseptual
           </p>
-          <strong style={{ display: "block", fontSize: "20px", color: "var(--color-neutral-dark)", marginBottom: "8px" }}>
+          <h4 className="text-xl font-display font-medium text-primary mb-2">
             {model} Layout / {material}
-          </strong>
-          <span style={{ display: "block", fontSize: "13px", color: "var(--color-neutral-muted)", marginBottom: "16px" }}>
-            Dimensi: {width} x {length} meter, dengan {items.length} elemen arsitektural terpasang.
-          </span>
+          </h4>
+          <p className="text-xs text-neutral-muted leading-relaxed mb-6">
+            Dimensi: {width} x {length} meter, dengan {items.length} elemen arsitektural terpasang dalam rencana blueprint.
+          </p>
           <a 
-            className="primary" 
+            className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow-md shadow-primary/10 group"
             href={whatsappUrl(message)} 
             target="_blank" 
             rel="noopener noreferrer" 
             onClick={() => trackEvent("planner_whatsapp", { room, model, material, items: items.length })}
             aria-label="Kirim rancangan denah ke WhatsApp Caturaya Living"
-            style={{ width: "100%", display: "inline-flex" }}
           >
-            Hubungi untuk Realisasi
+            <span>Hubungi untuk Realisasi</span>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </aside>

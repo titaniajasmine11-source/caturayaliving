@@ -3,9 +3,7 @@ import { designStages } from "@/lib/content";
 import { whatsappUrl } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/subpages.module.css";
-import cardStyles from "@/components/styles/cards.module.css";
-import homeStyles from "../styles/home.module.css";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Visual Planner Preview Arsitektural | Caturaya Living",
@@ -14,64 +12,115 @@ export const metadata = {
 
 export default function PlannerPage() {
   return (
-    <main className={styles.subpageWrapper}>
-      {/* Breadcrumb */}
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link href="/">Beranda</Link>
-        <span>Visual Planner</span>
-      </nav>
+    <main className="bg-accent-light/30 min-h-screen text-neutral-text pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-neutral-muted mb-8" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-accent">Beranda</Link>
+          <span className="text-neutral-300">/</span>
+          <span className="text-primary">Visual Planner</span>
+        </nav>
 
-      <header className={styles.subpageHeader}>
-        <p className={styles.articleMeta} style={{ fontSize: "12px", fontWeight: "700" }}>Rancang Bangun Denah</p>
-        <h1>Visual Konseptual Proyek Rumah</h1>
-        <p>
-          Kami memandu Anda dalam memahami konsep, tata letak, warna material, dan pembagian ruang secara transparan. Mulai dari sketsa konsep, denah 2D, pratinjau 3D realistis, hingga diagram tahapan progres pekerjaan arsitektural.
-        </p>
-      </header>
-
-      <section style={{ marginBottom: "60px" }}>
-        <header className={styles.subpageHeader} style={{ borderBottom: "none", marginBottom: "20px", paddingBottom: 0 }}>
-          <p className={styles.articleMeta} style={{ fontSize: "11px", fontWeight: "700" }}>Konfigurator Briefing</p>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "24px", fontWeight: "600", color: "var(--color-neutral-dark)" }}>
-            Buat Rancangan Kasar Area Rumah Anda
-          </h2>
+        {/* Page Header */}
+        <header className="max-w-3xl flex flex-col gap-4 mb-16">
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-3.5 py-1.5 rounded-full w-fit">
+            <Sparkles size={14} className="text-accent animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-widest text-accent">
+              Rancang Bangun Denah
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-display font-medium text-primary tracking-tight leading-[1.1]">
+            Visual Konseptual Proyek Rumah
+          </h1>
+          <p className="text-base sm:text-lg text-neutral-muted leading-relaxed">
+            Kami memandu Anda dalam memahami konsep, tata letak, warna material, dan pembagian ruang secara transparan. Mulai dari sketsa konsep, denah 2D, pratinjau 3D realistis, hingga diagram tahapan progres pekerjaan arsitektural.
+          </p>
         </header>
-        <VisualPlanner />
-      </section>
 
-      <section style={{ marginBottom: "60px" }}>
-        <div className={cardStyles.stageGrid}>
-          {designStages.map((stage) => (
-            <article className={cardStyles.stageCard} key={stage.title}>
-              <div className={cardStyles.stageImage}>
-                <Image src={stage.image} alt={`${stage.title} Caturaya Living`} fill sizes="(max-width: 980px) 50vw, 25vw" />
-                <span>{stage.label}</span>
-              </div>
-              <h3>{stage.title}</h3>
-              <p>{stage.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        {/* Configurator Section */}
+        <section className="mb-16 bg-white border border-border-premium/50 p-6 sm:p-10 rounded-[32px] shadow-premium">
+          <header className="mb-8 border-b border-border-premium/30 pb-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">Konfigurator Briefing</p>
+            <h2 className="text-2xl sm:text-3xl font-display font-medium text-primary tracking-tight">
+              Buat Rancangan Kasar Area Rumah Anda
+            </h2>
+            <p className="text-xs text-neutral-muted mt-2">
+              Pilih spesifikasi area, rancang dimensi ukuran kasar, dan pilih elemen untuk menghasilkan rangkuman konseptual instan.
+            </p>
+          </header>
+          <VisualPlanner />
+        </section>
 
-      {/* CTA bottom */}
-      <section className={homeStyles.process} style={{ borderRadius: "var(--radius-lg)" }}>
-        <p className={styles.articleMeta} style={{ fontSize: "11px", fontWeight: "700", display: "block", marginBottom: "12px" }}>Output Konsultasi Desain</p>
-        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "28px", color: "var(--color-neutral-dark)", marginBottom: "16px", fontWeight: "600" }}>
-          Ingin Visualisasi Khusus Untuk Rumah Anda?
-        </h2>
-        <p style={{ color: "var(--color-neutral)", fontSize: "14px", maxWidth: "600px", margin: "0 auto 24px" }}>
-          Kirimkan foto lokasi, perkiraan ukuran, dan referensi model. Tim arsitektur kami akan memproses arahan visual (sketsa, 2D, atau 3D) yang sesuai kebutuhan Anda.
-        </p>
-        <a 
-          className="primary" 
-          href={whatsappUrl("Halo Caturaya Living, saya ingin konsultasi detail planner sketsa 2D/3D/4D untuk proyek rumah saya.")} 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Mulai Diskusi Desain
-        </a>
-      </section>
+        {/* Stages Section */}
+        <section className="mb-24">
+          <header className="max-w-2xl flex flex-col gap-3 mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-accent">Tahapan Perencanaan</p>
+            <h2 className="text-2xl sm:text-3xl font-display font-medium text-primary tracking-tight">
+              Proses Pematangan Konsep Visual Kami
+            </h2>
+            <p className="text-sm text-neutral-muted leading-relaxed">
+              Tim arsitektur kami membagi draf visualisasi pekerjaan Anda ke dalam empat tahapan konseptual guna menjamin kesesuaian eksekusi lapangan.
+            </p>
+          </header>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {designStages.map((stage) => (
+              <article 
+                className="bg-white border border-border-premium/50 rounded-[28px] overflow-hidden group shadow-premium hover:shadow-premium-lg transition-all duration-300 flex flex-col" 
+                key={stage.title}
+              >
+                <div className="h-[180px] relative w-full overflow-hidden bg-accent-light/30 flex items-center justify-center p-6 border-b border-border-premium/20">
+                  <Image 
+                    src={stage.image} 
+                    alt={`${stage.title} Caturaya Living`} 
+                    width={100} 
+                    height={100} 
+                    className="object-contain group-hover:scale-110 transition-transform duration-500" 
+                  />
+                  <span className="absolute bottom-3 right-3 bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded">
+                    {stage.label}
+                  </span>
+                </div>
+                <div className="p-6 flex flex-col gap-2 flex-1 justify-between">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-base font-bold text-primary group-hover:text-accent transition-colors">
+                      {stage.title}
+                    </h3>
+                    <p className="text-xs text-neutral-muted leading-relaxed">
+                      {stage.description}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA Bottom Block */}
+        <section className="bg-primary text-white rounded-[40px] overflow-hidden p-8 sm:p-16 text-center relative shadow-premium">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-accent/15 via-transparent to-transparent pointer-events-none" />
+          <div className="relative z-10 max-w-2xl mx-auto flex flex-col gap-6 items-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-accent">Output Konsultasi Desain</p>
+            <h2 className="text-2xl sm:text-3xl font-display font-medium leading-tight">
+              Ingin Visualisasi Khuset (Sketsa/2D/3D) Khusus Untuk Rumah Anda?
+            </h2>
+            <p className="text-neutral-muted text-sm leading-relaxed">
+              Kirimkan foto lokasi, perkiraan ukuran, dan referensi model. Tim arsitektur kami akan memproses arahan visual (sketsa, 2D, atau 3D) yang sesuai kebutuhan Anda.
+            </p>
+            <a 
+              className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl text-sm font-semibold uppercase tracking-wider shadow-lg shadow-accent/20 transition-all group"
+              href={whatsappUrl("Halo Caturaya Living, saya ingin konsultasi detail planner sketsa 2D/3D/4D untuk proyek rumah saya.")} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <span>Mulai Diskusi Desain</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </section>
+
+      </div>
     </main>
   );
 }

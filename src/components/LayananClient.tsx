@@ -5,8 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Phone, ArrowRight, ArrowUpRight, Compass, Shield } from "lucide-react";
+import { Phone, ArrowRight, ArrowUpRight, Compass, Shield, Hammer, Wrench, Paintbrush, Sofa, Home } from "lucide-react";
 import { whatsappUrl } from "@/lib/site";
+
+const categoryIconMap: Record<string, React.ComponentType<any>> = {
+  Hammer,
+  Wrench,
+  Paintbrush,
+  Sofa,
+  Home
+};
 
 interface LayananClientProps {
   allServices: any[];
@@ -66,6 +74,7 @@ export default function LayananClient({
           <div className="flex gap-8 min-w-max pb-1">
             {serviceCategories.map((cat) => {
               const isActive = activeCategory === cat.id;
+              const IconComponent = categoryIconMap[cat.icon] || Compass;
               return (
                 <button
                   key={cat.id}
@@ -75,7 +84,7 @@ export default function LayananClient({
                   }`}
                 >
                   <span className="flex items-center gap-2">
-                    <span className="text-lg">{cat.icon}</span>
+                    <IconComponent size={16} className={isActive ? "text-accent" : "text-neutral-muted group-hover:text-primary"} />
                     <span>{cat.label}</span>
                   </span>
                   {isActive && (
@@ -135,7 +144,10 @@ export default function LayananClient({
                     className="object-cover group-hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-xs uppercase font-bold tracking-widest text-accent px-3 py-1 rounded-full border border-white/50 flex items-center gap-1.5">
-                    <span>{activeCategoryData?.icon}</span>
+                    {activeCategoryData && (() => {
+                      const CardIcon = categoryIconMap[activeCategoryData.icon] || Compass;
+                      return <CardIcon size={12} className="text-accent" />;
+                    })()}
                     <span>{activeCategoryData?.label}</span>
                   </div>
                 </div>
