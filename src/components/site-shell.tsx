@@ -40,6 +40,16 @@ export function SiteHeader() {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  const isHomePage = pathname === "/";
+  const useLightHeader = isHomePage && !isScrolled;
+
+  const headerTextClass = useLightHeader ? "text-white" : "text-primary";
+  const headerMutedTextClass = useLightHeader ? "text-white/80 hover:text-accent" : "text-primary/70 hover:text-accent";
+  const headerCtaClass = useLightHeader
+    ? "border-white hover:border-accent text-white hover:bg-accent hover:text-white"
+    : "border-primary hover:border-accent text-primary hover:bg-accent hover:text-white";
+  const hamburgerTextClass = useLightHeader ? "text-white" : "text-primary";
+
   return (
     <>
       <header
@@ -52,14 +62,18 @@ export function SiteHeader() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Brand Logo */}
           <Link
-            className="flex items-center gap-3 text-primary group"
+            className={`flex items-center gap-3 group transition-colors duration-300 ${headerTextClass}`}
             href="/"
             aria-label="Eko Suyanto Workshop Beranda"
           >
-            <div className="relative w-8 h-8 flex items-center justify-center bg-accent/5 border border-accent/15 rounded-[4px] p-1.5 transition-transform duration-500 group-hover:rotate-6">
+            <div className={`relative w-8 h-8 flex items-center justify-center rounded-[4px] p-1.5 transition-transform duration-500 group-hover:rotate-6 ${
+              useLightHeader 
+                ? "bg-white/10 border border-white/20" 
+                : "bg-accent/5 border border-accent/15"
+            }`}>
               <Image src="/images/logo-caturaya.png" alt="Eko Suyanto Workshop Logo" width={22} height={22} priority />
             </div>
-            <span className="tracking-[0.25em] text-xs font-medium uppercase text-primary transition-colors group-hover:text-accent">
+            <span className={`tracking-[0.25em] text-xs font-medium uppercase transition-colors duration-300 ${headerTextClass} group-hover:text-accent`}>
               Eko Suyanto Workshop
             </span>
           </Link>
@@ -75,7 +89,7 @@ export function SiteHeader() {
                   className={`text-xs font-medium uppercase tracking-luxury-sm transition-all duration-300 relative py-1 ${
                     isActive
                       ? "text-accent"
-                      : "text-primary/70 hover:text-accent"
+                      : headerMutedTextClass
                   }`}
                 >
                   {item.label}
@@ -93,7 +107,7 @@ export function SiteHeader() {
 
           {/* Desktop CTA */}
           <a
-            className="hidden lg:flex items-center gap-2 border border-primary hover:border-accent hover:bg-accent hover:text-white text-primary px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm"
+            className={`hidden lg:flex items-center gap-2 border px-5 py-2.5 rounded-[2px] text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-sm ${headerCtaClass}`}
             href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
@@ -105,7 +119,7 @@ export function SiteHeader() {
 
           {/* Hamburger button (Mobile) */}
           <button
-            className="lg:hidden text-primary p-2 focus:outline-none"
+            className={`lg:hidden p-2 focus:outline-none transition-colors duration-300 ${hamburgerTextClass}`}
             onClick={toggleMenu}
             aria-label="Buka menu navigasi"
             aria-expanded={isMenuOpen}
